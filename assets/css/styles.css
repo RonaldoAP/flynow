@@ -4,19 +4,19 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  /* Palette — cobre + neutros quentes */
-  --ivory:      #FBF8F3;
-  --cream:      #F3ECE1;
-  --sand:       #E7DBCB;
-  --sand-line:  #E2D7C8;
-  --ink:        #2B2621;
-  --ink-soft:   #4A423A;
-  --stone:      #746B60;
-  --stone-lt:   #9A9086;
-  --copper:     #B67A54;
-  --copper-dp:  #98603F;
-  --blush:      #EBD8CA;
-  --sage:       #8E9A83;
+  /* Palette — branco + azul + preto */
+  --ivory:      #FFFFFF;
+  --cream:      #F2F7FB;
+  --sand:       #E1E9F1;
+  --sand-line:  #E0E8F0;
+  --ink:        #0B0D10;
+  --ink-soft:   #1C2229;
+  --stone:      #545E68;
+  --stone-lt:   #8A96A1;
+  --copper:     #0B7BD6;   /* azul primário */
+  --copper-dp:  #075CA3;   /* azul profundo */
+  --blush:      #DBEAF8;   /* azul claro / tint */
+  --sage:       #5C88A8;
   --white:      #FFFFFF;
 
   --radius:     18px;
@@ -275,7 +275,7 @@ em { font-style: italic; }
   background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.55), transparent 55%);
   mix-blend-mode: soft-light;
 }
-.ph--tone { background: linear-gradient(135deg, var(--sand) 0%, var(--blush) 60%, #d9b79f 100%); }
+.ph--tone { background: linear-gradient(135deg, var(--sand) 0%, var(--blush) 60%, #a9cdea 100%); }
 .ph__label {
   position: relative;
   z-index: 2;
@@ -432,7 +432,7 @@ em { font-style: italic; }
 .plan--featured {
   border-color: var(--copper);
   box-shadow: var(--shadow);
-  background: linear-gradient(180deg, #fff 0%, #fdf7f1 100%);
+  background: linear-gradient(180deg, #fff 0%, #f0f7fd 100%);
 }
 .plan__flag {
   position: absolute;
