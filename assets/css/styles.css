@@ -669,7 +669,8 @@ em { font-style: italic; }
   background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%);
   bottom: -260px; left: -120px;
 }
-.final-cta__inner { position: relative; max-width: 780px; margin-inline: auto; }
+.final-cta__inner { position: relative; max-width: 1000px; margin-inline: auto; }
+.final-cta h2 { text-wrap: balance; }
 .final-cta .eyebrow { color: rgba(255,255,255,0.72); }
 .final-cta h2 {
   font-family: var(--font-serif);
