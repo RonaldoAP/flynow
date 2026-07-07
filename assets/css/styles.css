@@ -383,7 +383,7 @@ em { font-style: italic; }
   filter: drop-shadow(0 20px 40px rgba(10, 60, 110, 0.14));
 }
 .molecule--1 { width: clamp(120px, 15vw, 220px); left: -1.5%; bottom: 6%; }
-.molecule--2 { width: clamp(90px, 11vw, 160px); left: 41%; top: 3%; }
+.molecule--2 { width: clamp(90px, 12vw, 170px); right: -2%; top: 30%; }
 .formula__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: clamp(34px, 5vw, 60px); }
 .formula__link { flex: none; font-weight: 600; color: var(--ink); border-bottom: 1.5px solid var(--copper); padding-bottom: 4px; transition: color .3s; }
 .formula__link:hover { color: var(--copper-dp); }
