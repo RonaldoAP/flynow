@@ -854,8 +854,18 @@ html.lenis, html.lenis body { height: auto; }
 
   .faq__grid { grid-template-columns: 1fr; }
   .faq__aside { position: static; }
-  .gallery__stage { flex-wrap: wrap; }
-  .gallery__side { width: clamp(180px, 40vw, 260px); }
+  /* Galeria: no mobile vira pilha vertical sticky — frasco em cima, rosto sobrepõe */
+  .gallery { height: auto; }
+  .gallery__pin { position: static; height: auto; overflow: visible; background: transparent; display: flex; flex-direction: column; padding: 0 18px clamp(30px, 8vw, 60px); }
+  .gallery__side--l { display: none; }
+  .gallery__center, .gallery__side--r {
+    position: sticky; top: 80px;
+    inset: auto; left: auto; width: 100%; height: auto;
+    aspect-ratio: 3 / 4; transform: none; border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .gallery__center { order: 1; z-index: 1; }
+  .gallery__side--r { order: 2; z-index: 2; margin-top: 24px; }
   .concerns__head { flex-direction: column; align-items: flex-start; gap: 14px; }
 
   /* Cuidados essenciais: pilha com efeito sticky */
