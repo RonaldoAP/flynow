@@ -393,15 +393,10 @@ em { font-style: italic; }
 .signal__bg {
   position: absolute; top: 0; right: 0; bottom: 0;
   width: 50%;
-  background-image: url("../../img/ilustracao-sinalizacao.webp");
+  background-image: url("../../img/como-funciona.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-/* leve véu para transição suave entre o texto e a imagem */
-.signal__bg::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, var(--ivory) 0%, rgba(251,248,243,0) 22%);
 }
 .signal__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
 .signal__copy { grid-column: 1; padding-right: clamp(20px, 4vw, 60px); }
@@ -817,7 +812,6 @@ html.lenis, html.lenis body { height: auto; }
   /* Signal: no mobile a imagem vira uma faixa cheia no topo da seção */
   .signal { padding-top: 0; }
   .signal__bg { position: static; width: 100%; height: 260px; margin-bottom: clamp(30px, 6vw, 48px); }
-  .signal__bg::before { background: none; }
   .signal__copy { padding-right: 0; }
   .bio__bento { grid-template-columns: 1fr; }
   .formula__media { max-width: 480px; }
