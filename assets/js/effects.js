@@ -104,36 +104,33 @@
     startAuto();
   }
 
-  /* ─────────── Scrollytelling: troca de foto + preenche a linha ─────────── */
-  var scrolly = document.getElementById('scrolly');
-  if (scrolly) {
-    var steps = Array.prototype.slice.call(scrolly.querySelectorAll('.sstep'));
-    var imgs = scrolly.querySelectorAll('.scrolly__img');
-    var numEl = document.getElementById('scrollyNum');
-    var stepsWrap = document.getElementById('scrollySteps');
-    var lineFill = scrolly.querySelector('.scrolly__line i');
+  /* ─────────── Timeline por etapas (fixa/pinned): 1 semana por vez ─────────── */
+  var track = document.getElementById('scrolly');
+  if (track) {
+    var steps = Array.prototype.slice.call(track.querySelectorAll('.sstep'));
+    var nodes = Array.prototype.slice.call(track.querySelectorAll('.tline__node'));
+    var railFill = track.querySelector('.tline__rail-line i');
+    var N = steps.length;
+    var current = -1;
 
     function setActive(idx) {
+      if (idx === current) return;
+      current = idx;
       steps.forEach(function (s) { s.classList.toggle('is-active', +s.dataset.step === idx); });
-      imgs.forEach(function (im) { im.classList.toggle('is-active', +im.dataset.step === idx); });
-      if (numEl) numEl.textContent = ('0' + (idx + 1)).slice(-2);
-      // preenche a linha vertical até o centro do nó ativo
-      if (lineFill && stepsWrap) {
-        var node = steps[idx].querySelector('.sstep__node');
-        var wrapTop = stepsWrap.getBoundingClientRect().top;
-        var nr = node.getBoundingClientRect();
-        lineFill.style.height = (nr.top + nr.height / 2 - wrapTop) + 'px';
-      }
+      nodes.forEach(function (n) { n.classList.toggle('is-active', +n.dataset.step <= idx); });
+      if (railFill) railFill.style.height = (N > 1 ? (idx / (N - 1)) * 100 : 0) + '%';
     }
 
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) setActive(+en.target.dataset.step);
-        });
-      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-      steps.forEach(function (s) { io.observe(s); });
+    function update() {
+      var rect = track.getBoundingClientRect();
+      var scrollable = track.offsetHeight - window.innerHeight;
+      var p = scrollable > 0 ? (-rect.top) / scrollable : 0;
+      p = Math.max(0, Math.min(0.9999, p));
+      setActive(Math.min(N - 1, Math.floor(p * N)));
     }
+    onScroll(update);
+    window.addEventListener('resize', update);
+    update();
   }
 
   /* ─────────── Galeria scroll-reveal pinada (centro → 33/34/33) ─────────── */

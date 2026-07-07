@@ -71,7 +71,7 @@
           <span class="eyebrow">Peptídeo biomimético de cobre</span>
           <h1 class="hero__title">
             Sua pele:<br />
-            <em>firme, luminosa</em> e regenerada
+            <em>firme, luminosa</em><br /> e regenerada
           </h1>
           <p class="hero__sub">
             Sérum GHK-Cu com Peptídeos de Cobre, Colágeno e Ácido Hialurônico.
@@ -254,64 +254,73 @@
       </div>
     </section>
 
-    <!-- ═══════════════ RESULTADOS PROGRESSIVOS (timeline + imagem fixa) ═══════════════ -->
+    <!-- ═══════════════ RESULTADOS (timeline por etapas, fixa no scroll) ═══════════════ -->
     <section class="results" id="resultados">
-      <div class="results__scene" id="scrolly">
-        <!-- ESQUERDA: imagem grande fixa (background) -->
-        <div class="results__visual">
-          <!-- IMAGEM: foto grande única da timeline (~1200x1500px vertical).
-               Suba como img/ilustracao-sinalizacao-2 que eu otimizo pra .webp -->
-          <div class="results__bg"></div>
-        </div>
+      <div class="results__track" id="scrolly">
+        <div class="results__scene">
+          <!-- ESQUERDA: imagem grande fixa (background) -->
+          <div class="results__visual"><div class="results__bg"></div></div>
 
-        <!-- DIREITA: título + subheadline + linha do tempo -->
-        <div class="results__panel">
-          <div class="results__head reveal">
-            <span class="eyebrow">Evolução</span>
-            <h2 class="section-title">Resultados que evoluem a cada fase de uso</h2>
-            <p class="lead">A consistência potencializa hidratação, textura, firmeza e luminosidade — acompanhe a evolução semana a semana.</p>
+          <!-- DIREITA: título + subheadline + etapas (uma por vez) -->
+          <div class="results__panel">
+            <div class="results__head">
+              <span class="eyebrow">Evolução</span>
+              <h2 class="section-title">Resultados que evoluem a cada fase de uso</h2>
+              <p class="lead">Acompanhe a evolução da pele semana a semana.</p>
+            </div>
+
+            <div class="tline">
+              <!-- trilho de progresso (nós que acendem por etapa) -->
+              <ol class="tline__rail" id="tlineRail">
+                <span class="tline__rail-line"><i></i></span>
+                <li class="tline__node is-active" data-step="0"><b></b><span>Primeiros dias</span></li>
+                <li class="tline__node" data-step="1"><b></b><span>2 semanas</span></li>
+                <li class="tline__node" data-step="2"><b></b><span>4 semanas</span></li>
+                <li class="tline__node" data-step="3"><b></b><span>6 semanas+</span></li>
+              </ol>
+
+              <!-- palco: só a etapa ativa aparece -->
+              <div class="tline__stage" id="scrollySteps">
+                <article class="sstep is-active" data-step="0">
+                  <span class="sstep__pill">Primeiros dias</span>
+                  <h3>Hidratação imediata</h3>
+                  <ul class="sstep__list">
+                    <li>Pele mais confortável</li>
+                    <li>Toque mais macio</li>
+                    <li>Aspecto menos ressecado</li>
+                  </ul>
+                </article>
+                <article class="sstep" data-step="1">
+                  <span class="sstep__pill">2 semanas</span>
+                  <h3>Textura mais refinada</h3>
+                  <ul class="sstep__list">
+                    <li>Superfície mais uniforme</li>
+                    <li>Mais viço visível</li>
+                    <li>Melhor aparência geral</li>
+                  </ul>
+                </article>
+                <article class="sstep" data-step="2">
+                  <span class="sstep__pill">4 semanas</span>
+                  <h3>Firmeza em evolução</h3>
+                  <ul class="sstep__list">
+                    <li>Elasticidade aparente maior</li>
+                    <li>Linhas menos evidentes</li>
+                    <li>Pele com mais sustentação</li>
+                  </ul>
+                </article>
+                <article class="sstep sstep--peak" data-step="3">
+                  <span class="sstep__pill">6 semanas+</span>
+                  <h3>Qualidade cutânea elevada</h3>
+                  <ul class="sstep__list">
+                    <li>Luminosidade contínua</li>
+                    <li>Aparência revitalizada</li>
+                    <li>Resultados mais consistentes</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+            <p class="results__note">*Os resultados variam de acordo com a individualidade da pele.</p>
           </div>
-
-          <ol class="tline" id="scrollySteps">
-            <span class="scrolly__line" aria-hidden="true"><i></i></span>
-            <li class="sstep is-active" data-step="0">
-              <span class="sstep__node"></span>
-              <div class="sstep__row"><span class="sstep__pill">Primeiros dias</span><h3>Hidratação imediata</h3></div>
-              <ul class="sstep__list">
-                <li>Pele mais confortável</li>
-                <li>Toque mais macio</li>
-                <li>Aspecto menos ressecado</li>
-              </ul>
-            </li>
-            <li class="sstep" data-step="1">
-              <span class="sstep__node"></span>
-              <div class="sstep__row"><span class="sstep__pill">2 semanas</span><h3>Textura mais refinada</h3></div>
-              <ul class="sstep__list">
-                <li>Superfície mais uniforme</li>
-                <li>Mais viço visível</li>
-                <li>Melhor aparência geral</li>
-              </ul>
-            </li>
-            <li class="sstep" data-step="2">
-              <span class="sstep__node"></span>
-              <div class="sstep__row"><span class="sstep__pill">4 semanas</span><h3>Firmeza em evolução</h3></div>
-              <ul class="sstep__list">
-                <li>Elasticidade aparente maior</li>
-                <li>Linhas menos evidentes</li>
-                <li>Pele com mais sustentação</li>
-              </ul>
-            </li>
-            <li class="sstep sstep--peak" data-step="3">
-              <span class="sstep__node"></span>
-              <div class="sstep__row"><span class="sstep__pill">6 semanas+</span><h3>Qualidade cutânea elevada</h3></div>
-              <ul class="sstep__list">
-                <li>Luminosidade contínua</li>
-                <li>Aparência revitalizada</li>
-                <li>Resultados mais consistentes</li>
-              </ul>
-            </li>
-          </ol>
-          <p class="results__note">*Os resultados variam de acordo com a individualidade da pele.</p>
         </div>
       </div>
     </section>
@@ -321,8 +330,8 @@
       <div class="wrap why__grid">
         <div class="why__media reveal">
           <!-- IMAGEM: Comparativo visual / textura do sérum em gota (~820x980px). -->
-          <figure class="ph ph--portrait ph--tone" data-img="serum-textura.jpg">
-            <span class="ph__label">Textura do sérum · macro</span>
+          <figure class="ph ph--portrait ph--tone">
+            <img class="ph__media" src="img/serum-textura.webp" alt="Textura do sérum GHK-Cu" width="1100" height="1366" loading="lazy" />
           </figure>
         </div>
         <div class="why__copy reveal">
@@ -455,8 +464,11 @@
             <h3>Assinatura</h3>
             <p>Reposição automática, sem interromper resultados.</p>
           </div>
-          <!-- IMAGEM: mockup assinatura (~500x500px, fundo transparente) -->
-          <figure class="ph ph--plan" data-img="mockup-assinatura.png"><span class="ph__label">Assinatura</span></figure>
+          <!-- IMAGEM: mockup assinatura (~500x500px). Aguardando upload. -->
+          <figure class="ph ph--plan" data-img="mockup-assinatura.png">
+            <span class="plan__badge">Em breve</span>
+            <span class="ph__label">Assinatura</span>
+          </figure>
           <div class="plan__price">
             <span class="plan__now">R$ 152,90<small>/mês</small></span>
             <span class="plan__pix">Cancele quando quiser</span>
@@ -573,8 +585,7 @@
           <span class="eyebrow">Dúvidas</span>
           <h2 class="section-title">Perguntas<br />frequentes</h2>
           <div class="faq__support">
-            <!-- IMAGEM: close suave de pele/olhar (~760x520px). Fundo do card de suporte. -->
-            <figure class="ph faq__support-img" data-img="faq-suporte.jpg"><span class="ph__label">Foto · suporte</span></figure>
+            <figure class="ph faq__support-img"><img class="ph__media" src="img/faq-suporte.webp" alt="Suporte Divessence" width="800" height="600" loading="lazy" /></figure>
             <div class="faq__support-inner">
               <div>
                 <h3>Ainda tem dúvidas?</h3>
@@ -612,11 +623,12 @@
 
     <!-- ═══════════════ CTA FINAL ═══════════════ -->
     <section class="final-cta">
+      <div class="final-cta__bg"></div>
       <div class="wrap final-cta__inner reveal">
         <span class="eyebrow">Comece hoje</span>
         <h2>Comece hoje a construir<br />uma pele <em>firme, luminosa e regenerada</em></h2>
         <p>Fórmula eficiente para evoluir sua pele com precisão e consistência.</p>
-        <a href="#oferta" class="btn btn--dark btn--lg">Iniciar meu protocolo</a>
+        <a href="#oferta" class="btn btn--blue btn--lg">Iniciar meu protocolo</a>
         <span class="final-cta__mini">Frete grátis acima de R$199 · Pré-venda com brinde</span>
       </div>
     </section>
