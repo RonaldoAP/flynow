@@ -32,32 +32,24 @@
   <!-- ═══════════════ HEADER ═══════════════ -->
   <header class="header" id="header">
     <div class="wrap header__inner">
-      <button class="header__burger" aria-label="Abrir menu" id="burger">
-        <span></span><span></span>
-      </button>
-
-      <nav class="header__nav header__nav--left">
-        <a href="#beneficios">Benefícios</a>
-        <a href="#ingredientes">Ingredientes</a>
-        <a href="#resultados">Resultados</a>
-      </nav>
-
-      <!-- IMAGEM: Logo da marca (SVG/PNG horizontal, ~140x40px, versão escura). Substituir o texto abaixo. -->
-      <a href="#top" class="header__logo">flynow</a>
+      <a href="#top" class="header__logo">
+        <img src="img/logo-black-empresa.svg" alt="Flynow" />
+      </a>
 
       <nav class="header__nav header__nav--right">
         <a href="#protocolo">Protocolo</a>
         <a href="#faq">Dúvidas</a>
         <a href="#oferta" class="header__cta">Comprar</a>
       </nav>
+
+      <button class="header__burger" aria-label="Abrir menu" id="burger">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
   <!-- Menu mobile -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#beneficios">Benefícios</a>
-    <a href="#ingredientes">Ingredientes</a>
-    <a href="#resultados">Resultados</a>
     <a href="#protocolo">Protocolo</a>
     <a href="#faq">Dúvidas</a>
     <a href="#oferta" class="btn btn--solid">Comprar agora</a>
@@ -68,6 +60,13 @@
     <!-- ═══════════════ HERO ═══════════════ -->
     <section class="hero">
       <div class="wrap hero__grid">
+        <!-- Rail vertical: linha com texto paralelo dos dois lados (GHK em cima, Sérum embaixo) -->
+        <div class="hero__rail reveal">
+          <span class="hero__rail-top">GHK-Cu · 30ml</span>
+          <span class="hero__rail-line"></span>
+          <span class="hero__rail-bottom">Sérum regenerador</span>
+        </div>
+
         <div class="hero__copy reveal">
           <span class="eyebrow">Peptídeo biomimético de cobre</span>
           <h1 class="hero__title">
@@ -88,11 +87,7 @@
             </div>
           </div>
 
-          <ul class="hero__trust">
-            <li>★★★★★ <span>+2.400 avaliações</span></li>
-            <li>Vegano · Cruelty-free</li>
-            <li>Dermatologicamente testado</li>
-          </ul>
+          <div class="hero__rating">★★★★★ <span>+2.420 avaliações</span></div>
         </div>
 
         <div class="hero__media reveal">
@@ -125,84 +120,105 @@
       </div>
     </section>
 
-    <!-- ═══════════════ BIOESTIMULAÇÃO ═══════════════ -->
+    <!-- ═══════════════ BIOESTIMULAÇÃO (bento) ═══════════════ -->
     <section class="bio" id="beneficios">
-      <div class="wrap bio__grid">
-        <div class="bio__media reveal">
-          <!-- IMAGEM: Close de pele/textura ou detalhe do produto sendo aplicado (~800x960px). -->
-          <figure class="ph ph--portrait" data-img="pele-close.jpg">
-            <span class="ph__label">Close de pele · aplicação</span>
+      <div class="wrap bio__head reveal">
+        <span class="eyebrow">Ação regenerativa e antissinais</span>
+        <h2 class="section-title">
+          Bioestimulação que reativa a qualidade<br />da pele
+        </h2>
+      </div>
+
+      <div class="wrap bio__bento">
+        <!-- ESQUERDA: galeria de fotos — 1 em cima, 2 embaixo -->
+        <div class="bio__gallery reveal">
+          <!-- IMAGEM: Foto principal da galeria (close de pele / lifestyle, ~1000x760px). -->
+          <figure class="ph bio__g-main" data-img="galeria-01.jpg">
+            <span class="ph__label">Galeria · foto 1</span>
           </figure>
+          <div class="bio__g-duo">
+            <!-- IMAGEM: Foto secundária (~500x500px). -->
+            <figure class="ph bio__g-sm" data-img="galeria-02.jpg">
+              <span class="ph__label">Foto 2</span>
+            </figure>
+            <!-- IMAGEM: Foto secundária (~500x500px). -->
+            <figure class="ph bio__g-sm" data-img="galeria-03.jpg">
+              <span class="ph__label">Foto 3</span>
+            </figure>
+          </div>
         </div>
-        <div class="bio__copy reveal">
-          <span class="eyebrow">Ação regenerativa e antissinais</span>
-          <h2 class="section-title">
-            Bioestimulação que reativa<br />a qualidade da pele
-          </h2>
-          <p class="lead">
-            O GHK-Cu atua como um sinalizador biológico: favorece a atividade dos
-            fibroblastos e auxilia a síntese de colágeno, elastina e componentes
-            essenciais da matriz cutânea.
-          </p>
-          <div class="bio__points">
-            <div class="bio__point">
-              <span class="bio__num">01</span>
-              <div>
-                <h3>Renovação assistida</h3>
-                <p>Acelera os processos naturais de renovação e melhora a capacidade da pele de reter água.</p>
-              </div>
+
+        <!-- DIREITA: texto, box preto do ativo (centro) e stats -->
+        <div class="bio__right">
+          <div class="biobox biobox--text reveal">
+            <h3>Sinalização biológica que a pele reconhece</h3>
+            <p>O GHK-Cu favorece a atividade dos fibroblastos e auxilia a síntese de
+              colágeno, elastina e componentes essenciais da matriz cutânea — estimulando
+              a renovação natural, de forma gradual e visível.</p>
+          </div>
+
+          <div class="biobox biobox--active reveal">
+            <span class="biobox__kicker">Ativo principal</span>
+            <h3>Tripeptídeo de Cobre</h3>
+            <p>O eixo de firmeza, renovação e vitalidade — o mesmo que impulsiona a matriz dérmica.</p>
+          </div>
+
+          <div class="bio__stats">
+            <div class="biobox biobox--stat reveal">
+              <strong>92%</strong>
+              <span>notaram pele mais firme*</span>
             </div>
-            <div class="bio__point">
-              <span class="bio__num">02</span>
-              <div>
-                <h3>Matriz fortalecida</h3>
-                <p>Sustenta colágeno e elastina, devolvendo firmeza aparente e viço à pele.</p>
-              </div>
+            <div class="biobox biobox--stat-alt reveal">
+              <strong>+30%</strong>
+              <span>hidratação percebida*</span>
             </div>
           </div>
         </div>
       </div>
+      <p class="wrap bio__note reveal">*Percepção em uso contínuo. Os resultados variam conforme a individualidade da pele.</p>
     </section>
 
-    <!-- ═══════════════ INGREDIENTES ═══════════════ -->
-    <section class="ingredients" id="ingredientes">
-      <div class="wrap ingredients__head reveal">
-        <span class="eyebrow">A fórmula</span>
+    <!-- ═══════════════ FÓRMULA (estilo Zencial) ═══════════════ -->
+    <section class="formula" id="ingredientes">
+      <div class="wrap formula__head reveal">
         <h2 class="section-title">Uma fórmula estruturada para atuar em<br />diferentes necessidades da pele</h2>
-        <p class="lead lead--center">Três ativos que se complementam para hidratação profunda, firmeza e luminosidade progressiva.</p>
+        <a href="#resultados" class="formula__link">Cronograma de uso →</a>
       </div>
 
-      <div class="wrap ingredients__grid">
-        <article class="ing-card reveal">
-          <!-- IMAGEM: Ativo GHK-Cu / molécula de cobre (~600x600px, fundo claro). -->
-          <figure class="ph ph--square" data-img="ativo-ghkcu.jpg">
-            <span class="ph__label">GHK-Cu</span>
+      <div class="wrap formula__grid">
+        <div class="formula__media reveal">
+          <!-- IMAGEM: Macro dos ativos / gotas do sérum (~900x1000px). Ocupa a coluna esquerda. -->
+          <figure class="ph formula__img" data-img="formula-ativos.jpg">
+            <span class="ph__label">Ativos · macro</span>
           </figure>
-          <h3>Tripeptídeo de Cobre</h3>
-          <p>O eixo de renovação. Peptídeo biomimético de cobre que favorece fibroblastos, colágeno e elasticidade, com melhora visível no uso contínuo.</p>
-          <span class="ing-tag">Firmeza &amp; renovação</span>
-        </article>
+        </div>
 
-        <article class="ing-card reveal">
-          <!-- IMAGEM: Ativo Ácido Hialurônico (~600x600px). -->
-          <figure class="ph ph--square" data-img="ativo-acido-hialuronico.jpg">
-            <span class="ph__label">Ácido Hialurônico</span>
-          </figure>
-          <h3>Ácido Hialurônico</h3>
-          <p>Atrai e retém água na pele. Responde pela maciez, elasticidade visual e viço imediato, com aparência mais preenchida e confortável.</p>
-          <span class="ing-tag">Hidratação &amp; viço</span>
-        </article>
-
-        <article class="ing-card reveal">
-          <!-- IMAGEM: Ativo Colágeno Hidrolisado (~600x600px). -->
-          <figure class="ph ph--square" data-img="ativo-colageno.jpg">
-            <span class="ph__label">Colágeno</span>
-          </figure>
-          <h3>Colágeno Hidrolisado</h3>
-          <p>Proteína estrutural ligada à sustentação e firmeza. Complementa o suporte da pele e reforça a aparência de textura uniforme e saudável.</p>
-          <span class="ing-tag">Estrutura &amp; textura</span>
-        </article>
+        <div class="formula__list reveal">
+          <details class="acc" open>
+            <summary>Tripeptídeo de Cobre <span class="acc__tag">GHK-Cu</span></summary>
+            <div class="acc__body">
+              <p>O eixo de renovação. Peptídeo biomimético de cobre que atua como sinalizador
+                biológico, favorecendo fibroblastos, colágeno e elasticidade, com melhora
+                visível no uso contínuo.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>Ácido Hialurônico</summary>
+            <div class="acc__body">
+              <p>Atrai e retém água na pele. Responde pela maciez, elasticidade visual e viço
+                imediato, deixando a pele com aparência mais preenchida e confortável.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>Colágeno Hidrolisado</summary>
+            <div class="acc__body">
+              <p>Proteína estrutural ligada à sustentação e firmeza. Complementa o suporte da
+                pele e reforça a aparência de textura uniforme e saudável.</p>
+            </div>
+          </details>
+        </div>
       </div>
+      <p class="wrap formula__note reveal">*Os resultados variam de acordo com a individualidade da pele.</p>
     </section>
 
     <!-- ═══════════════ SINALIZAÇÃO BIOLÓGICA ═══════════════ -->
@@ -468,7 +484,7 @@
     <div class="wrap footer__grid">
       <div class="footer__brand">
         <!-- IMAGEM: Logo (versão clara para fundo escuro, ~140x40px) -->
-        <span class="footer__logo">flynow</span>
+        <img class="footer__logo" src="img/logo-white-empresa.svg" alt="Flynow" />
         <p>Dermocosméticos desenvolvidos com inovação, tecnologia e cuidado.</p>
         <div class="footer__news">
           <input type="email" placeholder="Seu melhor e-mail" aria-label="E-mail" />
