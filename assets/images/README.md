@@ -1,4 +1,15 @@
-# Guia de imagens — Landing GHK-Cu (Flynow)
+# Guia de imagens — Landing GHK-Cu (Divessence)
+
+> **Onde ficam:** as imagens já enviadas estão em `img/` (não `assets/images/`).
+> Já foram ligadas na página (em `.png`): mockup-serum-hero, galeria-01/02/03,
+> formula-ativos, ilustracao-sinalizacao, galeria-scroll-centro/esq/dir.
+>
+> **Faltam enviar:** resultado-semana-01/04/08/12, concern-manchas/olheiras/rugas/hidratacao,
+> mockup-unidade/combo/assinatura, depoimentos-hero, faq-suporte, cliente-1..5.
+>
+> ⚠️ **Peso:** os PNGs enviados estão pesados (~2 MB cada). Para o site carregar
+> rápido, reexporte como **WebP** ou **JPG q80** (alvo: fotos grandes < 300 KB).
+
 
 Cada `<figure class="ph" data-img="NOME">` no `index.html` é um **placeholder**.
 Substitua trocando o `<figure>` por uma `<img>` com o mesmo enquadramento, ou
