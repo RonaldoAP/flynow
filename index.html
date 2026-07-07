@@ -254,73 +254,60 @@
       </div>
     </section>
 
-    <!-- ═══════════════ RESULTADOS (timeline por etapas, fixa no scroll) ═══════════════ -->
+    <!-- ═══════════════ RESULTADOS (timeline: imagem sticky + etapas) ═══════════════ -->
     <section class="results" id="resultados">
-      <div class="results__track" id="scrolly">
-        <div class="results__scene">
-          <!-- ESQUERDA: imagem grande fixa (background) -->
-          <div class="results__visual"><div class="results__bg"></div></div>
+      <div class="results__scene">
+        <!-- ESQUERDA: imagem grande fixa (sticky) -->
+        <div class="results__visual"><div class="results__bg"></div></div>
 
-          <!-- DIREITA: título + subheadline + etapas (uma por vez) -->
-          <div class="results__panel">
-            <div class="results__head">
-              <span class="eyebrow">Evolução</span>
-              <h2 class="section-title">Resultados que evoluem a cada fase de uso</h2>
-              <p class="lead">Acompanhe a evolução da pele semana a semana.</p>
-            </div>
-
-            <div class="tline">
-              <!-- trilho de progresso (nós que acendem por etapa) -->
-              <ol class="tline__rail" id="tlineRail">
-                <span class="tline__rail-line"><i></i></span>
-                <li class="tline__node is-active" data-step="0"><b></b><span>Primeiros dias</span></li>
-                <li class="tline__node" data-step="1"><b></b><span>2 semanas</span></li>
-                <li class="tline__node" data-step="2"><b></b><span>4 semanas</span></li>
-                <li class="tline__node" data-step="3"><b></b><span>6 semanas+</span></li>
-              </ol>
-
-              <!-- palco: só a etapa ativa aparece -->
-              <div class="tline__stage" id="scrollySteps">
-                <article class="sstep is-active" data-step="0">
-                  <span class="sstep__pill">Primeiros dias</span>
-                  <h3>Hidratação imediata</h3>
-                  <ul class="sstep__list">
-                    <li>Pele mais confortável</li>
-                    <li>Toque mais macio</li>
-                    <li>Aspecto menos ressecado</li>
-                  </ul>
-                </article>
-                <article class="sstep" data-step="1">
-                  <span class="sstep__pill">2 semanas</span>
-                  <h3>Textura mais refinada</h3>
-                  <ul class="sstep__list">
-                    <li>Superfície mais uniforme</li>
-                    <li>Mais viço visível</li>
-                    <li>Melhor aparência geral</li>
-                  </ul>
-                </article>
-                <article class="sstep" data-step="2">
-                  <span class="sstep__pill">4 semanas</span>
-                  <h3>Firmeza em evolução</h3>
-                  <ul class="sstep__list">
-                    <li>Elasticidade aparente maior</li>
-                    <li>Linhas menos evidentes</li>
-                    <li>Pele com mais sustentação</li>
-                  </ul>
-                </article>
-                <article class="sstep sstep--peak" data-step="3">
-                  <span class="sstep__pill">6 semanas+</span>
-                  <h3>Qualidade cutânea elevada</h3>
-                  <ul class="sstep__list">
-                    <li>Luminosidade contínua</li>
-                    <li>Aparência revitalizada</li>
-                    <li>Resultados mais consistentes</li>
-                  </ul>
-                </article>
-              </div>
-            </div>
-            <p class="results__note">*Os resultados variam de acordo com a individualidade da pele.</p>
+        <!-- DIREITA: título + subheadline + etapas (todas visíveis, ativa destaca) -->
+        <div class="results__panel">
+          <div class="results__head">
+            <span class="eyebrow">Evolução</span>
+            <h2 class="section-title">Resultados que evoluem a cada fase de uso</h2>
+            <p class="lead">Acompanhe a evolução da pele semana a semana.</p>
           </div>
+
+          <ol class="tline" id="scrollySteps">
+            <span class="tline__line" aria-hidden="true"><i></i></span>
+            <li class="sstep is-active" data-step="0">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">Primeiros dias</span><h3>Hidratação imediata</h3></div>
+              <ul class="sstep__list">
+                <li>Pele mais confortável</li>
+                <li>Toque mais macio</li>
+                <li>Aspecto menos ressecado</li>
+              </ul>
+            </li>
+            <li class="sstep" data-step="1">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">2 semanas</span><h3>Textura mais refinada</h3></div>
+              <ul class="sstep__list">
+                <li>Superfície mais uniforme</li>
+                <li>Mais viço visível</li>
+                <li>Melhor aparência geral</li>
+              </ul>
+            </li>
+            <li class="sstep" data-step="2">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">4 semanas</span><h3>Firmeza em evolução</h3></div>
+              <ul class="sstep__list">
+                <li>Elasticidade aparente maior</li>
+                <li>Linhas menos evidentes</li>
+                <li>Pele com mais sustentação</li>
+              </ul>
+            </li>
+            <li class="sstep sstep--peak" data-step="3">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">6 semanas+</span><h3>Qualidade cutânea elevada</h3></div>
+              <ul class="sstep__list">
+                <li>Luminosidade contínua</li>
+                <li>Aparência revitalizada</li>
+                <li>Resultados mais consistentes</li>
+              </ul>
+            </li>
+          </ol>
+          <p class="results__note">*Os resultados variam de acordo com a individualidade da pele.</p>
         </div>
       </div>
     </section>
@@ -667,7 +654,6 @@
     </div>
     <div class="wrap footer__bottom">
       <span>© 2026 Divessence. Todos os direitos reservados.</span>
-      <span>Vegano · Cruelty-free · Testado dermatologicamente</span>
     </div>
   </footer>
 

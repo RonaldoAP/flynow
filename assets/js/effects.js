@@ -104,33 +104,30 @@
     startAuto();
   }
 
-  /* ─────────── Timeline por etapas (fixa/pinned): 1 semana por vez ─────────── */
-  var track = document.getElementById('scrolly');
-  if (track) {
-    var steps = Array.prototype.slice.call(track.querySelectorAll('.sstep'));
-    var nodes = Array.prototype.slice.call(track.querySelectorAll('.tline__node'));
-    var railFill = track.querySelector('.tline__rail-line i');
-    var N = steps.length;
-    var current = -1;
+  /* ─────────── Timeline: destaca a etapa ativa + preenche a linha ─────────── */
+  var tline = document.getElementById('scrollySteps');
+  if (tline) {
+    var steps = Array.prototype.slice.call(tline.querySelectorAll('.sstep'));
+    var lineFill = tline.querySelector('.tline__line i');
 
     function setActive(idx) {
-      if (idx === current) return;
-      current = idx;
       steps.forEach(function (s) { s.classList.toggle('is-active', +s.dataset.step === idx); });
-      nodes.forEach(function (n) { n.classList.toggle('is-active', +n.dataset.step <= idx); });
-      if (railFill) railFill.style.height = (N > 1 ? (idx / (N - 1)) * 100 : 0) + '%';
+      if (lineFill) {
+        var node = steps[idx].querySelector('.sstep__node');
+        var wrapTop = tline.getBoundingClientRect().top;
+        var nr = node.getBoundingClientRect();
+        lineFill.style.height = (nr.top + nr.height / 2 - wrapTop) + 'px';
+      }
     }
 
-    function update() {
-      var rect = track.getBoundingClientRect();
-      var scrollable = track.offsetHeight - window.innerHeight;
-      var p = scrollable > 0 ? (-rect.top) / scrollable : 0;
-      p = Math.max(0, Math.min(0.9999, p));
-      setActive(Math.min(N - 1, Math.floor(p * N)));
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) setActive(+en.target.dataset.step);
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+      steps.forEach(function (s) { io.observe(s); });
     }
-    onScroll(update);
-    window.addEventListener('resize', update);
-    update();
   }
 
   /* ─────────── Galeria scroll-reveal pinada (centro → 33/34/33) ─────────── */

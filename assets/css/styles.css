@@ -416,15 +416,13 @@ em { font-style: italic; }
 .signal__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
 .signal__copy { grid-column: 1; padding-right: clamp(20px, 4vw, 60px); }
 
-/* ═══════════ RESULTS (timeline por etapas, fixa no scroll) ═══════════ */
+/* ═══════════ RESULTS (imagem sticky à esquerda + etapas à direita) ═══════════ */
 .results { background: var(--ink); color: var(--ivory); }
-/* trilho alto: dá o "espaço de scroll" enquanto a cena fica fixa */
-.results__track { height: 420vh; position: relative; }
-.results__scene { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
-/* ESQUERDA: imagem grande de fundo */
-.results__visual { position: relative; overflow: hidden; }
+.results__scene { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+/* ESQUERDA: imagem grande fixa (sticky) enquanto as etapas rolam */
+.results__visual { position: relative; }
 .results__bg {
-  position: absolute; inset: 0;
+  position: sticky; top: 0; height: 100vh;
   background-color: #0b0d10;
   background-image: url("../../img/ilustracao-sinalizacao-2.webp");
   background-size: cover;
@@ -434,52 +432,48 @@ em { font-style: italic; }
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(11,13,16,0) 55%, var(--ink) 100%);
 }
-/* DIREITA: painel centralizado */
-.results__panel {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: clamp(40px, 6vh, 90px) clamp(24px, 5vw, 80px);
-  max-width: 720px;
-}
-.results__head { margin-bottom: clamp(28px, 4vh, 48px); }
+/* DIREITA: painel com etapas */
+.results__panel { padding: clamp(64px, 12vh, 150px) clamp(24px, 5vw, 80px); max-width: 720px; }
+.results__head { margin-bottom: clamp(28px, 4vh, 52px); }
 .results .section-title { color: var(--ivory); }
 .results .eyebrow { color: var(--blush); }
 .results .lead { color: rgba(251, 248, 243, 0.72); }
 
-/* Timeline: trilho de nós (esquerda) + palco da etapa ativa (direita) */
-.tline { display: grid; grid-template-columns: auto 1fr; gap: clamp(24px, 3vw, 44px); align-items: stretch; }
-.tline__rail { list-style: none; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 6px 0; }
-.tline__rail-line { position: absolute; left: 6px; top: 12px; bottom: 12px; width: 2px; background: rgba(235,216,202,0.16); }
-.tline__rail-line i { position: absolute; left: 0; top: 0; width: 100%; height: var(--fill, 0%); background: linear-gradient(180deg, var(--copper), var(--blush)); transition: height .45s var(--ease); }
-.tline__node { position: relative; display: flex; align-items: center; gap: 14px; padding-left: 26px; cursor: default; }
-.tline__node b {
-  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+/* Timeline vertical: linha que preenche + etapas (todas visíveis, ativa destaca) */
+.tline { list-style: none; position: relative; padding-left: 40px; }
+.tline__line { position: absolute; left: 15px; top: 10px; bottom: 10px; width: 2px; background: rgba(235,216,202,0.16); }
+.tline__line i { position: absolute; left: 0; top: 0; width: 100%; height: var(--fill, 0px); background: linear-gradient(180deg, var(--copper), var(--blush)); transition: height .45s var(--ease); }
+.sstep {
+  position: relative;
+  padding: clamp(22px, 4vh, 46px) 0;
+  opacity: 0.34;
+  transition: opacity .45s var(--ease);
+}
+.sstep.is-active { opacity: 1; }
+.sstep__node {
+  position: absolute; left: -40px; top: clamp(30px, 5vh, 54px);
   width: 14px; height: 14px; border-radius: 50%;
   background: var(--ink); border: 2px solid rgba(235,216,202,0.35);
+  box-shadow: 0 0 0 5px var(--ink);
   transition: background .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease);
 }
-.tline__node span { font-size: 0.86rem; font-weight: 600; color: rgba(251,248,243,0.5); transition: color .4s var(--ease); white-space: nowrap; }
-.tline__node.is-active b { background: var(--copper); border-color: var(--copper); transform: translateY(-50%) scale(1.15); }
-.tline__node.is-active span { color: var(--ivory); }
-
-/* palco: só a etapa ativa aparece (fluxo normal — sem absolute/transform) */
-.tline__stage { position: relative; display: grid; min-height: clamp(260px, 40vh, 340px); align-items: center; }
-.tline__stage .sstep { grid-area: 1 / 1; display: none; flex-direction: column; }
-.tline__stage .sstep.is-active { display: flex; animation: stepFade .45s var(--ease); }
-@keyframes stepFade { from { opacity: 0; } to { opacity: 1; } }
+.sstep.is-active .sstep__node { background: var(--copper); border-color: var(--copper); transform: scale(1.15); }
+.sstep__row { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
 .sstep__pill {
-  align-self: flex-start;
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em;
-  color: #fff; background: var(--copper);
-  padding: 7px 16px; border-radius: 100px; white-space: nowrap; margin-bottom: 16px;
+  color: #fff; background: rgba(11,123,214,0.28); border: 1px solid rgba(235,216,202,0.22);
+  padding: 7px 16px; border-radius: 100px; white-space: nowrap;
+  transition: background .4s var(--ease), border-color .4s var(--ease);
 }
-.sstep h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--ivory); margin-bottom: 20px; }
+.sstep.is-active .sstep__pill { background: var(--copper); border-color: var(--copper); }
+.sstep__row h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.5rem, 2.8vw, 2.1rem); color: var(--ivory); }
 .sstep__list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .sstep__list li { position: relative; padding-left: 26px; font-size: 1rem; color: rgba(251, 248, 243, 0.78); }
 .sstep__list li::before {
   content: ""; position: absolute; left: 4px; top: 0.5em;
   width: 8px; height: 8px; border-radius: 50%; background: var(--copper);
 }
-.results__note { margin-top: clamp(24px, 4vh, 44px); font-size: 0.78rem; color: rgba(251,248,243,0.45); }
+.results__note { margin-top: clamp(20px, 3vh, 36px); font-size: 0.78rem; color: rgba(251,248,243,0.45); padding-left: 0; }
 
 /* ═══════════ WHY ═══════════ */
 .why { padding: clamp(60px, 9vw, 120px) 0; }
@@ -649,9 +643,11 @@ em { font-style: italic; }
 .faq__support { position: relative; margin-top: 30px; border-radius: var(--radius); overflow: hidden; min-height: 300px; display: flex; }
 .faq__support-img { position: absolute; inset: 0; border-radius: 0; }
 .faq__support-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,38,33,0.15), rgba(43,38,33,0.72)); z-index: 1; }
-.faq__support-inner { position: relative; z-index: 2; margin-top: auto; padding: 26px; color: var(--white); width: 100%; }
-.faq__support-inner h3 { font-family: var(--font-serif); font-weight: 500; font-size: 1.4rem; margin-bottom: 6px; }
-.faq__support-inner p { font-size: 0.92rem; color: rgba(255,255,255,0.82); margin-bottom: 20px; max-width: 32ch; }
+.faq__support-inner { position: relative; z-index: 2; margin-top: auto; padding: 24px; color: var(--white); width: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.faq__support-inner > div { min-width: 0; }
+.faq__support-inner h3 { font-family: var(--font-serif); font-weight: 500; font-size: 1.35rem; margin-bottom: 6px; }
+.faq__support-inner p { font-size: 0.9rem; color: rgba(255,255,255,0.82); }
+.faq__support-inner .btn { flex: none; padding: 13px 22px; font-size: 0.88rem; }
 
 .faq__item {
   background: var(--cream);
@@ -820,16 +816,13 @@ html.lenis, html.lenis body { height: auto; }
   .offer__grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
   .reviews__layout { grid-template-columns: 1fr; }
   .reviews__figure { min-height: 420px; }
-  /* Timeline: no mobile desativa o pin e empilha todas as etapas */
-  .results__track { height: auto; }
-  .results__scene { position: static; height: auto; grid-template-columns: 1fr; overflow: visible; }
+  /* Timeline: no mobile a imagem vira faixa no topo e as etapas empilham */
+  .results__scene { grid-template-columns: 1fr; }
   .results__visual { height: 240px; }
+  .results__bg { position: relative; height: 240px; }
   .results__bg::after { display: none; }
   .results__panel { padding: clamp(40px, 8vw, 60px) 24px; max-width: none; }
-  .tline { grid-template-columns: 1fr; }
-  .tline__rail { display: none; }
-  .tline__stage { position: static; min-height: 0; display: flex; flex-direction: column; gap: 44px; }
-  .tline__stage .sstep { position: static; opacity: 1; transform: none; pointer-events: auto; }
+  .sstep { opacity: 1; }
   .faq__grid { grid-template-columns: 1fr; }
   .faq__aside { position: static; }
   .gallery__stage { flex-wrap: wrap; }
