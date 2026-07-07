@@ -564,6 +564,7 @@ em { font-style: italic; }
 /* ═══════════ REVIEWS (carrossel + foto) ═══════════ */
 .reviews { padding: clamp(60px, 9vw, 120px) 0; background: var(--cream); overflow: hidden; }
 .reviews__layout { display: grid; grid-template-columns: 1.55fr 1fr; gap: clamp(30px, 4vw, 60px); align-items: stretch; }
+.reviews__main { min-width: 0; }
 .reviews__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 34px; }
 .reviews__head .eyebrow { color: var(--copper); }
 .reviews__nav { display: flex; gap: 12px; flex: none; margin-top: 6px; }
