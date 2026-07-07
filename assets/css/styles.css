@@ -464,16 +464,16 @@ em { font-style: italic; }
 /* palco: etapas empilhadas, só a ativa aparece */
 .tline__stage { position: relative; min-height: clamp(260px, 40vh, 340px); }
 .tline__stage .sstep {
-  position: absolute; inset: 0;
+  position: absolute; left: 0; right: 0; top: 0;
   display: flex; flex-direction: column; justify-content: center;
-  opacity: 0; transform: translateY(16px); pointer-events: none;
-  transition: opacity .5s var(--ease), transform .5s var(--ease);
+  opacity: 0; pointer-events: none;
+  transition: opacity .45s var(--ease);
 }
-.tline__stage .sstep.is-active { opacity: 1; transform: none; pointer-events: auto; }
+.tline__stage .sstep.is-active { opacity: 1; pointer-events: auto; }
 .sstep__pill {
   align-self: flex-start;
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em;
-  color: var(--ink); background: var(--copper);
+  color: #fff; background: var(--copper);
   padding: 7px 16px; border-radius: 100px; white-space: nowrap; margin-bottom: 16px;
 }
 .sstep h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--ivory); margin-bottom: 20px; }
