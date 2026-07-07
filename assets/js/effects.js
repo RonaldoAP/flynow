@@ -69,42 +69,28 @@
     originals.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
     var index = 0;
     var timer = null;
-    var animating = false;
 
     function stepPx() {
       var style = window.getComputedStyle(track);
       var gap = parseFloat(style.columnGap || style.gap || '24') || 24;
-      return originals[0].getBoundingClientRect().width + gap;
+      var w = originals[0].getBoundingClientRect().width;
+      if (!w) { w = (track.parentElement.getBoundingClientRect().width || 0); } // fallback
+      return w + gap;
     }
     function apply(withTransition) {
       track.style.transition = withTransition ? '' : 'none';
       track.style.transform = 'translateX(' + (-stepPx() * index) + 'px)';
     }
-    function next() {
-      if (animating) return;
-      animating = true;
-      index++;
-      apply(true);
-    }
+    function next() { index++; apply(true); }
     function prev() {
-      if (animating) return;
-      animating = true;
-      if (index <= 0) {                 // salta pro clone equivalente e volta suave
-        index = count;
-        apply(false);
-        // força reflow antes de animar
-        void track.offsetWidth;
-      }
-      index--;
-      apply(true);
+      if (index <= 0) { index = count; apply(false); void track.offsetWidth; }
+      index--; apply(true);
     }
+    // ao terminar a transição, reseta os clones sem "trancar" nada
     track.addEventListener('transitionend', function (e) {
       if (e.propertyName !== 'transform') return;
-      animating = false;
-      if (index >= count) {             // chegou nos clones → reseta sem transição
-        index = 0;
-        apply(false);
-      }
+      if (index >= count) { index -= count; apply(false); }
+      else if (index < 0) { index += count; apply(false); }
     });
 
     function startAuto() { stopAuto(); timer = setInterval(next, 5000); }
@@ -128,11 +114,11 @@
   }
 
   /* ─────────── Timeline: pin no desktop (1 etapa/scroll) · empilhada no mobile ─────────── */
-  var track = document.getElementById('scrolly');
-  if (track) {
-    var steps = Array.prototype.slice.call(track.querySelectorAll('.sstep'));
-    var nodes = Array.prototype.slice.call(track.querySelectorAll('.tline__node'));
-    var railFill = track.querySelector('.tline__rail-line i');
+  var pinTrack = document.getElementById('scrolly');
+  if (pinTrack) {
+    var steps = Array.prototype.slice.call(pinTrack.querySelectorAll('.sstep'));
+    var nodes = Array.prototype.slice.call(pinTrack.querySelectorAll('.tline__node'));
+    var railFill = pinTrack.querySelector('.tline__rail-line i');
     var N = steps.length;
     var current = -1;
     var desktop = window.matchMedia('(min-width: 981px)');
@@ -147,8 +133,8 @@
 
     // Desktop: índice pela progressão do scroll dentro do trilho alto (pin)
     function updatePin() {
-      var rect = track.getBoundingClientRect();
-      var scrollable = track.offsetHeight - window.innerHeight;
+      var rect = pinTrack.getBoundingClientRect();
+      var scrollable = pinTrack.offsetHeight - window.innerHeight;
       var p = scrollable > 0 ? (-rect.top) / scrollable : 0;
       p = Math.max(0, Math.min(0.9999, p));
       setActive(Math.min(N - 1, Math.floor(p * N)));

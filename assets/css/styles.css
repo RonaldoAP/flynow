@@ -820,7 +820,7 @@ html.lenis, html.lenis body { height: auto; }
   .hero__rail-line { width: auto; height: 1.5px; flex: 1; }
   .hero__rail-top, .hero__rail-bottom { writing-mode: horizontal-tb; transform: none; }
   /* texto (com botão) primeiro, foto embaixo */
-  .hero__media { order: 2; max-width: 440px; margin-inline: auto; margin-top: 34px; }
+  .hero__media { order: 2; width: 100%; max-width: 440px; margin-inline: auto; margin-top: 34px; }
 
   .signal__grid, .why__grid, .formula__grid { grid-template-columns: 1fr; }
   .why__media { order: 2; max-width: 480px; margin-top: 30px; }
@@ -896,4 +896,7 @@ html.lenis, html.lenis body { height: auto; }
   .strip__track span { font-size: 1.2rem; }
   .sstep__row h3 { font-size: 1.35rem; }
   .btn--lg { padding: 16px 30px; }
+  /* Oferta: título em 3 linhas (não 4) no mobile */
+  .offer__head .section-title { font-size: 1.65rem; }
+  .offer__head .section-title br { display: none; }
 }
