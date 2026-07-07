@@ -34,6 +34,55 @@
     });
   }
 
+  /* ── Acordeões (.acc): abrem/fecham suavemente, vários ao mesmo tempo ── */
+  var prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function openAcc(details, body) {
+    details.open = true;
+    if (prefersReduced) return;
+    var target = body.scrollHeight;
+    body.style.height = '0px';
+    body.style.opacity = '0';
+    requestAnimationFrame(function () {
+      body.style.height = target + 'px';
+      body.style.opacity = '1';
+    });
+    body.addEventListener('transitionend', function te(ev) {
+      if (ev.propertyName !== 'height') return;
+      body.style.height = '';
+      body.removeEventListener('transitionend', te);
+    });
+  }
+
+  function closeAcc(details, body) {
+    if (prefersReduced) { details.open = false; return; }
+    body.style.height = body.scrollHeight + 'px';
+    body.style.opacity = '1';
+    requestAnimationFrame(function () {
+      body.style.height = '0px';
+      body.style.opacity = '0';
+    });
+    body.addEventListener('transitionend', function te(ev) {
+      if (ev.propertyName !== 'height') return;
+      details.open = false;
+      body.style.height = '';
+      body.style.opacity = '';
+      body.removeEventListener('transitionend', te);
+    });
+  }
+
+  document.querySelectorAll('.acc').forEach(function (details) {
+    var summary = details.querySelector('summary');
+    var body = details.querySelector('.acc__body');
+    if (!summary || !body) return;
+    summary.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (details.open) closeAcc(details, body);
+      else openAcc(details, body);
+    });
+  });
+
   /* ── FAQ: só um aberto por vez ── */
   var faqItems = document.querySelectorAll('.faq__item');
   faqItems.forEach(function (item) {

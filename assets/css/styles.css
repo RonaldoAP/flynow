@@ -330,7 +330,9 @@ em { font-style: italic; }
 
 /* ═══════════ BIO (bento) ═══════════ */
 .bio { padding: clamp(60px, 9vw, 120px) 0; }
-.bio__head { margin-bottom: clamp(30px, 4vw, 50px); max-width: 720px; }
+.bio__head { display: flex; justify-content: space-between; align-items: flex-end; gap: clamp(24px, 5vw, 72px); margin-bottom: clamp(30px, 4vw, 50px); }
+.bio__head-left { flex: none; }
+.bio__sub { max-width: 42ch; font-size: 1.02rem; color: var(--stone); padding-bottom: 6px; }
 .bio__bento { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 18px; align-items: stretch; }
 
 /* Galeria: 1 em cima, 2 embaixo */
@@ -373,7 +375,8 @@ em { font-style: italic; }
 .acc summary::after { content: "+"; font-family: var(--font-sans); font-size: 1.6rem; color: var(--copper); transition: transform .3s var(--ease); flex: none; }
 .acc[open] summary::after { transform: rotate(45deg); }
 .acc__tag { font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper-dp); background: var(--blush); padding: 5px 12px; border-radius: 100px; font-weight: 700; margin-right: auto; margin-left: 12px; }
-.acc__body { padding-bottom: 24px; }
+.acc__body { overflow: hidden; transition: height .38s var(--ease), opacity .38s var(--ease); }
+.acc__body-inner { padding-bottom: 24px; }
 .acc__body p { color: var(--stone); max-width: 54ch; }
 .formula__note { font-size: 0.78rem; color: var(--stone-lt); margin-top: clamp(30px, 4vw, 48px); }
 
