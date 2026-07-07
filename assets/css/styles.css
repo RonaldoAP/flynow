@@ -388,9 +388,23 @@ em { font-style: italic; }
 .acc__body p { color: var(--stone); max-width: 54ch; }
 .formula__note { font-size: 0.78rem; color: var(--stone-lt); margin-top: clamp(30px, 4vw, 48px); }
 
-/* ═══════════ SIGNAL ═══════════ */
-.signal { padding: clamp(60px, 9vw, 120px) 0; }
-.signal__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(30px, 5vw, 76px); align-items: center; }
+/* ═══════════ SIGNAL (imagem 50% à direita como background) ═══════════ */
+.signal { position: relative; padding: clamp(70px, 11vw, 150px) 0; overflow: hidden; }
+.signal__bg {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 50%;
+  background-image: url("../../img/ilustracao-sinalizacao.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* leve véu para transição suave entre o texto e a imagem */
+.signal__bg::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, var(--ivory) 0%, rgba(251,248,243,0) 22%);
+}
+.signal__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.signal__copy { grid-column: 1; padding-right: clamp(20px, 4vw, 60px); }
 
 /* ═══════════ RESULTS ═══════════ */
 .results { padding: clamp(60px, 9vw, 120px) 0; background: var(--ink); color: var(--ivory); }
@@ -799,7 +813,12 @@ html.lenis, html.lenis body { height: auto; }
   .hero__rail-top, .hero__rail-bottom { writing-mode: horizontal-tb; transform: none; }
   .hero__media { order: -1; max-width: 440px; margin-inline: auto; }
   .signal__grid, .why__grid, .formula__grid { grid-template-columns: 1fr; }
-  .signal__media, .why__media { max-width: 480px; }
+  .why__media { max-width: 480px; }
+  /* Signal: no mobile a imagem vira uma faixa cheia no topo da seção */
+  .signal { padding-top: 0; }
+  .signal__bg { position: static; width: 100%; height: 260px; margin-bottom: clamp(30px, 6vw, 48px); }
+  .signal__bg::before { background: none; }
+  .signal__copy { padding-right: 0; }
   .bio__bento { grid-template-columns: 1fr; }
   .formula__media { max-width: 480px; }
   .offer__grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
