@@ -83,14 +83,21 @@
     });
   });
 
-  /* ── FAQ: só um aberto por vez ── */
-  var faqItems = document.querySelectorAll('.faq__item');
+  /* ── FAQ: animação suave + só um aberto por vez ── */
+  var faqItems = Array.prototype.slice.call(document.querySelectorAll('.faq__item'));
   faqItems.forEach(function (item) {
-    item.addEventListener('toggle', function () {
+    var summary = item.querySelector('summary');
+    var body = item.querySelector('.faq__body');
+    if (!summary || !body) return;
+    summary.addEventListener('click', function (e) {
+      e.preventDefault();
       if (item.open) {
+        closeAcc(item, body);
+      } else {
         faqItems.forEach(function (other) {
-          if (other !== item) other.open = false;
+          if (other !== item && other.open) closeAcc(other, other.querySelector('.faq__body'));
         });
+        openAcc(item, body);
       }
     });
   });

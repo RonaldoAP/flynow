@@ -264,44 +264,51 @@
         <p class="lead lead--center">A consistência potencializa hidratação, textura, firmeza e luminosidade.<br /><small>*Os resultados variam de acordo com a individualidade da pele.</small></p>
       </div>
 
-      <ol class="wrap timeline reveal">
-        <li class="tstep" style="--i:0; --lvl:26%">
-          <div class="tstep__row">
-            <span class="tstep__node">1</span>
+      <div class="wrap scrolly" id="scrolly">
+        <!-- ESQUERDA: foto sticky que troca a cada semana -->
+        <div class="scrolly__media">
+          <div class="scrolly__sticky">
+            <!-- IMAGEM: foto por fase (~800x1000px vertical) -->
+            <figure class="ph scrolly__img is-active" data-step="0" data-img="resultado-semana-01.jpg"><span class="ph__label">Semana 1 · foto</span></figure>
+            <figure class="ph scrolly__img" data-step="1" data-img="resultado-semana-04.jpg"><span class="ph__label">Semana 4 · foto</span></figure>
+            <figure class="ph scrolly__img" data-step="2" data-img="resultado-semana-08.jpg"><span class="ph__label">Semana 8 · foto</span></figure>
+            <figure class="ph scrolly__img" data-step="3" data-img="resultado-semana-12.jpg"><span class="ph__label">Semana 12 · foto</span></figure>
+            <span class="scrolly__count"><em id="scrollyNum">01</em> / 04</span>
           </div>
-          <span class="tstep__week">Semana 1</span>
-          <h3>Hidratação imediata</h3>
-          <p>Conforto e maciez logo nas primeiras aplicações, com viço perceptível.</p>
-          <div class="tstep__meter"><i></i></div>
-        </li>
-        <li class="tstep" style="--i:1; --lvl:52%">
-          <div class="tstep__row">
-            <span class="tstep__node">2</span>
-          </div>
-          <span class="tstep__week">Semana 4</span>
-          <h3>Textura mais refinada</h3>
-          <p>Pele mais lisa ao toque e aparência visualmente mais uniforme.</p>
-          <div class="tstep__meter"><i></i></div>
-        </li>
-        <li class="tstep" style="--i:2; --lvl:78%">
-          <div class="tstep__row">
-            <span class="tstep__node">3</span>
-          </div>
-          <span class="tstep__week">Semana 8</span>
-          <h3>Firmeza em evolução</h3>
-          <p>Sustentação aparente e diminuição da percepção de sinais finos.</p>
-          <div class="tstep__meter"><i></i></div>
-        </li>
-        <li class="tstep tstep--peak" style="--i:3; --lvl:100%">
-          <div class="tstep__row">
-            <span class="tstep__node">4</span>
-          </div>
-          <span class="tstep__week">Semana 12</span>
-          <h3>Qualidade cutânea elevada</h3>
-          <p>Luminosidade, firmeza e vitalidade construídas com o uso contínuo.</p>
-          <div class="tstep__meter"><i></i></div>
-        </li>
-      </ol>
+        </div>
+
+        <!-- DIREITA: linha do tempo -->
+        <ol class="scrolly__steps">
+          <li class="sstep is-active" data-step="0" style="--lvl:26%">
+            <span class="sstep__node">1</span>
+            <span class="sstep__week">Semana 1</span>
+            <h3>Hidratação imediata</h3>
+            <p>Conforto e maciez logo nas primeiras aplicações, com viço perceptível.</p>
+            <div class="sstep__meter"><i></i></div>
+          </li>
+          <li class="sstep" data-step="1" style="--lvl:52%">
+            <span class="sstep__node">2</span>
+            <span class="sstep__week">Semana 4</span>
+            <h3>Textura mais refinada</h3>
+            <p>Pele mais lisa ao toque e aparência visualmente mais uniforme.</p>
+            <div class="sstep__meter"><i></i></div>
+          </li>
+          <li class="sstep" data-step="2" style="--lvl:78%">
+            <span class="sstep__node">3</span>
+            <span class="sstep__week">Semana 8</span>
+            <h3>Firmeza em evolução</h3>
+            <p>Sustentação aparente e diminuição da percepção de sinais finos.</p>
+            <div class="sstep__meter"><i></i></div>
+          </li>
+          <li class="sstep sstep--peak" data-step="3" style="--lvl:100%">
+            <span class="sstep__node">4</span>
+            <span class="sstep__week">Semana 12</span>
+            <h3>Qualidade cutânea elevada</h3>
+            <p>Luminosidade, firmeza e vitalidade construídas com o uso contínuo.</p>
+            <div class="sstep__meter"><i></i></div>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <!-- ═══════════════ POR QUE FÓRMULAS AVANÇADAS ═══════════════ -->
@@ -323,6 +330,24 @@
             <li><strong>Uso simples.</strong> Um gesto na sua rotina, resultados que se constroem no tempo.</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ GALERIA SCROLL-REVEAL ═══════════════ -->
+    <section class="gallery" id="gallery">
+      <div class="gallery__stage">
+        <!-- Lateral esquerda (aparece ao rolar) -->
+        <figure class="ph gallery__side gallery__side--l" data-img="galeria-scroll-esq.jpg">
+          <span class="ph__label">Foto lateral</span>
+        </figure>
+        <!-- Centro (imagem principal) -->
+        <figure class="ph gallery__center" data-img="galeria-scroll-centro.jpg">
+          <span class="ph__label">Foto central</span>
+        </figure>
+        <!-- Lateral direita (aparece ao rolar) -->
+        <figure class="ph gallery__side gallery__side--r" data-img="galeria-scroll-dir.jpg">
+          <span class="ph__label">Foto lateral</span>
+        </figure>
       </div>
     </section>
 
@@ -449,66 +474,128 @@
 
     <!-- ═══════════════ DEPOIMENTOS ═══════════════ -->
     <section class="reviews">
-      <div class="wrap reviews__head reveal">
-        <span class="eyebrow">★★★★★ 4,9 / 5</span>
-        <h2 class="section-title">Quem usa, recomenda</h2>
-      </div>
-      <div class="wrap reviews__grid">
-        <figure class="review reveal">
-          <div class="review__stars">★★★★★</div>
-          <blockquote>"Minha pele ficou visivelmente mais firme e com um viço que eu não via há anos. Textura sequinha, absorve rápido."</blockquote>
-          <figcaption>
-            <!-- IMAGEM: avatar cliente (~120x120px, círculo) -->
-            <span class="ph ph--avatar" data-img="cliente-1.jpg"></span>
-            <span>Marina S. · <em>pele madura</em></span>
-          </figcaption>
-        </figure>
-        <figure class="review reveal">
-          <div class="review__stars">★★★★★</div>
-          <blockquote>"Usei por 8 semanas e as linhas finas ficaram bem menos marcadas. A hidratação dura o dia todo."</blockquote>
-          <figcaption>
-            <span class="ph ph--avatar" data-img="cliente-2.jpg"></span>
-            <span>Carla M. · <em>pele mista</em></span>
-          </figcaption>
-        </figure>
-        <figure class="review reveal">
-          <div class="review__stars">★★★★★</div>
-          <blockquote>"Delicado, sem cheiro forte e não irrita minha pele sensível. Virou passo fixo da minha rotina."</blockquote>
-          <figcaption>
-            <span class="ph ph--avatar" data-img="cliente-3.jpg"></span>
-            <span>Rafael T. · <em>pele sensível</em></span>
-          </figcaption>
-        </figure>
+      <div class="wrap reviews__layout">
+        <div class="reviews__main reveal">
+          <div class="reviews__head">
+            <div>
+              <span class="eyebrow">Depoimentos</span>
+              <h2 class="section-title">Quem usa,<br />recomenda</h2>
+            </div>
+            <div class="reviews__nav">
+              <button class="rev-arrow" data-rev="prev" aria-label="Anterior">←</button>
+              <button class="rev-arrow" data-rev="next" aria-label="Próximo">→</button>
+            </div>
+          </div>
+
+          <div class="reviews__viewport">
+            <div class="reviews__track" id="revTrack">
+              <figure class="review">
+                <div class="review__stars">★★★★★</div>
+                <blockquote>Minha pele ficou visivelmente mais firme e com um viço que eu não via há anos. Textura sequinha, absorve rápido.</blockquote>
+                <figcaption>
+                  <span class="ph ph--avatar" data-img="cliente-1.jpg"></span>
+                  <span class="review__who"><strong>Marina S.</strong><em>Pele madura</em></span>
+                </figcaption>
+              </figure>
+              <figure class="review">
+                <div class="review__stars">★★★★★</div>
+                <blockquote>Usei por 8 semanas e as linhas finas ficaram bem menos marcadas. A hidratação dura o dia todo.</blockquote>
+                <figcaption>
+                  <span class="ph ph--avatar" data-img="cliente-2.jpg"></span>
+                  <span class="review__who"><strong>Carla M.</strong><em>Pele mista</em></span>
+                </figcaption>
+              </figure>
+              <figure class="review">
+                <div class="review__stars">★★★★★</div>
+                <blockquote>Delicado, sem cheiro forte e não irrita minha pele sensível. Virou passo fixo da minha rotina.</blockquote>
+                <figcaption>
+                  <span class="ph ph--avatar" data-img="cliente-3.jpg"></span>
+                  <span class="review__who"><strong>Rafael T.</strong><em>Pele sensível</em></span>
+                </figcaption>
+              </figure>
+              <figure class="review">
+                <div class="review__stars">★★★★★</div>
+                <blockquote>Resultado real e sem irritação. A textura da pele mudou, ficou mais uniforme e macia ao toque.</blockquote>
+                <figcaption>
+                  <span class="ph ph--avatar" data-img="cliente-4.jpg"></span>
+                  <span class="review__who"><strong>Júlia R.</strong><em>Pele normal</em></span>
+                </figcaption>
+              </figure>
+              <figure class="review">
+                <div class="review__stars">★★★★★</div>
+                <blockquote>Incorporei na rotina da noite e em poucas semanas notei mais luminosidade e firmeza. Recomendo demais.</blockquote>
+                <figcaption>
+                  <span class="ph ph--avatar" data-img="cliente-5.jpg"></span>
+                  <span class="review__who"><strong>Beatriz L.</strong><em>Pele seca</em></span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__figure reveal">
+          <!-- IMAGEM DE FUNDO: mulher com a mão no pescoço (~900x1100px vertical).
+               Você vai subir esta imagem — salve como assets/images/depoimentos-hero.jpg -->
+          <figure class="ph reviews__photo" data-img="depoimentos-hero.jpg">
+            <span class="ph__label">Foto · mulher (mão no pescoço)</span>
+          </figure>
+          <div class="rating-card">
+            <span class="rating-card__score">4,9</span>
+            <div class="rating-card__stars">★★★★★</div>
+            <span class="rating-card__label">Avaliação dos clientes</span>
+            <div class="rating-card__avatars">
+              <span class="ph ph--avatar" data-img="cliente-1.jpg"></span>
+              <span class="ph ph--avatar" data-img="cliente-2.jpg"></span>
+              <span class="ph ph--avatar" data-img="cliente-3.jpg"></span>
+              <span class="ph ph--avatar" data-img="cliente-4.jpg"></span>
+              <span class="rating-card__more">+2,4k</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ═══════════════ FAQ ═══════════════ -->
     <section class="faq" id="faq">
-      <div class="wrap faq__head reveal">
-        <span class="eyebrow">Dúvidas</span>
-        <h2 class="section-title">Perguntas frequentes sobre o GHK-Cu</h2>
-      </div>
-      <div class="wrap faq__list">
-        <details class="faq__item reveal">
-          <summary>Em quanto tempo a pele começa a responder?</summary>
-          <div class="faq__body"><p>A hidratação e o viço costumam ser percebidos já nas primeiras semanas. Firmeza e refinamento de textura evoluem de forma progressiva, com melhor resultado a partir de 8 a 12 semanas de uso contínuo.</p></div>
-        </details>
-        <details class="faq__item reveal">
-          <summary>Como aplicar corretamente?</summary>
-          <div class="faq__body"><p>Com a pele limpa, aplique de 2 a 3 gotas no rosto e pescoço, massageando suavemente até absorver. Use pela manhã e/ou à noite, antes do hidratante. Durante o dia, finalize com protetor solar.</p></div>
-        </details>
-        <details class="faq__item reveal">
-          <summary>Para quem este sérum é indicado?</summary>
-          <div class="faq__body"><p>Para quem busca firmeza, hidratação e renovação da qualidade da pele. Adequado para diferentes tipos de pele e faixas etárias que desejam um cuidado antissinais consistente.</p></div>
-        </details>
-        <details class="faq__item reveal">
-          <summary>Pode ser usado com outros produtos da rotina?</summary>
-          <div class="faq__body"><p>Sim. O GHK-Cu combina bem com hidratantes e protetores solares. Ao associar a ácidos ou retinoides, introduza gradualmente e observe a resposta da sua pele.</p></div>
-        </details>
-        <details class="faq__item reveal">
-          <summary>É adequado para peles sensíveis?</summary>
-          <div class="faq__body"><p>A fórmula foi pensada para ser delicada. Ainda assim, para peles reativas, recomendamos um teste em pequena área antes do uso regular e a introdução gradual na rotina.</p></div>
-        </details>
+      <div class="wrap faq__grid">
+        <div class="faq__aside reveal">
+          <span class="eyebrow">Dúvidas</span>
+          <h2 class="section-title">Perguntas<br />frequentes</h2>
+          <div class="faq__support">
+            <!-- IMAGEM: close suave de pele/olhar (~760x520px). Fundo do card de suporte. -->
+            <figure class="ph faq__support-img" data-img="faq-suporte.jpg"><span class="ph__label">Foto · suporte</span></figure>
+            <div class="faq__support-inner">
+              <div>
+                <h3>Ainda tem dúvidas?</h3>
+                <p>Nosso time ajuda você a montar o protocolo ideal.</p>
+              </div>
+              <a href="#" class="btn btn--light">Falar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item reveal" open>
+            <summary>Em quanto tempo a pele começa a responder?</summary>
+            <div class="faq__body"><div class="faq__body-inner"><p>A hidratação e o viço costumam ser percebidos já nas primeiras semanas. Firmeza e refinamento de textura evoluem de forma progressiva, com melhor resultado a partir de 8 a 12 semanas de uso contínuo.</p></div></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Como aplicar corretamente?</summary>
+            <div class="faq__body"><div class="faq__body-inner"><p>Com a pele limpa, aplique de 2 a 3 gotas no rosto e pescoço, massageando suavemente até absorver. Use pela manhã e/ou à noite, antes do hidratante. Durante o dia, finalize com protetor solar.</p></div></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Para quem este sérum é indicado?</summary>
+            <div class="faq__body"><div class="faq__body-inner"><p>Para quem busca firmeza, hidratação e renovação da qualidade da pele. Adequado para diferentes tipos de pele e faixas etárias que desejam um cuidado antissinais consistente.</p></div></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Pode ser usado com outros produtos da rotina?</summary>
+            <div class="faq__body"><div class="faq__body-inner"><p>Sim. O GHK-Cu combina bem com hidratantes e protetores solares. Ao associar a ácidos ou retinoides, introduza gradualmente e observe a resposta da sua pele.</p></div></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>É adequado para peles sensíveis?</summary>
+            <div class="faq__body"><div class="faq__body-inner"><p>A fórmula foi pensada para ser delicada. Ainda assim, para peles reativas, recomendamos um teste em pequena área antes do uso regular e a introdução gradual na rotina.</p></div></div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -570,6 +657,13 @@
     <a href="#oferta" class="btn btn--solid">Comprar</a>
   </div>
 
+  <!-- Scroll blur: névoa progressiva na base que aparece ao rolar -->
+  <div class="scroll-blur" id="scrollBlur" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <script src="assets/js/lenis.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/effects.js"></script>
 </body>
 </html>
