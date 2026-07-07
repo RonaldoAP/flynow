@@ -848,7 +848,7 @@ html.lenis, html.lenis body { height: auto; }
   .results__panel { padding: clamp(40px, 8vw, 64px) 22px; max-width: none; justify-content: flex-start; }
   .tline { grid-template-columns: 1fr; gap: 0; }
   .tline__rail { display: none; }
-  .tline__stage { display: flex; flex-direction: column; gap: 40px; min-height: 0; }
+  .tline__stage { display: flex; flex-direction: column; align-items: stretch; gap: 40px; min-height: 0; }
   .tline__stage .sstep { display: flex !important; opacity: 0.4; transition: opacity .4s var(--ease); animation: none; }
   .tline__stage .sstep.is-active { opacity: 1; }
 
@@ -899,4 +899,7 @@ html.lenis, html.lenis body { height: auto; }
   /* Oferta: título em 3 linhas (não 4) no mobile */
   .offer__head .section-title { font-size: 1.65rem; }
   .offer__head .section-title br { display: none; }
+  /* Fórmula: título em 3 linhas ("diferentes" junto de "em") */
+  .formula__head .section-title { font-size: 1.7rem; }
+  .formula__head .section-title br { display: none; }
 }
