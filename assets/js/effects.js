@@ -39,17 +39,6 @@
     window.addEventListener('scroll', cb, { passive: true });
   }
 
-  /* ─────────── Scroll blur (névoa na base) ─────────── */
-  var blur = document.getElementById('scrollBlur');
-  if (blur) {
-    var blurTimer = null;
-    onScroll(function () {
-      blur.classList.add('is-active');
-      if (blurTimer) clearTimeout(blurTimer);
-      blurTimer = setTimeout(function () { blur.classList.remove('is-active'); }, 220);
-    });
-  }
-
   /* ─────────── Depoimentos: carrossel auto + setas ─────────── */
   var track = document.getElementById('revTrack');
   if (track) {
@@ -94,17 +83,25 @@
     startAuto();
   }
 
-  /* ─────────── Scrollytelling: troca de foto por semana ─────────── */
+  /* ─────────── Scrollytelling: troca de foto + preenche a linha ─────────── */
   var scrolly = document.getElementById('scrolly');
   if (scrolly) {
-    var steps = scrolly.querySelectorAll('.sstep');
+    var steps = Array.prototype.slice.call(scrolly.querySelectorAll('.sstep'));
     var imgs = scrolly.querySelectorAll('.scrolly__img');
     var numEl = document.getElementById('scrollyNum');
+    var stepsWrap = document.getElementById('scrollySteps');
+    var lineFill = scrolly.querySelector('.scrolly__line i');
 
     function setActive(idx) {
       steps.forEach(function (s) { s.classList.toggle('is-active', +s.dataset.step === idx); });
       imgs.forEach(function (im) { im.classList.toggle('is-active', +im.dataset.step === idx); });
       if (numEl) numEl.textContent = ('0' + (idx + 1)).slice(-2);
+      // preenche a linha vertical até o nó ativo
+      if (lineFill && stepsWrap) {
+        var node = steps[idx].querySelector('.sstep__node');
+        var fill = node.offsetTop + node.offsetHeight / 2;
+        lineFill.style.height = fill + 'px';
+      }
     }
 
     if ('IntersectionObserver' in window) {
@@ -117,16 +114,17 @@
     }
   }
 
-  /* ─────────── Galeria scroll-reveal (centro → laterais) ─────────── */
+  /* ─────────── Galeria scroll-reveal pinada (centro → 33/34/33) ─────────── */
   var gallery = document.getElementById('gallery');
   if (gallery && !reduce) {
     var setProgress = function () {
-      var rect = gallery.getBoundingClientRect();
       var vh = window.innerHeight;
-      // progresso de 0 (entrando) a 1 (centralizado)
-      var p = 1 - Math.max(0, Math.min(1, (rect.top + rect.height * 0.1) / vh));
-      p = Math.max(0, Math.min(1, p * 1.15));
-      gallery.style.setProperty('--p', p.toFixed(3));
+      var start = gallery.offsetTop;
+      var len = gallery.offsetHeight - vh;      // distância de scroll dentro do pin
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      var p = (y - start) / (len || 1);
+      p = Math.max(0, Math.min(1, p));
+      gallery.style.setProperty('--p', p.toFixed(4));
     };
     onScroll(setProgress);
     window.addEventListener('resize', setProgress);

@@ -277,35 +277,32 @@
           </div>
         </div>
 
-        <!-- DIREITA: linha do tempo -->
-        <ol class="scrolly__steps">
-          <li class="sstep is-active" data-step="0" style="--lvl:26%">
+        <!-- DIREITA: linha do tempo (linha vertical preenche conforme o scroll) -->
+        <ol class="scrolly__steps" id="scrollySteps">
+          <span class="scrolly__line" aria-hidden="true"><i></i></span>
+          <li class="sstep is-active" data-step="0">
             <span class="sstep__node">1</span>
             <span class="sstep__week">Semana 1</span>
             <h3>Hidratação imediata</h3>
             <p>Conforto e maciez logo nas primeiras aplicações, com viço perceptível.</p>
-            <div class="sstep__meter"><i></i></div>
           </li>
-          <li class="sstep" data-step="1" style="--lvl:52%">
+          <li class="sstep" data-step="1">
             <span class="sstep__node">2</span>
             <span class="sstep__week">Semana 4</span>
             <h3>Textura mais refinada</h3>
             <p>Pele mais lisa ao toque e aparência visualmente mais uniforme.</p>
-            <div class="sstep__meter"><i></i></div>
           </li>
-          <li class="sstep" data-step="2" style="--lvl:78%">
+          <li class="sstep" data-step="2">
             <span class="sstep__node">3</span>
             <span class="sstep__week">Semana 8</span>
             <h3>Firmeza em evolução</h3>
             <p>Sustentação aparente e diminuição da percepção de sinais finos.</p>
-            <div class="sstep__meter"><i></i></div>
           </li>
-          <li class="sstep sstep--peak" data-step="3" style="--lvl:100%">
+          <li class="sstep sstep--peak" data-step="3">
             <span class="sstep__node">4</span>
             <span class="sstep__week">Semana 12</span>
             <h3>Qualidade cutânea elevada</h3>
             <p>Luminosidade, firmeza e vitalidade construídas com o uso contínuo.</p>
-            <div class="sstep__meter"><i></i></div>
           </li>
         </ol>
       </div>
@@ -333,20 +330,18 @@
       </div>
     </section>
 
-    <!-- ═══════════════ GALERIA SCROLL-REVEAL ═══════════════ -->
+    <!-- ═══════════════ GALERIA SCROLL-REVEAL (pinada) ═══════════════ -->
     <section class="gallery" id="gallery">
-      <div class="gallery__stage">
-        <!-- Lateral esquerda (aparece ao rolar) -->
+      <div class="gallery__pin">
+        <!-- Laterais saem de trás da central ao rolar; no fim: 33% / 34% / 33% preenchendo a tela -->
         <figure class="ph gallery__side gallery__side--l" data-img="galeria-scroll-esq.jpg">
           <span class="ph__label">Foto lateral</span>
         </figure>
-        <!-- Centro (imagem principal) -->
-        <figure class="ph gallery__center" data-img="galeria-scroll-centro.jpg">
-          <span class="ph__label">Foto central</span>
-        </figure>
-        <!-- Lateral direita (aparece ao rolar) -->
         <figure class="ph gallery__side gallery__side--r" data-img="galeria-scroll-dir.jpg">
           <span class="ph__label">Foto lateral</span>
+        </figure>
+        <figure class="ph gallery__center" data-img="galeria-scroll-centro.jpg">
+          <span class="ph__label">Foto central</span>
         </figure>
       </div>
     </section>
@@ -655,11 +650,6 @@
       <span>R$ 179,00 · 12x sem juros</span>
     </div>
     <a href="#oferta" class="btn btn--solid">Comprar</a>
-  </div>
-
-  <!-- Scroll blur: névoa progressiva na base que aparece ao rolar -->
-  <div class="scroll-blur" id="scrollBlur" aria-hidden="true">
-    <div></div><div></div><div></div><div></div>
   </div>
 
   <script src="assets/js/lenis.min.js"></script>
