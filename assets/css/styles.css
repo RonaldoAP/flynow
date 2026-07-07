@@ -420,9 +420,9 @@ em { font-style: italic; }
 .results { background: var(--ink); color: var(--ivory); }
 /* trilho alto: dá o "espaço de scroll" enquanto a cena fica fixa */
 .results__track { height: 420vh; position: relative; }
-.results__scene { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.results__scene { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
 /* ESQUERDA: imagem grande de fundo */
-.results__visual { position: relative; }
+.results__visual { position: relative; overflow: hidden; }
 .results__bg {
   position: absolute; inset: 0;
   background-color: #0b0d10;
@@ -461,15 +461,11 @@ em { font-style: italic; }
 .tline__node.is-active b { background: var(--copper); border-color: var(--copper); transform: translateY(-50%) scale(1.15); }
 .tline__node.is-active span { color: var(--ivory); }
 
-/* palco: etapas empilhadas, só a ativa aparece */
-.tline__stage { position: relative; min-height: clamp(260px, 40vh, 340px); }
-.tline__stage .sstep {
-  position: absolute; left: 0; right: 0; top: 0;
-  display: flex; flex-direction: column; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity .45s var(--ease);
-}
-.tline__stage .sstep.is-active { opacity: 1; pointer-events: auto; }
+/* palco: só a etapa ativa aparece (fluxo normal — sem absolute/transform) */
+.tline__stage { position: relative; display: grid; min-height: clamp(260px, 40vh, 340px); align-items: center; }
+.tline__stage .sstep { grid-area: 1 / 1; display: none; flex-direction: column; }
+.tline__stage .sstep.is-active { display: flex; animation: stepFade .45s var(--ease); }
+@keyframes stepFade { from { opacity: 0; } to { opacity: 1; } }
 .sstep__pill {
   align-self: flex-start;
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em;
