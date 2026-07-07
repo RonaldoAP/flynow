@@ -264,28 +264,44 @@
         <p class="lead lead--center">A consistência potencializa hidratação, textura, firmeza e luminosidade.<br /><small>*Os resultados variam de acordo com a individualidade da pele.</small></p>
       </div>
 
-      <div class="wrap results__grid">
-        <div class="result reveal">
-          <span class="result__week">Semana 1</span>
+      <ol class="wrap timeline reveal">
+        <li class="tstep" style="--i:0; --lvl:26%">
+          <div class="tstep__row">
+            <span class="tstep__node">1</span>
+          </div>
+          <span class="tstep__week">Semana 1</span>
           <h3>Hidratação imediata</h3>
           <p>Conforto e maciez logo nas primeiras aplicações, com viço perceptível.</p>
-        </div>
-        <div class="result reveal">
-          <span class="result__week">Semana 4</span>
+          <div class="tstep__meter"><i></i></div>
+        </li>
+        <li class="tstep" style="--i:1; --lvl:52%">
+          <div class="tstep__row">
+            <span class="tstep__node">2</span>
+          </div>
+          <span class="tstep__week">Semana 4</span>
           <h3>Textura mais refinada</h3>
           <p>Pele mais lisa ao toque e aparência visualmente mais uniforme.</p>
-        </div>
-        <div class="result reveal">
-          <span class="result__week">Semana 8</span>
+          <div class="tstep__meter"><i></i></div>
+        </li>
+        <li class="tstep" style="--i:2; --lvl:78%">
+          <div class="tstep__row">
+            <span class="tstep__node">3</span>
+          </div>
+          <span class="tstep__week">Semana 8</span>
           <h3>Firmeza em evolução</h3>
           <p>Sustentação aparente e diminuição da percepção de sinais finos.</p>
-        </div>
-        <div class="result reveal">
-          <span class="result__week">Semana 12</span>
+          <div class="tstep__meter"><i></i></div>
+        </li>
+        <li class="tstep tstep--peak" style="--i:3; --lvl:100%">
+          <div class="tstep__row">
+            <span class="tstep__node">4</span>
+          </div>
+          <span class="tstep__week">Semana 12</span>
           <h3>Qualidade cutânea elevada</h3>
           <p>Luminosidade, firmeza e vitalidade construídas com o uso contínuo.</p>
-        </div>
-      </div>
+          <div class="tstep__meter"><i></i></div>
+        </li>
+      </ol>
     </section>
 
     <!-- ═══════════════ POR QUE FÓRMULAS AVANÇADAS ═══════════════ -->
@@ -313,31 +329,46 @@
     <!-- ═══════════════ PREOCUPAÇÕES / INDICAÇÕES ═══════════════ -->
     <section class="concerns">
       <div class="wrap concerns__head reveal">
-        <span class="eyebrow">Cuidados essenciais</span>
-        <h2 class="section-title">Para o que o GHK-Cu pode ajudar</h2>
+        <div>
+          <span class="eyebrow">Cuidados essenciais</span>
+          <h2 class="section-title">Para o que o GHK-Cu pode ajudar</h2>
+        </div>
+        <p class="concerns__sub">Um único sérum que atua em várias frentes da qualidade da pele — do tom à firmeza.</p>
       </div>
       <div class="wrap concerns__grid">
-        <div class="concern reveal">
-          <!-- IMAGEM: ícone/foto "manchas" (~400x400px) -->
-          <figure class="ph ph--round" data-img="concern-manchas.jpg"><span class="ph__label">Manchas</span></figure>
-          <h4>Manchas</h4>
-          <p>Apoio à uniformização do tom da pele.</p>
-        </div>
-        <div class="concern reveal">
-          <figure class="ph ph--round" data-img="concern-olheiras.jpg"><span class="ph__label">Olheiras</span></figure>
-          <h4>Olheiras</h4>
-          <p>Área do olhar com aparência mais descansada.</p>
-        </div>
-        <div class="concern reveal">
-          <figure class="ph ph--round" data-img="concern-rugas.jpg"><span class="ph__label">Rugas</span></figure>
-          <h4>Rugas &amp; sinais</h4>
-          <p>Suporte à firmeza e à percepção de sinais finos.</p>
-        </div>
-        <div class="concern reveal">
-          <figure class="ph ph--round" data-img="concern-hidratacao.jpg"><span class="ph__label">Hidratação</span></figure>
-          <h4>Hidratação</h4>
-          <p>Conforto e viço com hidratação profunda.</p>
-        </div>
+        <article class="concern reveal">
+          <!-- IMAGEM: foto vertical "manchas" (~600x760px). Preenche o card. -->
+          <figure class="ph concern__img" data-img="concern-manchas.jpg"><span class="ph__label">Manchas</span></figure>
+          <span class="concern__index">01</span>
+          <div class="concern__body">
+            <h4>Manchas</h4>
+            <p>Apoio à uniformização do tom da pele.</p>
+          </div>
+        </article>
+        <article class="concern reveal">
+          <figure class="ph concern__img" data-img="concern-olheiras.jpg"><span class="ph__label">Olheiras</span></figure>
+          <span class="concern__index">02</span>
+          <div class="concern__body">
+            <h4>Olheiras</h4>
+            <p>Área do olhar com aparência mais descansada.</p>
+          </div>
+        </article>
+        <article class="concern reveal">
+          <figure class="ph concern__img" data-img="concern-rugas.jpg"><span class="ph__label">Rugas &amp; sinais</span></figure>
+          <span class="concern__index">03</span>
+          <div class="concern__body">
+            <h4>Rugas &amp; sinais</h4>
+            <p>Suporte à firmeza e à percepção de sinais finos.</p>
+          </div>
+        </article>
+        <article class="concern reveal">
+          <figure class="ph concern__img" data-img="concern-hidratacao.jpg"><span class="ph__label">Hidratação</span></figure>
+          <span class="concern__index">04</span>
+          <div class="concern__body">
+            <h4>Hidratação</h4>
+            <p>Conforto e viço com hidratação profunda.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -484,9 +515,10 @@
     <!-- ═══════════════ CTA FINAL ═══════════════ -->
     <section class="final-cta">
       <div class="wrap final-cta__inner reveal">
+        <span class="eyebrow">Comece hoje</span>
         <h2>Comece hoje a construir uma pele<br /><em>firme, luminosa e regenerada</em></h2>
         <p>Fórmula eficiente para evoluir sua pele com precisão e consistência.</p>
-        <a href="#oferta" class="btn btn--solid btn--lg">Iniciar meu protocolo</a>
+        <a href="#oferta" class="btn btn--dark btn--lg">Iniciar meu protocolo</a>
         <span class="final-cta__mini">Frete grátis acima de R$199 · Pré-venda com brinde</span>
       </div>
     </section>
