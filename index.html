@@ -185,6 +185,10 @@
 
     <!-- ═══════════════ FÓRMULA (estilo Zencial) ═══════════════ -->
     <section class="formula" id="ingredientes">
+      <!-- Moléculas flutuantes (posição absoluta + parallax ao rolar) -->
+      <img class="molecule molecule--2" src="img/molecula-2.webp" alt="" data-speed="180" aria-hidden="true" />
+      <img class="molecule molecule--1" src="img/molecula-1.webp" alt="" data-speed="120" aria-hidden="true" />
+
       <div class="wrap formula__head reveal">
         <h2 class="section-title">Uma fórmula estruturada para atuar em<br />diferentes necessidades da pele</h2>
         <a href="#resultados" class="formula__link">Cronograma de uso →</a>
@@ -482,15 +486,15 @@
                 <div class="review__stars">★★★★★</div>
                 <blockquote>Minha pele ficou visivelmente mais firme e com um viço que eu não via há anos. Textura sequinha, absorve rápido.</blockquote>
                 <figcaption>
-                  <span class="ph ph--avatar" data-img="cliente-1.jpg"></span>
-                  <span class="review__who"><strong>Marina S.</strong><em>Pele madura</em></span>
+                  <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-1.webp" alt="Marcos A." width="120" height="120" loading="lazy" /></span>
+                  <span class="review__who"><strong>Marcos A.</strong><em>Pele madura</em></span>
                 </figcaption>
               </figure>
               <figure class="review">
                 <div class="review__stars">★★★★★</div>
                 <blockquote>Usei por 8 semanas e as linhas finas ficaram bem menos marcadas. A hidratação dura o dia todo.</blockquote>
                 <figcaption>
-                  <span class="ph ph--avatar" data-img="cliente-2.jpg"></span>
+                  <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-2.webp" alt="Carla M." width="120" height="120" loading="lazy" /></span>
                   <span class="review__who"><strong>Carla M.</strong><em>Pele mista</em></span>
                 </figcaption>
               </figure>
@@ -498,15 +502,15 @@
                 <div class="review__stars">★★★★★</div>
                 <blockquote>Delicado, sem cheiro forte e não irrita minha pele sensível. Virou passo fixo da minha rotina.</blockquote>
                 <figcaption>
-                  <span class="ph ph--avatar" data-img="cliente-3.jpg"></span>
-                  <span class="review__who"><strong>Rafael T.</strong><em>Pele sensível</em></span>
+                  <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-3.webp" alt="Marina S." width="120" height="120" loading="lazy" /></span>
+                  <span class="review__who"><strong>Marina S.</strong><em>Pele sensível</em></span>
                 </figcaption>
               </figure>
               <figure class="review">
                 <div class="review__stars">★★★★★</div>
                 <blockquote>Resultado real e sem irritação. A textura da pele mudou, ficou mais uniforme e macia ao toque.</blockquote>
                 <figcaption>
-                  <span class="ph ph--avatar" data-img="cliente-4.jpg"></span>
+                  <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-4.webp" alt="Júlia R." width="120" height="120" loading="lazy" /></span>
                   <span class="review__who"><strong>Júlia R.</strong><em>Pele normal</em></span>
                 </figcaption>
               </figure>
@@ -514,8 +518,16 @@
                 <div class="review__stars">★★★★★</div>
                 <blockquote>Incorporei na rotina da noite e em poucas semanas notei mais luminosidade e firmeza. Recomendo demais.</blockquote>
                 <figcaption>
-                  <span class="ph ph--avatar" data-img="cliente-5.jpg"></span>
-                  <span class="review__who"><strong>Beatriz L.</strong><em>Pele seca</em></span>
+                  <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-5.webp" alt="Bruno L." width="120" height="120" loading="lazy" /></span>
+                  <span class="review__who"><strong>Bruno L.</strong><em>Pele seca</em></span>
+                </figcaption>
+              </figure>
+              <figure class="review">
+                <div class="review__stars">★★★★★</div>
+                <blockquote>Sinto a pele mais viçosa e uniforme. O toque ficou macio e a maquiagem assenta muito melhor agora.</blockquote>
+                <figcaption>
+                  <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-6.webp" alt="Beatriz L." width="120" height="120" loading="lazy" /></span>
+                  <span class="review__who"><strong>Beatriz L.</strong><em>Pele madura</em></span>
                 </figcaption>
               </figure>
             </div>
@@ -523,20 +535,18 @@
         </div>
 
         <div class="reviews__figure reveal">
-          <!-- IMAGEM DE FUNDO: mulher com a mão no pescoço (~900x1100px vertical).
-               Você vai subir esta imagem — salve como assets/images/depoimentos-hero.jpg -->
-          <figure class="ph reviews__photo" data-img="depoimentos-hero.jpg">
-            <span class="ph__label">Foto · mulher (mão no pescoço)</span>
+          <figure class="ph reviews__photo">
+            <img class="ph__media" src="img/depoimentos-hero.webp" alt="Cliente cuidando da pele" width="900" height="1200" loading="lazy" />
           </figure>
           <div class="rating-card">
             <span class="rating-card__score">4,9</span>
             <div class="rating-card__stars">★★★★★</div>
             <span class="rating-card__label">Avaliação dos clientes</span>
             <div class="rating-card__avatars">
-              <span class="ph ph--avatar" data-img="cliente-1.jpg"></span>
-              <span class="ph ph--avatar" data-img="cliente-2.jpg"></span>
-              <span class="ph ph--avatar" data-img="cliente-3.jpg"></span>
-              <span class="ph ph--avatar" data-img="cliente-4.jpg"></span>
+              <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-2.webp" alt="" width="120" height="120" loading="lazy" /></span>
+              <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-4.webp" alt="" width="120" height="120" loading="lazy" /></span>
+              <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-6.webp" alt="" width="120" height="120" loading="lazy" /></span>
+              <span class="ph ph--avatar"><img class="ph__media" src="img/cliente-1.webp" alt="" width="120" height="120" loading="lazy" /></span>
               <span class="rating-card__more">+2,4k</span>
             </div>
           </div>

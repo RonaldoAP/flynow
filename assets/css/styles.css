@@ -345,6 +345,9 @@ em { font-style: italic; }
 
 /* Galeria: 1 em cima, 2 embaixo */
 .bio__gallery { display: flex; flex-direction: column; gap: 18px; }
+.bio__g-main, .bio__g-sm { cursor: pointer; }
+.bio__g-main .ph__media, .bio__g-sm .ph__media { transition: transform .6s var(--ease); }
+.bio__g-main:hover .ph__media, .bio__g-sm:hover .ph__media { transform: scale(1.06); }
 .bio__g-main { flex: 1.4; min-height: 260px; }
 .bio__g-duo { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .bio__g-sm { min-height: 200px; }
@@ -370,7 +373,17 @@ em { font-style: italic; }
 .bio__note { font-size: 0.78rem; color: var(--stone-lt); margin-top: 18px; }
 
 /* ═══════════ FÓRMULA (estilo Zencial) ═══════════ */
-.formula { padding: clamp(60px, 9vw, 120px) 0; background: var(--cream); }
+.formula { position: relative; padding: clamp(60px, 9vw, 120px) 0; background: var(--cream); overflow: hidden; }
+.formula__head, .formula__grid, .formula__note { position: relative; z-index: 1; }
+/* Moléculas flutuantes */
+.molecule {
+  position: absolute; z-index: 0; pointer-events: none; user-select: none;
+  transform: translateY(var(--pY, 0));
+  transition: transform .25s ease-out;
+  filter: drop-shadow(0 20px 40px rgba(10, 60, 110, 0.14));
+}
+.molecule--1 { width: clamp(120px, 15vw, 220px); left: -1.5%; bottom: 6%; }
+.molecule--2 { width: clamp(90px, 11vw, 160px); left: 41%; top: 3%; }
 .formula__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: clamp(34px, 5vw, 60px); }
 .formula__link { flex: none; font-weight: 600; color: var(--ink); border-bottom: 1.5px solid var(--copper); padding-bottom: 4px; transition: color .3s; }
 .formula__link:hover { color: var(--copper-dp); }

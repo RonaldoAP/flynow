@@ -39,6 +39,28 @@
     window.addEventListener('scroll', cb, { passive: true });
   }
 
+  /* ─────────── Moléculas flutuantes: parallax ao rolar ─────────── */
+  var molecules = Array.prototype.slice.call(document.querySelectorAll('.molecule'));
+  if (molecules.length && !reduce) {
+    var molSection = molecules[0].closest('section');
+    function molParallax() {
+      var rect = molSection.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // progresso: 0 quando a seção entra pela base, 1 quando sai pelo topo
+      var prog = (vh - rect.top) / (vh + rect.height);
+      prog = Math.max(0, Math.min(1, prog));
+      molecules.forEach(function (m) {
+        var amp = parseFloat(m.dataset.speed || '120');
+        // sobe naturalmente: de +amp/2 (entrando) a -amp/2 (saindo)
+        var y = (0.5 - prog) * amp;
+        m.style.setProperty('--pY', y.toFixed(1) + 'px');
+      });
+    }
+    onScroll(molParallax);
+    window.addEventListener('resize', molParallax);
+    molParallax();
+  }
+
   /* ─────────── Depoimentos: carrossel auto + setas ─────────── */
   var track = document.getElementById('revTrack');
   if (track) {
