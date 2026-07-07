@@ -63,34 +63,57 @@
   /* ─────────── Depoimentos: carrossel auto + setas ─────────── */
   var track = document.getElementById('revTrack');
   if (track) {
-    var cards = Array.prototype.slice.call(track.children);
+    var originals = Array.prototype.slice.call(track.children);
+    var count = originals.length;
+    // clona os cards para permitir loop infinito sem espaços vazios
+    originals.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
     var index = 0;
     var timer = null;
+    var animating = false;
 
-    function visibleCount() { return window.innerWidth <= 720 ? 1 : 2; }
-    function maxIndex() { return Math.max(0, cards.length - visibleCount()); }
-
-    function go(i) {
-      index = i > maxIndex() ? 0 : (i < 0 ? maxIndex() : i);
-      var card = cards[0];
+    function stepPx() {
       var style = window.getComputedStyle(track);
-      var gap = parseFloat(style.columnGap || style.gap || '20') || 20;
-      var step = card.getBoundingClientRect().width + gap;
-      track.style.transform = 'translateX(' + (-step * index) + 'px)';
+      var gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+      return originals[0].getBoundingClientRect().width + gap;
     }
-    function next() { go(index + 1); }
-    function prev() { go(index - 1); }
+    function apply(withTransition) {
+      track.style.transition = withTransition ? '' : 'none';
+      track.style.transform = 'translateX(' + (-stepPx() * index) + 'px)';
+    }
+    function next() {
+      if (animating) return;
+      animating = true;
+      index++;
+      apply(true);
+    }
+    function prev() {
+      if (animating) return;
+      animating = true;
+      if (index <= 0) {                 // salta pro clone equivalente e volta suave
+        index = count;
+        apply(false);
+        // força reflow antes de animar
+        void track.offsetWidth;
+      }
+      index--;
+      apply(true);
+    }
+    track.addEventListener('transitionend', function (e) {
+      if (e.propertyName !== 'transform') return;
+      animating = false;
+      if (index >= count) {             // chegou nos clones → reseta sem transição
+        index = 0;
+        apply(false);
+      }
+    });
 
-    function startAuto() {
-      stopAuto();
-      timer = setInterval(next, 5000);
-    }
+    function startAuto() { stopAuto(); timer = setInterval(next, 5000); }
     function stopAuto() { if (timer) clearInterval(timer); }
 
     document.querySelectorAll('[data-rev]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         if (btn.getAttribute('data-rev') === 'next') next(); else prev();
-        startAuto(); // reinicia o timer ao interagir
+        startAuto();
       });
     });
 
@@ -99,8 +122,8 @@
       revWrap.addEventListener('mouseenter', stopAuto);
       revWrap.addEventListener('mouseleave', startAuto);
     }
-    window.addEventListener('resize', function () { go(index); });
-    go(0);
+    window.addEventListener('resize', function () { apply(false); });
+    apply(false);
     startAuto();
   }
 
