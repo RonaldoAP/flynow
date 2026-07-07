@@ -42,18 +42,17 @@
   /* ─────────── Moléculas flutuantes: parallax ao rolar ─────────── */
   var molecules = Array.prototype.slice.call(document.querySelectorAll('.molecule'));
   if (molecules.length && !reduce) {
-    var molSection = molecules[0].closest('section');
+    var molData = molecules.map(function (m) {
+      return { el: m, sec: m.closest('section'), amp: parseFloat(m.dataset.speed || '120') };
+    });
     function molParallax() {
-      var rect = molSection.getBoundingClientRect();
       var vh = window.innerHeight;
-      // progresso: 0 quando a seção entra pela base, 1 quando sai pelo topo
-      var prog = (vh - rect.top) / (vh + rect.height);
-      prog = Math.max(0, Math.min(1, prog));
-      molecules.forEach(function (m) {
-        var amp = parseFloat(m.dataset.speed || '120');
-        // sobe naturalmente: de +amp/2 (entrando) a -amp/2 (saindo)
-        var y = (0.5 - prog) * amp;
-        m.style.setProperty('--pY', y.toFixed(1) + 'px');
+      molData.forEach(function (d) {
+        var rect = d.sec.getBoundingClientRect();
+        // progresso: 0 quando a seção entra pela base, 1 quando sai pelo topo
+        var prog = (vh - rect.top) / (vh + rect.height);
+        prog = Math.max(0, Math.min(1, prog));
+        d.el.style.setProperty('--pY', ((0.5 - prog) * d.amp).toFixed(1) + 'px');
       });
     }
     onScroll(molParallax);
@@ -118,11 +117,12 @@
       steps.forEach(function (s) { s.classList.toggle('is-active', +s.dataset.step === idx); });
       imgs.forEach(function (im) { im.classList.toggle('is-active', +im.dataset.step === idx); });
       if (numEl) numEl.textContent = ('0' + (idx + 1)).slice(-2);
-      // preenche a linha vertical até o nó ativo
+      // preenche a linha vertical até o centro do nó ativo
       if (lineFill && stepsWrap) {
         var node = steps[idx].querySelector('.sstep__node');
-        var fill = node.offsetTop + node.offsetHeight / 2;
-        lineFill.style.height = fill + 'px';
+        var wrapTop = stepsWrap.getBoundingClientRect().top;
+        var nr = node.getBoundingClientRect();
+        lineFill.style.height = (nr.top + nr.height / 2 - wrapTop) + 'px';
       }
     }
 

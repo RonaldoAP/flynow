@@ -254,55 +254,65 @@
       </div>
     </section>
 
-    <!-- ═══════════════ RESULTADOS PROGRESSIVOS ═══════════════ -->
+    <!-- ═══════════════ RESULTADOS PROGRESSIVOS (timeline + imagem fixa) ═══════════════ -->
     <section class="results" id="resultados">
-      <div class="wrap results__head reveal">
-        <span class="eyebrow">Evolução</span>
-        <h2 class="section-title">Resultados progressivos que evoluem<br />a cada fase de uso</h2>
-        <p class="lead lead--center">A consistência potencializa hidratação, textura, firmeza e luminosidade.<br /><small>*Os resultados variam de acordo com a individualidade da pele.</small></p>
-      </div>
-
-      <div class="wrap scrolly" id="scrolly">
-        <!-- ESQUERDA: foto sticky que troca a cada semana -->
-        <div class="scrolly__media">
-          <div class="scrolly__sticky">
-            <!-- IMAGEM: foto por fase (~800x1000px vertical) -->
-            <figure class="ph scrolly__img is-active" data-step="0" data-img="resultado-semana-01.jpg"><span class="ph__label">Semana 1 · foto</span></figure>
-            <figure class="ph scrolly__img" data-step="1" data-img="resultado-semana-04.jpg"><span class="ph__label">Semana 4 · foto</span></figure>
-            <figure class="ph scrolly__img" data-step="2" data-img="resultado-semana-08.jpg"><span class="ph__label">Semana 8 · foto</span></figure>
-            <figure class="ph scrolly__img" data-step="3" data-img="resultado-semana-12.jpg"><span class="ph__label">Semana 12 · foto</span></figure>
-            <span class="scrolly__count"><em id="scrollyNum">01</em> / 04</span>
-          </div>
+      <div class="results__scene" id="scrolly">
+        <!-- ESQUERDA: imagem grande fixa (background) -->
+        <div class="results__visual">
+          <!-- IMAGEM: foto grande única da timeline (~1200x1500px vertical).
+               Suba como img/ilustracao-sinalizacao-2 que eu otimizo pra .webp -->
+          <div class="results__bg"></div>
         </div>
 
-        <!-- DIREITA: linha do tempo (linha vertical preenche conforme o scroll) -->
-        <ol class="scrolly__steps" id="scrollySteps">
-          <span class="scrolly__line" aria-hidden="true"><i></i></span>
-          <li class="sstep is-active" data-step="0">
-            <span class="sstep__node">1</span>
-            <span class="sstep__week">Semana 1</span>
-            <h3>Hidratação imediata</h3>
-            <p>Conforto e maciez logo nas primeiras aplicações, com viço perceptível.</p>
-          </li>
-          <li class="sstep" data-step="1">
-            <span class="sstep__node">2</span>
-            <span class="sstep__week">Semana 4</span>
-            <h3>Textura mais refinada</h3>
-            <p>Pele mais lisa ao toque e aparência visualmente mais uniforme.</p>
-          </li>
-          <li class="sstep" data-step="2">
-            <span class="sstep__node">3</span>
-            <span class="sstep__week">Semana 8</span>
-            <h3>Firmeza em evolução</h3>
-            <p>Sustentação aparente e diminuição da percepção de sinais finos.</p>
-          </li>
-          <li class="sstep sstep--peak" data-step="3">
-            <span class="sstep__node">4</span>
-            <span class="sstep__week">Semana 12</span>
-            <h3>Qualidade cutânea elevada</h3>
-            <p>Luminosidade, firmeza e vitalidade construídas com o uso contínuo.</p>
-          </li>
-        </ol>
+        <!-- DIREITA: título + subheadline + linha do tempo -->
+        <div class="results__panel">
+          <div class="results__head reveal">
+            <span class="eyebrow">Evolução</span>
+            <h2 class="section-title">Resultados que evoluem a cada fase de uso</h2>
+            <p class="lead">A consistência potencializa hidratação, textura, firmeza e luminosidade — acompanhe a evolução semana a semana.</p>
+          </div>
+
+          <ol class="tline" id="scrollySteps">
+            <span class="scrolly__line" aria-hidden="true"><i></i></span>
+            <li class="sstep is-active" data-step="0">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">Primeiros dias</span><h3>Hidratação imediata</h3></div>
+              <ul class="sstep__list">
+                <li>Pele mais confortável</li>
+                <li>Toque mais macio</li>
+                <li>Aspecto menos ressecado</li>
+              </ul>
+            </li>
+            <li class="sstep" data-step="1">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">2 semanas</span><h3>Textura mais refinada</h3></div>
+              <ul class="sstep__list">
+                <li>Superfície mais uniforme</li>
+                <li>Mais viço visível</li>
+                <li>Melhor aparência geral</li>
+              </ul>
+            </li>
+            <li class="sstep" data-step="2">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">4 semanas</span><h3>Firmeza em evolução</h3></div>
+              <ul class="sstep__list">
+                <li>Elasticidade aparente maior</li>
+                <li>Linhas menos evidentes</li>
+                <li>Pele com mais sustentação</li>
+              </ul>
+            </li>
+            <li class="sstep sstep--peak" data-step="3">
+              <span class="sstep__node"></span>
+              <div class="sstep__row"><span class="sstep__pill">6 semanas+</span><h3>Qualidade cutânea elevada</h3></div>
+              <ul class="sstep__list">
+                <li>Luminosidade contínua</li>
+                <li>Aparência revitalizada</li>
+                <li>Resultados mais consistentes</li>
+              </ul>
+            </li>
+          </ol>
+          <p class="results__note">*Os resultados variam de acordo com a individualidade da pele.</p>
+        </div>
       </div>
     </section>
 
@@ -405,8 +415,7 @@
             <h3>Unidade</h3>
             <p>Ideal para conhecer o protocolo.</p>
           </div>
-          <!-- IMAGEM: mockup 1 frasco (~500x500px, fundo transparente) -->
-          <figure class="ph ph--plan" data-img="mockup-unidade.png"><span class="ph__label">1 frasco</span></figure>
+          <figure class="ph ph--plan"><img class="ph__media" src="img/mockup-unidade.webp" alt="Sérum GHK-Cu — 1 frasco" width="900" height="1117" loading="lazy" /></figure>
           <div class="plan__price">
             <span class="plan__old">R$ 239,00</span>
             <span class="plan__now">R$ 179,00</span>
@@ -426,8 +435,7 @@
             <h3>Combo</h3>
             <p>3 frascos para o protocolo completo de 3 meses.</p>
           </div>
-          <!-- IMAGEM: mockup 3 frascos (~560x560px, fundo transparente) -->
-          <figure class="ph ph--plan" data-img="mockup-combo.png"><span class="ph__label">3 frascos</span></figure>
+          <figure class="ph ph--plan"><img class="ph__media" src="img/mockup-combo.webp" alt="Sérum GHK-Cu — combo 3 frascos" width="900" height="1117" loading="lazy" /></figure>
           <div class="plan__price">
             <span class="plan__old">R$ 719,70</span>
             <span class="plan__now">R$ 489,90</span>
@@ -556,6 +564,10 @@
 
     <!-- ═══════════════ FAQ ═══════════════ -->
     <section class="faq" id="faq">
+      <!-- Moléculas flutuantes entre o FAQ e o "Comece hoje" -->
+      <img class="molecule molecule--3" src="img/molecula-2.webp" alt="" data-speed="140" aria-hidden="true" />
+      <img class="molecule molecule--4" src="img/molecula-1.webp" alt="" data-speed="110" aria-hidden="true" />
+
       <div class="wrap faq__grid">
         <div class="faq__aside reveal">
           <span class="eyebrow">Dúvidas</span>
