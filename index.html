@@ -15,17 +15,45 @@
 </head>
 <body>
 
+  <!-- ═══════════════ ÍCONES (Lucide · sprite SVG inline) ═══════════════ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </symbol>
+      <symbol id="i-unlock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+      </symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
+      </symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-4-4"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- ═══════════════ ANNOUNCEMENT BAR ═══════════════ -->
   <div class="announce">
     <div class="announce__track">
-      <span>Frete grátis acima de R$199</span><span class="dot">•</span>
-      <span>Pré-venda com brinde exclusivo</span><span class="dot">•</span>
-      <span>Parcele em até 12x</span><span class="dot">•</span>
-      <span>Fórmula dermatologicamente testada</span><span class="dot">•</span>
-      <span>Frete grátis acima de R$199</span><span class="dot">•</span>
-      <span>Pré-venda com brinde exclusivo</span><span class="dot">•</span>
-      <span>Parcele em até 12x</span><span class="dot">•</span>
-      <span>Fórmula dermatologicamente testada</span><span class="dot">•</span>
+      <div class="announce__group">
+        <span>Frete grátis acima de R$199</span><span class="dot">•</span>
+        <span>Pré-venda com brinde exclusivo</span><span class="dot">•</span>
+        <span>Parcele em até 12x</span><span class="dot">•</span>
+        <span>Fórmula dermatologicamente testada</span><span class="dot">•</span>
+      </div>
+      <div class="announce__group" aria-hidden="true">
+        <span>Frete grátis acima de R$199</span><span class="dot">•</span>
+        <span>Pré-venda com brinde exclusivo</span><span class="dot">•</span>
+        <span>Parcele em até 12x</span><span class="dot">•</span>
+        <span>Fórmula dermatologicamente testada</span><span class="dot">•</span>
+      </div>
     </div>
   </div>
 
@@ -57,48 +85,153 @@
 
   <main id="top">
 
-    <!-- ═══════════════ HERO ═══════════════ -->
+    <!-- ═══════════════ HERO / COMPRA (estilo Zencial) ═══════════════ -->
     <section class="hero">
-      <div class="wrap hero__grid">
-        <!-- Rail vertical: linha com texto paralelo dos dois lados (GHK em cima, Sérum embaixo) -->
-        <div class="hero__rail reveal">
-          <span class="hero__rail-top">GHK-Cu · 30ml</span>
-          <span class="hero__rail-line"></span>
-          <span class="hero__rail-bottom">Sérum regenerador</span>
+      <div class="wrap shop">
+
+        <!-- GALERIA -->
+        <div class="shop__gallery reveal">
+          <figure class="gal__main">
+            <img id="galMain" src="img/mockup-serum-hero.webp" alt="Sérum GHK-Cu Divessence"
+                 width="1000" height="1250" fetchpriority="high" />
+            <span class="gal__flag">GHK-Cu · 30ml</span>
+          </figure>
+          <div class="gal__thumbs">
+            <button type="button" class="gal__thumb is-active" data-src="img/mockup-serum-hero.webp" aria-label="Foto 1">
+              <img src="img/mockup-serum-hero.webp" alt="" />
+            </button>
+            <button type="button" class="gal__thumb" data-src="img/mockup-unidade.webp" aria-label="Foto 2">
+              <img src="img/mockup-unidade.webp" alt="" />
+            </button>
+            <button type="button" class="gal__thumb" data-src="img/mockup-combo.webp" aria-label="Foto 3">
+              <img src="img/mockup-combo.webp" alt="" />
+            </button>
+            <button type="button" class="gal__thumb" data-src="img/galeria-scroll-centro.webp" aria-label="Foto 4">
+              <img src="img/galeria-scroll-centro.webp" alt="" />
+            </button>
+          </div>
         </div>
 
-        <div class="hero__copy reveal">
-          <span class="eyebrow">Peptídeo biomimético de cobre</span>
-          <h1 class="hero__title">
-            Sua pele:<br />
-            <em>firme, luminosa</em><br /> e regenerada
-          </h1>
-          <p class="hero__sub">
-            Sérum GHK-Cu com Peptídeos de Cobre, Colágeno e Ácido Hialurônico.
-            Uma fórmula que favorece a síntese de colágeno e elastina, aprofunda
-            a hidratação e promove renovação cutânea progressiva com o uso contínuo.
+        <!-- PAINEL DE COMPRA -->
+        <div class="shop__panel reveal">
+          <span class="shop__pill">Peptídeo biomimético de cobre</span>
+          <h1 class="shop__title">Sérum GHK-Cu com Peptídeos de Cobre, Colágeno e Ácido Hialurônico</h1>
+
+          <div class="shop__rating">
+            <span class="stars">★★★★★</span>
+            <span>4.9 · +2.420 avaliações</span>
+          </div>
+
+          <p class="shop__desc">
+            Fórmula que favorece a síntese de colágeno e elastina, aprofunda a hidratação
+            e promove renovação cutânea progressiva com o uso contínuo.
           </p>
 
-          <div class="hero__actions">
-            <a href="#oferta" class="btn btn--solid btn--lg">Adicionar ao carrinho</a>
-            <div class="hero__price">
-              <span class="hero__price-now">R$ 179,00</span>
-              <span class="hero__price-note">ou R$ 147,90 à vista no Pix</span>
+          <!-- OPÇÕES DE COMPRA -->
+          <div class="offers" data-offers>
+            <span class="offers__label">Escolha seu kit</span>
+
+            <label class="ocard">
+              <input type="radio" name="hero-offer" value="1"
+                     data-img="img/mockup-unidade.webp" data-off="19% OFF"
+                     data-old="182,90" data-price="147,90" data-unit="147,90 / frasco"
+                     data-parcela="12x de R$ 12,33 sem juros" data-avista="ou R$ 140,51 à vista no Pix" checked />
+              <span class="ocard__box">
+                <span class="ocard__radio"></span>
+                <span class="ocard__main">
+                  <span class="ocard__name">1 unidade</span>
+                  <span class="ocard__unit">R$ 147,90 por frasco</span>
+                </span>
+                <span class="ocard__price">
+                  <span class="ocard__old">R$ 182,90</span>
+                  <span class="ocard__now">R$ 147,90</span>
+                </span>
+              </span>
+            </label>
+
+            <!-- Ofertas de 3 e 6 unidades ficam sob a raspadinha -->
+            <div class="scratch" id="scratch">
+              <div class="scratch__offers">
+                <label class="ocard ocard--best">
+                  <input type="radio" name="hero-offer" value="3"
+                         data-img="img/mockup-combo.webp" data-off="46% OFF"
+                         data-old="548,70" data-price="297,90" data-unit="99,30 / frasco"
+                         data-parcela="12x de R$ 24,83 sem juros" data-avista="ou R$ 283,01 à vista no Pix" />
+                  <span class="ocard__tag">★ Mais vendido</span>
+                  <span class="ocard__box">
+                    <span class="ocard__radio"></span>
+                    <span class="ocard__main">
+                      <span class="ocard__name">3 unidades</span>
+                      <span class="ocard__unit">R$ 99,30 por frasco · economize 46%</span>
+                    </span>
+                    <span class="ocard__price">
+                      <span class="ocard__old">R$ 548,70</span>
+                      <span class="ocard__now">R$ 297,90</span>
+                    </span>
+                  </span>
+                </label>
+
+                <label class="ocard ocard--gold">
+                  <input type="radio" name="hero-offer" value="6"
+                         data-img="img/mockup-combo.webp" data-off="55% OFF"
+                         data-old="1.097,40" data-price="489,90" data-unit="81,65 / frasco"
+                         data-parcela="12x de R$ 40,83 sem juros" data-avista="ou R$ 465,41 à vista no Pix" />
+                  <span class="ocard__tag ocard__tag--gold">Melhor oferta · 55% OFF</span>
+                  <span class="ocard__box">
+                    <span class="ocard__radio"></span>
+                    <span class="ocard__main">
+                      <span class="ocard__name">6 unidades</span>
+                      <span class="ocard__unit">R$ 81,65 por frasco · máxima economia</span>
+                    </span>
+                    <span class="ocard__price">
+                      <span class="ocard__old">R$ 1.097,40</span>
+                      <span class="ocard__now">R$ 489,90</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <canvas class="scratch__cover" id="scratchCover"></canvas>
+              <div class="scratch__hint" id="scratchHint">
+                <svg class="ico ico--lg" aria-hidden="true"><use href="#i-gift"/></svg>
+                <strong>Raspe e descubra a oferta</strong>
+                <em>Revele os kits de 3 e 6 unidades</em>
+              </div>
             </div>
           </div>
 
-          <div class="hero__rating">★★★★★ <span>+2.420 avaliações</span></div>
-        </div>
+          <!-- UPGRADE / brindes (desbloqueiam ao raspar as ofertas acima) -->
+          <div class="upsell">
+            <div class="upsell__head">
+              <strong>Dê um upgrade em sua compra</strong>
+              <span>Desbloqueie promoções e prêmios ao raspar</span>
+            </div>
 
-        <div class="hero__media reveal">
-          <!-- IMAGEM: Mockup principal do sérum (PNG com fundo transparente, ~900x1100px).
-               Frasco em destaque, luz suave. Este é o mockup que você vai fornecer. -->
-          <figure class="ph ph--hero">
-            <img class="ph__media ph__media--contain" src="img/mockup-serum-hero.webp" alt="Sérum GHK-Cu Divessence" width="1000" height="1250" fetchpriority="high" />
-          </figure>
-          <div class="hero__badge">
-            <strong>30ml</strong>
-            <span>Concentração ativa</span>
+            <div class="upsell__prizes">
+              <div class="prize is-locked">
+                <span class="prize__ico"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></span>
+                <span class="prize__body">
+                  <span class="prize__name">Frete Grátis · kit 3 unidades</span>
+                  <span class="prize__lockedname">Bloqueado</span>
+                </span>
+                <span class="prize__val prize__val--free">Grátis</span>
+              </div>
+              <div class="prize is-locked">
+                <span class="prize__ico"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg></span>
+                <span class="prize__body">
+                  <span class="prize__name">Brinde surpresa · kit 6 unidades</span>
+                  <span class="prize__lockedname">Bloqueado</span>
+                </span>
+                <span class="prize__val prize__val--gift">Surpresa</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#oferta" class="btn btn--solid btn--lg btn--block shop__cta">Adicionar ao carrinho</a>
+
+          <div class="shop__trust">
+            <span><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Compra segura</span>
+            <span><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> Frete grátis</span>
+            <span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Garantia de 30 dias</span>
           </div>
         </div>
       </div>
@@ -107,16 +240,20 @@
     <!-- ═══════════════ MARQUEE DE CONFIANÇA ═══════════════ -->
     <section class="strip">
       <div class="strip__track">
-        <span>Colágeno</span><i></i>
-        <span>Elastina</span><i></i>
-        <span>Ácido Hialurônico</span><i></i>
-        <span>Tripeptídeo de Cobre</span><i></i>
-        <span>Renovação Cutânea</span><i></i>
-        <span>Colágeno</span><i></i>
-        <span>Elastina</span><i></i>
-        <span>Ácido Hialurônico</span><i></i>
-        <span>Tripeptídeo de Cobre</span><i></i>
-        <span>Renovação Cutânea</span><i></i>
+        <div class="strip__group">
+          <span>Colágeno</span><i></i>
+          <span>Elastina</span><i></i>
+          <span>Ácido Hialurônico</span><i></i>
+          <span>Tripeptídeo de Cobre</span><i></i>
+          <span>Renovação Cutânea</span><i></i>
+        </div>
+        <div class="strip__group" aria-hidden="true">
+          <span>Colágeno</span><i></i>
+          <span>Elastina</span><i></i>
+          <span>Ácido Hialurônico</span><i></i>
+          <span>Tripeptídeo de Cobre</span><i></i>
+          <span>Renovação Cutânea</span><i></i>
+        </div>
       </div>
     </section>
 
@@ -412,73 +549,106 @@
     <!-- ═══════════════ OFERTA / PROTOCOLO ═══════════════ -->
     <section class="offer" id="oferta">
       <div class="wrap offer__head reveal">
-        <span class="eyebrow">Protocolo</span>
-        <h2 class="section-title" id="protocolo">Escolha a forma ideal de iniciar<br />seu protocolo com GHK-Cu</h2>
-        <p class="lead lead--center">Combinações pensadas para iniciar e sustentar a evolução da pele com melhor custo-benefício.</p>
+        <span class="eyebrow">Oferta especial</span>
+        <h2 class="section-title" id="protocolo">Escolha seu kit e economize <br />no seu protocolo GHK-Cu</h2>
+        <p class="lead lead--center">Quanto maior o kit, menor o preço por frasco — com frete grátis e resultados que se sustentam no tempo.</p>
       </div>
 
-      <div class="wrap offer__grid">
-        <!-- Unidade -->
-        <article class="plan reveal">
-          <div class="plan__head">
-            <h3>Unidade</h3>
-            <p>Ideal para conhecer o protocolo.</p>
+      <div class="wrap checkout reveal" data-offers data-checkout>
+        <!-- ESQUERDA: imagem por oferta -->
+        <div class="checkout__media">
+          <span class="checkout__off" id="checkoutOff">19% OFF</span>
+          <img id="checkoutImg" src="img/mockup-unidade.webp" alt="Sérum GHK-Cu" width="900" height="1117" loading="lazy" />
+          <div class="checkout__stars">
+            <span class="stars">★★★★★</span>
+            <span>4.8 · 2.853 avaliações</span>
           </div>
-          <figure class="ph ph--plan"><img class="ph__media" src="img/mockup-unidade.webp" alt="Sérum GHK-Cu — 1 frasco" width="900" height="1117" loading="lazy" /></figure>
-          <div class="plan__price">
-            <span class="plan__old">R$ 239,00</span>
-            <span class="plan__now">R$ 179,00</span>
-            <span class="plan__pix">ou R$ 147,90 à vista no Pix</span>
-          </div>
-          <a href="#" class="btn btn--outline btn--block">Comprar 1 unidade</a>
-          <ul class="plan__perks">
-            <li>Sérum GHK-Cu 30ml</li>
-            <li>Frete grátis acima de R$199</li>
-          </ul>
-        </article>
+        </div>
 
-        <!-- Combo (destaque) -->
-        <article class="plan plan--featured reveal">
-          <span class="plan__flag">Mais escolhido</span>
-          <div class="plan__head">
-            <h3>Combo</h3>
-            <p>3 frascos para o protocolo completo de 3 meses.</p>
-          </div>
-          <figure class="ph ph--plan"><img class="ph__media" src="img/mockup-combo.webp" alt="Sérum GHK-Cu — combo 3 frascos" width="900" height="1117" loading="lazy" /></figure>
-          <div class="plan__price">
-            <span class="plan__old">R$ 719,70</span>
-            <span class="plan__now">R$ 489,90</span>
-            <span class="plan__pix">ou R$ 297,90 à vista no Pix · 12x sem juros</span>
-          </div>
-          <a href="#" class="btn btn--solid btn--block">Quero o combo</a>
-          <ul class="plan__perks">
-            <li>3× Sérum GHK-Cu 30ml</li>
-            <li><strong>Brinde exclusivo de pré-venda</strong></li>
-            <li>Frete grátis + maior economia</li>
-          </ul>
-        </article>
+        <!-- DIREITA: opções + resumo -->
+        <div class="checkout__panel">
+          <h3 class="checkout__title">Sérum GHK-Cu · Peptídeo de Cobre 30ml</h3>
+          <p class="checkout__sub">Selecione a quantidade ideal para o seu protocolo:</p>
 
-        <!-- Assinatura -->
-        <article class="plan reveal">
-          <div class="plan__head">
-            <h3>Assinatura</h3>
-            <p>Reposição automática, sem interromper resultados.</p>
+          <div class="offers offers--lg" data-offers-lg>
+            <label class="ocard">
+              <input type="radio" name="offer" value="1"
+                     data-img="img/mockup-unidade.webp" data-off="19% OFF"
+                     data-old="182,90" data-price="147,90" data-unit="147,90 / frasco"
+                     data-parcela="12x de R$ 12,33 sem juros" data-avista="ou R$ 140,51 à vista no Pix" checked />
+              <span class="ocard__box">
+                <span class="ocard__radio"></span>
+                <span class="ocard__main">
+                  <span class="ocard__name">1 unidade</span>
+                  <span class="ocard__unit">R$ 147,90 por frasco</span>
+                </span>
+                <span class="ocard__price">
+                  <span class="ocard__old">R$ 182,90</span>
+                  <span class="ocard__now">R$ 147,90</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="ocard ocard--best">
+              <input type="radio" name="offer" value="3"
+                     data-img="img/mockup-combo.webp" data-off="46% OFF"
+                     data-old="548,70" data-price="297,90" data-unit="99,30 / frasco"
+                     data-parcela="12x de R$ 24,83 sem juros" data-avista="ou R$ 283,01 à vista no Pix" />
+              <span class="ocard__tag">★ Mais vendido</span>
+              <span class="ocard__box">
+                <span class="ocard__radio"></span>
+                <span class="ocard__main">
+                  <span class="ocard__name">3 unidades <em class="ocard__free">+ Frete grátis</em></span>
+                  <span class="ocard__unit">R$ 99,30 por frasco · economize 46%</span>
+                </span>
+                <span class="ocard__price">
+                  <span class="ocard__old">R$ 548,70</span>
+                  <span class="ocard__now">R$ 297,90</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="ocard ocard--gold">
+              <input type="radio" name="offer" value="6"
+                     data-img="img/mockup-combo.webp" data-off="55% OFF"
+                     data-old="1.097,40" data-price="489,90" data-unit="81,65 / frasco"
+                     data-parcela="12x de R$ 40,83 sem juros" data-avista="ou R$ 465,41 à vista no Pix" />
+              <span class="ocard__tag ocard__tag--gold">Melhor oferta · 55% OFF</span>
+              <span class="ocard__box">
+                <span class="ocard__radio"></span>
+                <span class="ocard__main">
+                  <span class="ocard__name">6 unidades <em class="ocard__free">+ Frete grátis</em></span>
+                  <span class="ocard__unit">R$ 81,65 por frasco · máxima economia</span>
+                  <span class="ocard__placeholder">Imagem em breve</span>
+                </span>
+                <span class="ocard__price">
+                  <span class="ocard__old">R$ 1.097,40</span>
+                  <span class="ocard__now">R$ 489,90</span>
+                </span>
+              </span>
+            </label>
           </div>
-          <figure class="ph ph--plan">
-            <span class="plan__badge">O ano todo</span>
-            <img class="ph__media" src="img/mockup-assinatura.webp" alt="Sérum GHK-Cu — assinatura" width="900" height="1117" loading="lazy" />
-          </figure>
-          <div class="plan__price">
-            <span class="plan__now">R$ 152,90<small>/mês</small></span>
-            <span class="plan__pix">Cancele quando quiser</span>
+
+          <!-- Resumo de parcelamento -->
+          <div class="summary">
+            <div class="summary__line">
+              <span>Total</span>
+              <strong id="sumTotal">R$ 147,90</strong>
+            </div>
+            <div class="summary__line summary__line--big">
+              <strong id="sumParcela">12x de R$ 12,33 sem juros</strong>
+              <em id="sumAvista">ou R$ 140,51 à vista no Pix</em>
+            </div>
           </div>
-          <a href="#" class="btn btn--outline btn--block">Assinar</a>
-          <ul class="plan__perks">
-            <li>1 frasco todo mês</li>
-            <li>Preço com desconto fixo</li>
-            <li>Sem multa, sem fidelidade</li>
-          </ul>
-        </article>
+
+          <a href="#" class="btn btn--solid btn--lg btn--block checkout__cta">Comprar agora</a>
+
+          <div class="checkout__badges">
+            <div class="tbadge"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> Frete Grátis</div>
+            <div class="tbadge"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Garantia 30 dias</div>
+            <div class="tbadge"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Compra Segura</div>
+          </div>
+        </div>
       </div>
 
       <p class="offer__note reveal">Compra 100% segura · Pagamento via cartão, Pix ou boleto</p>
@@ -673,7 +843,7 @@
   <div class="buybar" id="buybar">
     <div class="buybar__info">
       <strong>Sérum GHK-Cu</strong>
-      <span>R$ 179,00 · 12x sem juros</span>
+      <span>a partir de R$ 147,90 · 12x sem juros</span>
     </div>
     <a href="#oferta" class="btn btn--solid">Comprar</a>
   </div>
