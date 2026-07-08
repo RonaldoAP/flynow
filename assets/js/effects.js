@@ -159,6 +159,158 @@
     if (desktop.addEventListener) desktop.addEventListener('change', function () { current = -1; mode(); });
   }
 
+  /* ─────────── Galeria do hero: troca a imagem principal pelos thumbs ─────────── */
+  var galMain = document.getElementById('galMain');
+  var galThumbs = Array.prototype.slice.call(document.querySelectorAll('.gal__thumb'));
+  function setGalMain(src) {
+    if (!galMain || !src) return;
+    galMain.src = src;
+    galThumbs.forEach(function (t) { t.classList.toggle('is-active', t.dataset.src === src); });
+  }
+  galThumbs.forEach(function (t) {
+    t.addEventListener('click', function () { setGalMain(t.dataset.src); });
+  });
+
+  /* ─────────── Seleção de oferta (hero) + espelho na galeria ─────────── */
+  var heroOffers = document.querySelector('.hero [data-offers]');
+  if (heroOffers && galMain) {
+    heroOffers.querySelectorAll('input[type="radio"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        if (r.checked && r.dataset.img) setGalMain(r.dataset.img);
+      });
+    });
+  }
+
+  /* ─────────── Checkout (estilo Cellenium): imagem + resumo por oferta ─────────── */
+  var checkout = document.querySelector('[data-checkout]');
+  if (checkout) {
+    var cImg = document.getElementById('checkoutImg');
+    var cOff = document.getElementById('checkoutOff');
+    var sTotal = document.getElementById('sumTotal');
+    var sParcela = document.getElementById('sumParcela');
+    var sAvista = document.getElementById('sumAvista');
+    function updateCheckout(r) {
+      if (cImg && r.dataset.img) cImg.src = r.dataset.img;
+      if (cOff) cOff.textContent = r.dataset.off || '';
+      if (sTotal && r.dataset.price) sTotal.textContent = 'R$ ' + r.dataset.price;
+      if (sParcela) sParcela.textContent = r.dataset.parcela || '';
+      if (sAvista) sAvista.textContent = r.dataset.avista || '';
+    }
+    checkout.querySelectorAll('input[type="radio"]').forEach(function (r) {
+      r.addEventListener('change', function () { if (r.checked) updateCheckout(r); });
+    });
+    var checkedNow = checkout.querySelector('input[type="radio"]:checked');
+    if (checkedNow) updateCheckout(checkedNow);
+  }
+
+  /* ─────────── Raspe e descubra a oferta (scratch card) ─────────── */
+  var scratchEl = document.getElementById('scratch');
+  var scratchCanvas = document.getElementById('scratchCover');
+  if (scratchEl && scratchCanvas && scratchCanvas.getContext) {
+    var sctx = scratchCanvas.getContext('2d');
+    var scratchDone = false;
+    var pressing = false;
+    var cssW = 0, cssH = 0;
+    // grade de cobertura: detecta "quanto foi raspado" sem depender de getImageData
+    var GRID_COLS = 12, GRID_ROWS = 4;
+    var hitCells = {};
+    var hitCount = 0;
+    var TOTAL_CELLS = GRID_COLS * GRID_ROWS;
+
+    function paintCover(w, h) {
+      var g = sctx.createLinearGradient(0, 0, w, h);
+      g.addColorStop(0, '#8C949E');
+      g.addColorStop(0.5, '#C4CBD3');
+      g.addColorStop(1, '#98A0AA');
+      sctx.globalCompositeOperation = 'source-over';
+      sctx.fillStyle = g;
+      sctx.fillRect(0, 0, w, h);
+      // brilho/pontinhos para textura metálica de "raspadinha"
+      sctx.fillStyle = 'rgba(255,255,255,0.18)';
+      for (var i = 0; i < 60; i++) {
+        var x = ((i * 53) % Math.max(1, Math.floor(w)));
+        var y = ((i * 97) % Math.max(1, Math.floor(h)));
+        sctx.beginPath();
+        sctx.arc(x, y, 1.4, 0, Math.PI * 2);
+        sctx.fill();
+      }
+    }
+    function sizeCanvas() {
+      if (scratchDone) return;
+      var rect = scratchEl.getBoundingClientRect();
+      if (rect.width < 2 || rect.height < 2) return;
+      cssW = rect.width; cssH = rect.height;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      scratchCanvas.width = Math.round(rect.width * dpr);
+      scratchCanvas.height = Math.round(rect.height * dpr);
+      sctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      paintCover(rect.width, rect.height);
+      // canvas já pintado: remove a cobertura CSS para que a raspagem revele a oferta
+      scratchCanvas.style.background = 'transparent';
+    }
+    function markCell(x, y) {
+      if (!cssW || !cssH) return;
+      var col = Math.max(0, Math.min(GRID_COLS - 1, Math.floor(x / cssW * GRID_COLS)));
+      var row = Math.max(0, Math.min(GRID_ROWS - 1, Math.floor(y / cssH * GRID_ROWS)));
+      var key = row * GRID_COLS + col;
+      if (!hitCells[key]) { hitCells[key] = 1; hitCount++; }
+    }
+    function eraseAt(x, y) {
+      sctx.globalCompositeOperation = 'destination-out';
+      sctx.beginPath();
+      sctx.arc(x, y, 24, 0, Math.PI * 2);
+      sctx.fill();
+      markCell(x, y);
+    }
+    function revealPrizes() {
+      if (scratchDone) return;
+      scratchDone = true;
+      scratchEl.classList.add('is-revealed');
+      var box = scratchEl.closest('.upsell') || document;
+      box.querySelectorAll('.prize').forEach(function (p) { p.classList.remove('is-locked'); });
+    }
+    function maybeReveal() {
+      if (!scratchDone && hitCount / TOTAL_CELLS >= 0.5) revealPrizes();
+    }
+    function pointFromEvent(e) {
+      var rect = scratchCanvas.getBoundingClientRect();
+      var t = (e.touches && e.touches[0]) || e;
+      return { x: t.clientX - rect.left, y: t.clientY - rect.top };
+    }
+    function onDown(e) { pressing = true; var p = pointFromEvent(e); eraseAt(p.x, p.y); maybeReveal(); e.preventDefault(); }
+    function onMove(e) {
+      if (!pressing || scratchDone) return;
+      var p = pointFromEvent(e);
+      eraseAt(p.x, p.y);
+      maybeReveal();
+      e.preventDefault();
+    }
+    function onUp() {
+      if (!pressing) return;
+      pressing = false;
+      maybeReveal();
+    }
+
+    scratchCanvas.addEventListener('pointerdown', onDown);
+    scratchCanvas.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    // fallback touch (navegadores sem Pointer Events)
+    if (!window.PointerEvent) {
+      scratchCanvas.addEventListener('touchstart', onDown, { passive: false });
+      scratchCanvas.addEventListener('touchmove', onMove, { passive: false });
+      window.addEventListener('touchend', onUp);
+      scratchCanvas.addEventListener('mousedown', onDown);
+      scratchCanvas.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onUp);
+    }
+    window.addEventListener('resize', sizeCanvas);
+    // pinta o quanto antes; a cobertura CSS segura o "flash" até o canvas estar pronto
+    sizeCanvas();
+    if (document.readyState !== 'complete') window.addEventListener('load', sizeCanvas);
+    requestAnimationFrame(sizeCanvas);
+    setTimeout(sizeCanvas, 300);
+  }
+
   /* ─────────── Galeria scroll-reveal pinada (centro → 33/34/33) ─────────── */
   var gallery = document.getElementById('gallery');
   if (gallery && !reduce) {
