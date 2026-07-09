@@ -285,6 +285,7 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 .ocard__price { text-align: right; flex: none; display: flex; flex-direction: column; }
 .ocard__old { font-size: 0.8rem; color: var(--stone-lt); text-decoration: line-through; }
 .ocard__now { font-family: var(--font-serif); font-size: 1.35rem; color: var(--ink); line-height: 1.05; }
+.ocard__now small { font-size: 0.58em; color: var(--stone); font-family: var(--font-sans); }
 .ocard__tag {
   position: absolute; top: -10px; left: 16px; z-index: 2;
   font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
@@ -292,6 +293,10 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   padding: 4px 12px; border-radius: 100px; white-space: nowrap;
 }
 .ocard__tag--gold { background: linear-gradient(90deg, #C7962E, #E8B84B); color: #2B2100; }
+.ocard__tag--sub { background: var(--ink); color: #fff; }
+.ocard--sub:has(input:checked) .ocard__box { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(11,13,16,0.08); }
+.ocard--sub:has(input:checked) .ocard__radio { border-color: var(--ink); }
+.ocard--sub:has(input:checked) .ocard__radio::after { background: var(--ink); }
 /* estado selecionado */
 .ocard:has(input:checked) .ocard__box { border-color: var(--copper); box-shadow: 0 0 0 3px var(--blush); background: #FBFDFF; }
 .ocard:has(input:checked) .ocard__radio { border-color: var(--copper); }
