@@ -89,27 +89,16 @@
     <section class="hero">
       <div class="wrap shop">
 
-        <!-- GALERIA -->
+        <!-- GALERIA em blocos (mosaico) -->
         <div class="shop__gallery reveal">
-          <figure class="gal__main">
-            <img id="galMain" src="img/mockup-serum-hero.webp" alt="Sérum GHK-Cu Divessence"
-                 width="1000" height="1250" fetchpriority="high" />
+          <figure class="gblock gblock--wide">
+            <img src="img/mockup-serum-hero.webp" alt="Sérum GHK-Cu Divessence" width="1000" height="640" fetchpriority="high" />
             <span class="gal__flag">GHK-Cu · 30ml</span>
           </figure>
-          <div class="gal__thumbs">
-            <button type="button" class="gal__thumb is-active" data-src="img/mockup-serum-hero.webp" aria-label="Foto 1">
-              <img src="img/mockup-serum-hero.webp" alt="" />
-            </button>
-            <button type="button" class="gal__thumb" data-src="img/mockup-unidade.webp" aria-label="Foto 2">
-              <img src="img/mockup-unidade.webp" alt="" />
-            </button>
-            <button type="button" class="gal__thumb" data-src="img/mockup-combo.webp" aria-label="Foto 3">
-              <img src="img/mockup-combo.webp" alt="" />
-            </button>
-            <button type="button" class="gal__thumb" data-src="img/galeria-scroll-centro.webp" aria-label="Foto 4">
-              <img src="img/galeria-scroll-centro.webp" alt="" />
-            </button>
-          </div>
+          <figure class="gblock"><img src="img/galeria-scroll-esq.webp" alt="Sérum GHK-Cu" width="600" height="600" loading="lazy" /></figure>
+          <figure class="gblock"><img src="img/faq-suporte.webp" alt="Textura do sérum" width="600" height="600" loading="lazy" /></figure>
+          <figure class="gblock"><img src="img/galeria-scroll-dir.webp" alt="Sérum GHK-Cu em uso" width="600" height="600" loading="lazy" /></figure>
+          <figure class="gblock"><img src="img/serum-textura.webp" alt="Textura do sérum GHK-Cu" width="600" height="600" loading="lazy" /></figure>
         </div>
 
         <!-- PAINEL DE COMPRA -->
@@ -753,16 +742,7 @@
         <div class="faq__aside reveal">
           <span class="eyebrow">Dúvidas</span>
           <h2 class="section-title">Perguntas<br />frequentes</h2>
-          <div class="faq__support">
-            <figure class="ph faq__support-img"><img class="ph__media" src="img/faq-suporte.webp" alt="Suporte Divessence" width="800" height="600" loading="lazy" /></figure>
-            <div class="faq__support-inner">
-              <div>
-                <h3>Ainda tem dúvidas?</h3>
-                <p>Nosso time ajuda você a montar o protocolo ideal.</p>
-              </div>
-              <a href="#" class="btn btn--light">Falar no WhatsApp</a>
-            </div>
-          </div>
+          <p class="faq__aside-text">Reunimos as respostas mais comuns sobre o protocolo GHK-Cu. Se ainda restar alguma dúvida, fale com o nosso time pelo WhatsApp.</p>
         </div>
 
         <div class="faq__list">
@@ -799,6 +779,34 @@
         <p>Fórmula eficiente para evoluir sua pele<br />com precisão e consistência.</p>
         <a href="#oferta" class="btn btn--blue btn--lg">Iniciar meu protocolo</a>
         <span class="final-cta__mini">Frete grátis acima de R$199 · Pré-venda com brinde</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CONFIANÇA + CONTATO ═══════════════ -->
+    <section class="tc">
+      <div class="wrap tc__grid">
+        <!-- Reclame Aqui -->
+        <div class="tc__ra reveal">
+          <div class="ra__logo">Reclame<strong>AQUI</strong></div>
+          <div class="ra__score-row">
+            <span class="ra__score">8.9<span>/10</span></span>
+            <span class="ra__badge">RA1000</span>
+          </div>
+          <div class="ra__stars">★★★★★</div>
+          <hr class="ra__divider" />
+          <p class="ra__prize"><strong>Prêmio RA2025:</strong> Destaque na categoria "Dermocosméticos (Canais Operacionais)", ocupando a posição de 2º lugar.</p>
+        </div>
+
+        <!-- Contato / WhatsApp -->
+        <div class="tc__contact reveal">
+          <span class="tc__ph-tag">Imagem em breve</span>
+          <div class="tc__contact-inner">
+            <h3>Entre em contato</h3>
+            <p class="tc__contact-sub">Suporte via WhatsApp</p>
+            <p class="tc__contact-phone">+55 43 99000-0000</p>
+            <a href="#" class="btn btn--light">Iniciar conversa</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
