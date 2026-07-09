@@ -811,7 +811,7 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   padding: clamp(28px, 4vw, 46px);
   display: flex; flex-direction: column;
 }
-.ra__logo-img { display: block; height: 46px; width: auto; align-self: flex-start; }
+.ra__logo-img { display: block; height: 69px; width: auto; align-self: flex-start; }
 .ra__logo { font-weight: 800; font-size: 1.7rem; letter-spacing: -0.02em; color: #3DB84C; }
 .ra__logo strong { color: #1F7A34; }
 .ra__score-row { display: flex; align-items: center; gap: 16px; margin-top: 30px; }
