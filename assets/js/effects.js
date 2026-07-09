@@ -181,6 +181,19 @@
     });
   }
 
+  /* ─────────── Miniatura por unidade ao lado do checkbox (visível no mobile) ─────────── */
+  Array.prototype.slice.call(document.querySelectorAll('.ocard')).forEach(function (card) {
+    var input = card.querySelector('input');
+    var radio = card.querySelector('.ocard__radio');
+    if (!input || !radio || !input.dataset.img) return;
+    var thumb = document.createElement('span');
+    thumb.className = 'ocard__thumb';
+    var im = document.createElement('img');
+    im.src = input.dataset.img; im.alt = '';
+    thumb.appendChild(im);
+    radio.insertAdjacentElement('afterend', thumb);
+  });
+
   /* ─────────── Checkout (estilo Cellenium): imagem + resumo por oferta ─────────── */
   var checkout = document.querySelector('[data-checkout]');
   if (checkout) {
