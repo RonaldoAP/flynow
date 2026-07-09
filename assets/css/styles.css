@@ -208,7 +208,9 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   align-items: start;
 }
 
-/* Galeria (esquerda) — mosaico de blocos de imagem */
+/* Galeria (esquerda) — mosaico de blocos de imagem.
+   O bloco largo do topo ocupa a linha 1fr, esticando para a galeria
+   alcançar a altura do painel (até o botão de compra). */
 .shop__gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
 .gblock {
   position: relative;
@@ -219,8 +221,10 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   overflow: hidden;
   isolation: isolate;
 }
-.gblock--wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.gblock--wide { grid-column: 1 / -1; aspect-ratio: 6 / 5; }
+.gblock--wide img { object-position: center 32%; }
 .gblock img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gblock--contain img { object-fit: contain; padding: 10px; }
 .gal__flag {
   position: absolute; top: 16px; left: 16px; z-index: 2;
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
@@ -718,7 +722,7 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 .faq .molecule--3 { width: clamp(90px, 11vw, 160px); right: -2%; bottom: 8%; }
 .faq .molecule--4 { width: clamp(110px, 13vw, 190px); left: -2.5%; bottom: -3%; }
 .faq__grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(34px, 5vw, 76px); align-items: start; }
-.faq__aside { position: sticky; top: 100px; }
+.faq__aside { align-self: start; }
 .faq__support { position: relative; margin-top: 30px; border-radius: var(--radius); overflow: hidden; min-height: 300px; display: flex; }
 .faq__support-img { position: absolute; inset: 0; border-radius: 0; }
 .faq__support-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,38,33,0.15), rgba(43,38,33,0.72)); z-index: 1; }
@@ -817,12 +821,9 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   background: linear-gradient(150deg, #133a58 0%, #0a1a2b 100%);
   min-height: 300px; display: flex; align-items: center;
 }
-.tc__ph-tag {
-  position: absolute; top: 14px; right: 14px; z-index: 2;
-  font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
-  color: #fff; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.32);
-  padding: 4px 10px; border-radius: 100px;
-}
+/* imagem do suporte (img/img-suporte.webp); se ausente, o gradiente acima aparece */
+.tc__contact-bg { position: absolute; inset: 0; background-image: url("../../img/img-suporte.webp"); background-size: cover; background-position: center; }
+.tc__contact-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, rgba(11,26,43,0.35) 0%, rgba(11,26,43,0.72) 100%); }
 .tc__contact-inner { position: relative; z-index: 1; padding: clamp(28px, 4vw, 46px); color: #fff; }
 .tc__contact-inner h3 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .tc__contact-sub { color: rgba(255,255,255,0.82); margin-top: 12px; font-size: 0.98rem; }
