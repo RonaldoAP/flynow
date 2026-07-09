@@ -629,7 +629,7 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 /* Esquerda: imagem por oferta — preenche a caixa até a altura do botão (desktop) */
 .checkout__media { position: relative; display: flex; flex-direction: column; gap: 16px; }
 .checkout__media > img {
-  width: 100%; flex: 1 1 auto; min-height: 340px; object-fit: contain;
+  width: 100%; flex: 1 1 auto; min-height: 340px; object-fit: cover;
   background: linear-gradient(160deg, var(--blush), var(--cream));
   border-radius: var(--radius-sm);
 }
@@ -799,13 +799,14 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 .final-cta__mini { display: block; margin-top: 20px; font-size: 0.82rem; color: rgba(255,255,255,0.8); letter-spacing: 0.04em; }
 
 /* ═══════════ CONFIANÇA + CONTATO (Reclame Aqui + WhatsApp) ═══════════ */
-.tc { padding: clamp(44px, 7vw, 90px) 0; background: var(--cream); }
-.tc__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+/* Reclame Aqui + Contato — na mesma dobra do FAQ (fundo herdado da seção) */
+.tc__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; margin-top: clamp(44px, 6vw, 76px); }
 .tc__ra {
-  background: var(--white); border: 1px solid var(--sand-line); border-radius: var(--radius);
-  padding: clamp(28px, 4vw, 46px); box-shadow: var(--shadow-sm);
+  background: var(--cream); border: 1px solid var(--sand-line); border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 46px);
   display: flex; flex-direction: column;
 }
+.ra__logo-img { display: block; height: 46px; width: auto; align-self: flex-start; }
 .ra__logo { font-weight: 800; font-size: 1.7rem; letter-spacing: -0.02em; color: #3DB84C; }
 .ra__logo strong { color: #1F7A34; }
 .ra__score-row { display: flex; align-items: center; gap: 16px; margin-top: 30px; }
@@ -822,7 +823,7 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   min-height: 300px; display: flex; align-items: center;
 }
 /* imagem do suporte (img/img-suporte.webp); se ausente, o gradiente acima aparece */
-.tc__contact-bg { position: absolute; inset: 0; background-image: url("../../img/img-suporte.webp"); background-size: cover; background-position: center; }
+.tc__contact-bg { position: absolute; inset: 0; background-image: url("../../img/img-suporte.png"); background-size: cover; background-position: center; }
 .tc__contact-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, rgba(11,26,43,0.35) 0%, rgba(11,26,43,0.72) 100%); }
 .tc__contact-inner { position: relative; z-index: 1; padding: clamp(28px, 4vw, 46px); color: #fff; }
 .tc__contact-inner h3 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.2rem); }
