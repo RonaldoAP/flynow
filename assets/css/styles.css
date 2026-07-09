@@ -219,7 +219,7 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
   overflow: hidden;
   isolation: isolate;
 }
-.gblock--wide { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.gblock--wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 .gblock img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .gal__flag {
   position: absolute; top: 16px; left: 16px; z-index: 2;
