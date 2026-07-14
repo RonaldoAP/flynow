@@ -957,10 +957,9 @@ html.lenis, html.lenis body { height: auto; }
   .bio__gallery { order: 2; margin-top: 4px; }
   .formula__media { order: 2; max-width: 480px; margin-top: 30px; }
 
-  /* Checkout: imagem em cima, opções embaixo (empilhado) */
+  /* Checkout: só as opções no mobile (imagem + avaliação removidas) */
   .checkout { grid-template-columns: 1fr; align-items: start; }
-  .checkout__media { max-width: 380px; margin-inline: auto; width: 100%; }
-  .checkout__media > img { flex: 0 0 auto; aspect-ratio: 1 / 1; min-height: 0; }
+  .checkout__media { display: none; }
   .reviews__layout { grid-template-columns: 1fr; }
   .reviews__figure { min-height: 420px; margin-top: 10px; }
 
@@ -999,8 +998,8 @@ html.lenis, html.lenis body { height: auto; }
   .concern__img { aspect-ratio: 3 / 2; }
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
-  .buybar { display: flex; }
-  body { padding-bottom: 74px; }
+  /* barra fixa de compra removida no mobile */
+  .buybar { display: none !important; }
 }
 
 @media (max-width: 720px) {
