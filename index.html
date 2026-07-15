@@ -961,20 +961,38 @@
       var clickid = urlParams.get("rtkcid");
 
       if (clickid) {
-        console.log(`ℹ ClickID encontrado: ${clickid}`);
         document.querySelectorAll(".smartplayer-click-event").forEach(function (link) {
           link.addEventListener("click", function (event) {
-            event.stopPropagation();
-            console.log(`✓ Clique em produto detectado: ${link.href}`);
+            event.preventDefault(); // IMPEDIR navegação imediata
+            var destination = link.href;
+            var redirected = false;
+            function go() {
+              if (redirected) return;
+              redirected = true;
+              window.location.href = destination;
+            }
 
-            var postbackURL = `https://red.track.divessence.com.br/postback?clickid=${clickid}&type=InitiateCheckout`;
+            var postbackURL = "https://red.track.divessence.com.br/postback?clickid="
+                            + clickid + "&type=InitiateCheckout";
+
+            // Disparar postback e redirecionar APÓS completar
             fetch(postbackURL, { method: "GET" })
-              .then(response => console.log(`✓ Conversão disparada para ClickID: ${clickid}`, response))
-              .catch(error => console.error("✗ Erro ao disparar conversão:", error));
+              .then(function (response) {
+                console.log("Postback InitiateCheckout disparado com sucesso");
+              })
+              .catch(function (error) {
+                console.error("Erro ao disparar postback:", error);
+              })
+              .finally(function () {
+                go(); // Só redireciona APÓS o postback
+              });
+
+            // Fallback de segurança: se demorar mais de 2s, redireciona mesmo assim
+            setTimeout(go, 2000);
           });
         });
       } else {
-        console.warn("⚠ ClickID (rtkcid) não encontrado na URL da página. Conversão não será disparada.");
+        console.warn("ClickID (rtkcid) não encontrado na URL. Conversão não será disparada.");
       }
     });
   </script>
