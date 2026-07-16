@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <base href="/upsell/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Especial — Divessence</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul: #0b7bd6;
+      --azul-escuro: #0965af;
+      --laranja: #f5a623;
+      --vermelho: #e02b2b;
+      --verde: #2fbf71;
+      --dourado: #e8b84b;
+      --dourado-escuro: #c7962e;
+      --texto: #4f4f4f;
+      --texto-claro: #8a96a1;
+      --cinza-borda: #d9d9d9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Rubik', Arial, sans-serif;
+      color: var(--texto);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      background: #fff;
+      border-bottom: 4px solid transparent;
+      border-image: linear-gradient(90deg, #a9cdea, var(--azul) 35%, #cfe6fb 60%, var(--dourado)) 1;
+    }
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img { height: 16px; width: auto; display: block; }
+    .selo-seguro {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      color: #6d6d6d;
+      text-transform: uppercase;
+      line-height: 1.4;
+      text-align: left;
+    }
+    .selo-seguro svg { flex-shrink: 0; }
+    .selo-seguro strong { display: block; color: #4a4a4a; }
+
+    /* ===== Cronômetro ===== */
+    .cronometro-wrap {
+      max-width: 600px;
+      margin: 34px auto 0;
+      padding: 0 20px;
+    }
+    .cronometro {
+      border: 1px dashed #c4cbd3;
+      border-radius: 4px;
+      padding: 14px 16px;
+      text-align: center;
+      font-size: 14px;
+      color: #6d6d6d;
+    }
+    .cronometro strong { color: #333; font-weight: 700; margin-left: 4px; }
+
+    /* ===== Conteúdo ===== */
+    .conteudo {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      text-align: center;
+    }
+
+    .headline {
+      margin-top: 56px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #555;
+      line-height: 1.45;
+    }
+    .headline .destaque { color: var(--laranja); }
+
+    .subtitulo {
+      margin-top: 34px;
+      font-size: 13px;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      color: #6d6d6d;
+      line-height: 1.7;
+    }
+    .subtitulo strong { color: var(--vermelho); font-weight: 700; }
+
+    /* ===== Cupom (placeholder da imagem) ===== */
+    .cupom-wrap {
+      margin: 28px auto 0;
+      max-width: 520px;
+    }
+    .cupom-wrap img { width: 100%; height: auto; display: block; }
+
+    /* ===== Copy do preço ===== */
+    .copy-preco {
+      margin-top: 40px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+    .copy-preco .normal { font-weight: 400; }
+    .preco-destaque {
+      margin-top: 22px;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--vermelho);
+    }
+    .aviso-desconto {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #9a9a9a;
+    }
+
+    /* ===== Card do produto ===== */
+    .produto {
+      max-width: 900px;
+      margin: 34px auto 0;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 44px;
+      align-items: center;
+      text-align: left;
+    }
+    .produto-foto {
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .produto-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .produto-info .unidade {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #8a8a8a;
+      letter-spacing: .4px;
+    }
+    .produto-info h2 {
+      margin-top: 6px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #44515c;
+      line-height: 1.45;
+    }
+    .produto-info .preco {
+      margin-top: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--verde);
+    }
+    .label-parcelas {
+      display: block;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #6d6d6d;
+    }
+    .select-parcelas {
+      margin-top: 8px;
+      width: 100%;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 14px;
+      color: #555;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 6px;
+      background: #fff;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+    }
+    .btn-oferta {
+      margin-top: 18px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--azul);
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(11, 123, 214, .35);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-oferta:hover { background: var(--azul-escuro); }
+    .ambiente-seguro {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 11.5px;
+      color: #8a8a8a;
+      line-height: 1.7;
+    }
+    .link-recusar {
+      display: block;
+      margin-top: 22px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--azul);
+      text-decoration: none;
+    }
+    .link-recusar:hover { text-decoration: underline; }
+
+    /* ===== Rodapé ===== */
+    .rodape {
+      margin-top: 60px;
+      background: #f5f5f5;
+      padding: 26px 20px 34px;
+      text-align: center;
+    }
+    .rodape .titulo-pagamento {
+      font-size: 12px;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 14px;
+    }
+    .bandeiras {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .bandeira {
+      background: #fff;
+      border: 1px solid #e3e3e3;
+      border-radius: 4px;
+      min-width: 44px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 720px) {
+      .header-inner { padding: 16px 16px; }
+      .selo-seguro { font-size: 9px; }
+      .cronometro-wrap { margin-top: 22px; }
+      .headline { margin-top: 36px; font-size: 22px; }
+      .subtitulo { margin-top: 24px; font-size: 12px; }
+      .copy-preco { margin-top: 30px; font-size: 15px; }
+      .preco-destaque { font-size: 23px; }
+      .produto {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="#" aria-label="Divessence">
+        <img src="img/logo-divessence.svg" alt="Divessence">
+      </a>
+      <div class="selo-seguro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="#6d6d6d" stroke-width="2" stroke-linecap="round"/>
+          <rect x="5" y="10" width="14" height="10" rx="2" stroke="#6d6d6d" stroke-width="2"/>
+        </svg>
+        <div><strong>Pagamento</strong> 100% seguro</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cronometro-wrap">
+    <div class="cronometro">Essa oferta termina em <strong id="cronometro">03:00</strong></div>
+  </div>
+
+  <main class="conteudo">
+    <h1 class="headline">
+      <span id="saudacao-nome"></span>Incrível! Você ganhou nosso <span class="destaque">CUPOM DOURADO!</span>
+    </h1>
+
+    <p class="subtitulo">
+      O CUPOM DOURADO É BASTANTE ESPECIAL: ELE APARECE PARA APENAS <strong>UM CLIENTE POR DIA</strong>.
+    </p>
+
+    <div class="cupom-wrap">
+      <img src="img/cupom-dourado.png" alt="Cupom Dourado Divessence: +1 frasco extra + frete prioritário, válido pelos próximos 5 minutos">
+    </div>
+
+    <p class="copy-preco">
+      <span class="normal">Com o Cupom Dourado, seu pedido acabou de receber</span> mais um frasco extra de bônus <span class="normal">e</span> frete prioritário <span class="normal">por apenas</span>
+    </p>
+
+    <p class="preco-destaque">12x R$8,90</p>
+
+    <p class="aviso-desconto">*Desconto único para você<span id="nome-desconto"></span>, válido apenas agora.</p>
+
+    <section class="produto">
+      <div class="produto-foto">
+        <img src="img/formula-ativos.webp" alt="Sérum GHK-Cu Divessence">
+      </div>
+      <div class="produto-info">
+        <div class="unidade">1 unidade de</div>
+        <h2>Sérum GHK-Cu Divessence com Peptídeos de Cobre, Niacinamide e Ácido Hialurônico</h2>
+        <div class="preco">R$ 89,90</div>
+
+        <label class="label-parcelas" for="parcelas">Nº de Parcelas</label>
+        <select class="select-parcelas" id="parcelas" payt_element="installment" data-object="RBMAO4-RDOPMW"></select>
+
+        <a class="btn-oferta" id="btn-oferta" href="#" payt_action="oneclick_buy" data-object="RBMAO4-RDOPMW">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+            <rect x="5" y="10" width="14" height="10" rx="2" fill="#fff"/>
+          </svg>
+          Quero esta oferta
+        </a>
+
+        <p class="ambiente-seguro">🔒 Você está em um ambiente seguro</p>
+
+        <a class="link-recusar" href="https://www.divessencebeauty.com.br/obrigado">Finalizar pedido sem a oferta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="titulo-pagamento">Formas de pagamento</div>
+    <div class="bandeiras">
+      <div class="bandeira" style="color:#016fd0;">AMEX</div>
+      <div class="bandeira" style="color:#1a1f71;">VISA</div>
+      <div class="bandeira" style="color:#0079be;">Diners</div>
+      <div class="bandeira">
+        <svg width="26" height="16" viewBox="0 0 26 16"><circle cx="10" cy="8" r="7" fill="#eb001b"/><circle cx="16" cy="8" r="7" fill="#f79e1b" fill-opacity=".85"/></svg>
+      </div>
+      <div class="bandeira" style="color:#f76e20;">DISCOVER</div>
+      <div class="bandeira" style="color:#f5a623;">Aura</div>
+      <div class="bandeira" style="color:#1a1a1a;">elo</div>
+      <div class="bandeira" style="color:#f37421;">Hiper</div>
+      <div class="bandeira" style="color:#32bcad;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2 2 12l10 10 10-10L12 2z" stroke="#32bcad" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Nome do cliente via URL (?nome=Fulana) =====
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var nome = (params.get('nome') || '').trim();
+      if (nome) {
+        nome = nome.charAt(0).toUpperCase() + nome.slice(1);
+        document.getElementById('saudacao-nome').textContent = nome + ', ';
+        document.getElementById('nome-desconto').textContent = ' ' + nome;
+      }
+    })();
+
+    // ===== Cronômetro (3 min, para em 00:00) =====
+    (function () {
+      var el = document.getElementById('cronometro');
+      var restante = 3 * 60;
+      function render() {
+        var m = String(Math.floor(restante / 60)).padStart(2, '0');
+        var s = String(restante % 60).padStart(2, '0');
+        el.textContent = m + ':' + s;
+      }
+      render();
+      var timer = setInterval(function () {
+        restante--;
+        render();
+        if (restante <= 0) clearInterval(timer);
+      }, 1000);
+    })();
+
+  </script>
+
+  <!-- Script da Payt: preenche o seletor de parcelas e ativa a compra 1-clique -->
+  <script type="text/javascript" src="https://checkout.payt.com.br/multiple-oneclickbuyscript/L8Q8DK.js"></script>
+
+</body>
+</html>
