@@ -1,0 +1,83 @@
+/* Ajustes exclusivos da página de checkout. O bloco de compra mantém
+   integralmente os estilos da página principal. */
+.checkout-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--sand-line);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: box-shadow 0.3s ease;
+}
+
+.checkout-header.is-scrolled {
+  box-shadow: 0 8px 28px -24px rgba(11, 13, 16, 0.45);
+}
+
+.checkout-header__inner {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.checkout-header__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.checkout-header__logo img {
+  width: auto;
+  height: 22px;
+}
+
+.checkout-header__secure {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--stone);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.checkout-header__secure .ico {
+  color: var(--copper);
+}
+
+.checkout-page .hero {
+  min-height: calc(100vh - 72px);
+}
+
+.checkout-footer {
+  border-top: 1px solid var(--sand-line);
+  background: var(--cream);
+  color: var(--stone);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.checkout-footer p {
+  font-size: 0.76rem;
+}
+
+@media (max-width: 560px) {
+  .checkout-header__inner {
+    min-height: 64px;
+  }
+
+  .checkout-header__logo img {
+    height: 19px;
+  }
+
+  .checkout-header__secure {
+    font-size: 0.7rem;
+  }
+
+  .checkout-page .hero {
+    min-height: calc(100vh - 64px);
+    padding-top: 22px;
+  }
+}
