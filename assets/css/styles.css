@@ -254,15 +254,20 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 /* ── Cards de oferta (radio) — compartilhado hero + checkout ── */
 .offers { display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
 .offers__label { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--stone); }
-.ocard { position: relative; display: block; cursor: pointer; }
+.ocard {
+  position: relative; display: block;
+  border: 1.6px solid var(--sand-line); border-radius: 14px;
+  padding-bottom: 12px; background: var(--white);
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+}
+.ocard__select { display: block; cursor: pointer; }
 .ocard input { position: absolute; opacity: 0; pointer-events: none; }
 .ocard__box {
   display: flex; align-items: center; gap: 14px;
-  border: 1.6px solid var(--sand-line);
-  border-radius: 14px;
+  border: 0; border-radius: 14px;
   padding: 16px 18px;
-  background: var(--white);
-  transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+  background: transparent;
+  transition: background .2s var(--ease);
 }
 .ocard__radio {
   flex: none; width: 22px; height: 22px; border-radius: 50%;
@@ -294,11 +299,21 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 }
 .ocard__tag--gold { background: linear-gradient(90deg, #C7962E, #E8B84B); color: #2B2100; }
 .ocard__tag--sub { background: var(--ink); color: #fff; }
-.ocard--sub:has(input:checked) .ocard__box { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(11,13,16,0.08); }
+.ocard__cta {
+  display: flex; width: fit-content; min-width: 140px; min-height: 40px;
+  margin: 0 14px 0 auto; padding: 9px 18px;
+  font-size: 0.8rem; letter-spacing: 0.02em;
+  box-shadow: none;
+}
+.ocard__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+.ocard--sub:has(input:checked) { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(11,13,16,0.08); }
 .ocard--sub:has(input:checked) .ocard__radio { border-color: var(--ink); }
 .ocard--sub:has(input:checked) .ocard__radio::after { background: var(--ink); }
 /* estado selecionado */
-.ocard:has(input:checked) .ocard__box { border-color: var(--copper); box-shadow: 0 0 0 3px var(--blush); background: #FBFDFF; }
+.ocard:has(input:checked) { border-color: var(--copper); box-shadow: 0 0 0 3px var(--blush); background: #FBFDFF; }
 .ocard:has(input:checked) .ocard__radio { border-color: var(--copper); }
 .ocard:has(input:checked) .ocard__radio::after { transform: scale(1); }
 .ocard input:focus-visible + .ocard__box { outline: 2px solid var(--copper); outline-offset: 2px; }
@@ -356,7 +371,6 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 .scratch.is-revealed ~ .upsell__prizes .prize { animation: prizePop .5s var(--ease) both; }
 @keyframes prizePop { from { transform: scale(0.97); opacity: .5; } to { transform: scale(1); opacity: 1; } }
 
-.shop__cta { margin-top: 22px; }
 .shop__trust { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 16px; font-size: 0.82rem; color: var(--stone); }
 .shop__trust span { display: inline-flex; align-items: center; gap: 6px; }
 
@@ -1020,6 +1034,7 @@ html.lenis, html.lenis body { height: auto; }
   .header__cta { padding: 9px 18px; font-size: 0.85rem; }
   .shop__title { font-size: clamp(1.5rem, 7vw, 1.9rem); }
   .ocard__box { padding: 14px 14px; gap: 10px; }
+  .ocard__cta { min-width: 132px; margin-right: 12px; padding-inline: 16px; }
   .ocard__now { font-size: 1.2rem; }
   .prize { grid-template-columns: 28px 1fr auto; gap: 10px; padding: 11px 12px; }
   .bio__stats { grid-template-columns: 1fr 1fr; }

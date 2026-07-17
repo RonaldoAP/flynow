@@ -11,6 +11,9 @@
   <link rel="canonical" href="https://www.divessencebeauty.com.br/" />
   <meta name="theme-color" content="#0B7BD6" />
 
+  <!-- RedTrack · carregamento base -->
+  <script type="text/javascript" src="https://red.track.divessencebeauty.com.br/track.js?"></script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favico.png?v=1" />
   <link rel="apple-touch-icon" href="img/favico.png?v=1" />
@@ -164,90 +167,102 @@
           </p>
 
           <!-- OPÇÕES DE COMPRA -->
-          <div class="offers" data-offers>
+          <div class="offers" id="heroOffers" data-offers>
             <span class="offers__label">Escolha seu kit</span>
 
-            <label class="ocard">
-              <input type="radio" name="hero-offer" value="1"
-                     data-link="https://red.track.divessencebeauty.com.br/click/1"
-                     data-img="img/mockup-unidade.webp" data-off="19% OFF"
-                     data-old="182,90" data-price="147,90" data-unit="147,90 / frasco"
-                     data-parcela="12x de R$ 12,33 sem juros" data-avista="ou R$ 140,51 à vista no Pix" checked />
-              <span class="ocard__box">
-                <span class="ocard__radio"></span>
-                <span class="ocard__main">
-                  <span class="ocard__name">1 unidade</span>
-                  <span class="ocard__unit">R$ 147,90 por frasco</span>
+            <div class="ocard">
+              <label class="ocard__select">
+                <input type="radio" name="hero-offer" value="1"
+                       data-link="https://red.track.divessencebeauty.com.br/click/1"
+                       data-img="img/mockup-unidade.webp" data-off="19% OFF"
+                       data-old="182,90" data-price="147,90" data-unit="147,90 / frasco"
+                       data-parcela="12x de R$ 12,33 sem juros" data-avista="ou R$ 140,51 à vista no Pix" checked />
+                <span class="ocard__box">
+                  <span class="ocard__radio"></span>
+                  <span class="ocard__main">
+                    <span class="ocard__name">1 unidade</span>
+                    <span class="ocard__unit">R$ 147,90 por frasco</span>
+                  </span>
+                  <span class="ocard__price">
+                    <span class="ocard__old">R$ 182,90</span>
+                    <span class="ocard__now">R$ 147,90</span>
+                  </span>
                 </span>
-                <span class="ocard__price">
-                  <span class="ocard__old">R$ 182,90</span>
-                  <span class="ocard__now">R$ 147,90</span>
-                </span>
-              </span>
-            </label>
+              </label>
+              <a href="https://red.track.divessencebeauty.com.br/click/1" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar kit de 1 unidade">Comprar agora</a>
+            </div>
 
             <!-- Ofertas de 3 e 6 unidades ficam sob a raspadinha -->
             <div class="scratch" id="scratch">
               <div class="scratch__offers">
-                <label class="ocard ocard--best">
-                  <input type="radio" name="hero-offer" value="3"
-                         data-link="https://red.track.divessencebeauty.com.br/click/2"
-                         data-img="img/mockup-combo.webp" data-off="46% OFF"
-                         data-old="548,70" data-price="297,90" data-unit="99,30 / frasco"
-                         data-parcela="12x de R$ 24,83 sem juros" data-avista="ou R$ 283,01 à vista no Pix" />
-                  <span class="ocard__tag">★ Mais vendido</span>
-                  <span class="ocard__box">
-                    <span class="ocard__radio"></span>
-                    <span class="ocard__main">
-                      <span class="ocard__name">Compre 2, leve 3</span>
-                      <span class="ocard__unit">R$ 99,30 por frasco · economize 46%</span>
+                <div class="ocard ocard--best">
+                  <label class="ocard__select">
+                    <input type="radio" name="hero-offer" value="3"
+                           data-link="https://red.track.divessencebeauty.com.br/click/2"
+                           data-img="img/mockup-combo.webp" data-off="46% OFF"
+                           data-old="548,70" data-price="297,90" data-unit="99,30 / frasco"
+                           data-parcela="12x de R$ 24,83 sem juros" data-avista="ou R$ 283,01 à vista no Pix" />
+                    <span class="ocard__tag">★ Mais vendido</span>
+                    <span class="ocard__box">
+                      <span class="ocard__radio"></span>
+                      <span class="ocard__main">
+                        <span class="ocard__name">Compre 2, leve 3</span>
+                        <span class="ocard__unit">R$ 99,30 por frasco · economize 46%</span>
+                      </span>
+                      <span class="ocard__price">
+                        <span class="ocard__old">R$ 548,70</span>
+                        <span class="ocard__now">R$ 297,90</span>
+                      </span>
                     </span>
-                    <span class="ocard__price">
-                      <span class="ocard__old">R$ 548,70</span>
-                      <span class="ocard__now">R$ 297,90</span>
-                    </span>
-                  </span>
-                </label>
+                  </label>
+                  <a href="https://red.track.divessencebeauty.com.br/click/2" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar kit de 3 unidades">Comprar agora</a>
+                </div>
 
-                <label class="ocard ocard--gold">
-                  <input type="radio" name="hero-offer" value="6"
-                         data-link="https://red.track.divessencebeauty.com.br/click/3"
-                         data-img="img/mockup-combo.webp" data-off="55% OFF"
-                         data-old="1.097,40" data-price="489,90" data-unit="81,65 / frasco"
-                         data-parcela="12x de R$ 40,83 sem juros" data-avista="ou R$ 465,41 à vista no Pix" />
-                  <span class="ocard__tag ocard__tag--gold">Melhor oferta · 55% OFF</span>
-                  <span class="ocard__box">
-                    <span class="ocard__radio"></span>
-                    <span class="ocard__main">
-                      <span class="ocard__name">6 unidades</span>
-                      <span class="ocard__unit">R$ 81,65 por frasco · máxima economia</span>
+                <div class="ocard ocard--gold">
+                  <label class="ocard__select">
+                    <input type="radio" name="hero-offer" value="6"
+                           data-link="https://red.track.divessencebeauty.com.br/click/3"
+                           data-img="img/mockup-combo.webp" data-off="55% OFF"
+                           data-old="1.097,40" data-price="489,90" data-unit="81,65 / frasco"
+                           data-parcela="12x de R$ 40,83 sem juros" data-avista="ou R$ 465,41 à vista no Pix" />
+                    <span class="ocard__tag ocard__tag--gold">Melhor oferta · 55% OFF</span>
+                    <span class="ocard__box">
+                      <span class="ocard__radio"></span>
+                      <span class="ocard__main">
+                        <span class="ocard__name">6 unidades</span>
+                        <span class="ocard__unit">R$ 81,65 por frasco · máxima economia</span>
+                      </span>
+                      <span class="ocard__price">
+                        <span class="ocard__old">R$ 1.097,40</span>
+                        <span class="ocard__now">R$ 489,90</span>
+                      </span>
                     </span>
-                    <span class="ocard__price">
-                      <span class="ocard__old">R$ 1.097,40</span>
-                      <span class="ocard__now">R$ 489,90</span>
-                    </span>
-                  </span>
-                </label>
+                  </label>
+                  <a href="https://red.track.divessencebeauty.com.br/click/3" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar kit de 6 unidades">Comprar agora</a>
+                </div>
 
-                <label class="ocard ocard--sub">
-                  <input type="radio" name="hero-offer" value="assinatura"
-                         data-link="https://red.track.divessencebeauty.com.br/click/4"
-                         data-img="img/mockup-assinatura.webp" data-off="34% OFF"
-                         data-old="182,90" data-price="119,90" data-unit="119,90 / mês"
-                         data-parcela="Assinatura mensal · renova automaticamente" data-avista="Cancele quando quiser · sem fidelidade" />
-                  <span class="ocard__tag ocard__tag--sub">Assine e economize</span>
-                  <span class="ocard__box">
-                    <span class="ocard__radio"></span>
-                    <span class="ocard__main">
-                      <span class="ocard__name">Assinatura mensal</span>
-                      <span class="ocard__unit">1 frasco todo mês · cancele quando quiser</span>
+                <div class="ocard ocard--sub">
+                  <label class="ocard__select">
+                    <input type="radio" name="hero-offer" value="assinatura"
+                           data-link="https://red.track.divessencebeauty.com.br/click/4"
+                           data-img="img/mockup-assinatura.webp" data-off="34% OFF"
+                           data-old="182,90" data-price="119,90" data-unit="119,90 / mês"
+                           data-parcela="Assinatura mensal · renova automaticamente" data-avista="Cancele quando quiser · sem fidelidade" />
+                    <span class="ocard__tag ocard__tag--sub">Assine e economize</span>
+                    <span class="ocard__box">
+                      <span class="ocard__radio"></span>
+                      <span class="ocard__main">
+                        <span class="ocard__name">Assinatura mensal</span>
+                        <span class="ocard__unit">1 frasco todo mês · cancele quando quiser</span>
+                      </span>
+                      <span class="ocard__price">
+                        <span class="ocard__old">R$ 182,90</span>
+                        <span class="ocard__now">R$ 119,90<small>/mês</small></span>
+                      </span>
                     </span>
-                    <span class="ocard__price">
-                      <span class="ocard__old">R$ 182,90</span>
-                      <span class="ocard__now">R$ 119,90<small>/mês</small></span>
-                    </span>
-                  </span>
-                </label>
+                  </label>
+                  <a href="https://red.track.divessencebeauty.com.br/click/4" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar assinatura mensal">Comprar agora</a>
+                </div>
               </div>
               <canvas class="scratch__cover" id="scratchCover"></canvas>
               <div class="scratch__hint" id="scratchHint">
@@ -284,8 +299,6 @@
               </div>
             </div>
           </div>
-
-          <a href="https://red.track.divessencebeauty.com.br/click/1" class="btn btn--solid btn--lg btn--block shop__cta smartplayer-click-event">Adicionar ao carrinho</a>
 
           <div class="shop__trust">
             <span><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Compra segura</span>
@@ -629,85 +642,97 @@
           <h3 class="checkout__title">Sérum GHK-Cu · Peptídeo de Cobre 30ml</h3>
           <p class="checkout__sub">Selecione a quantidade ideal para o seu protocolo:</p>
 
-          <div class="offers offers--lg" data-offers-lg>
-            <label class="ocard">
-              <input type="radio" name="offer" value="1"
-                     data-link="https://red.track.divessencebeauty.com.br/click/1"
-                     data-img="img/mockup-unidade.webp" data-off="19% OFF"
-                     data-old="182,90" data-price="147,90" data-unit="147,90 / frasco"
-                     data-parcela="12x de R$ 12,33 sem juros" data-avista="ou R$ 140,51 à vista no Pix" checked />
-              <span class="ocard__box">
-                <span class="ocard__radio"></span>
-                <span class="ocard__main">
-                  <span class="ocard__name">1 unidade</span>
-                  <span class="ocard__unit">R$ 147,90 por frasco</span>
+          <div class="offers offers--lg" id="checkoutOffers" data-offers-lg>
+            <div class="ocard">
+              <label class="ocard__select">
+                <input type="radio" name="offer" value="1"
+                       data-link="https://red.track.divessencebeauty.com.br/click/1"
+                       data-img="img/mockup-unidade.webp" data-off="19% OFF"
+                       data-old="182,90" data-price="147,90" data-unit="147,90 / frasco"
+                       data-parcela="12x de R$ 12,33 sem juros" data-avista="ou R$ 140,51 à vista no Pix" checked />
+                <span class="ocard__box">
+                  <span class="ocard__radio"></span>
+                  <span class="ocard__main">
+                    <span class="ocard__name">1 unidade</span>
+                    <span class="ocard__unit">R$ 147,90 por frasco</span>
+                  </span>
+                  <span class="ocard__price">
+                    <span class="ocard__old">R$ 182,90</span>
+                    <span class="ocard__now">R$ 147,90</span>
+                  </span>
                 </span>
-                <span class="ocard__price">
-                  <span class="ocard__old">R$ 182,90</span>
-                  <span class="ocard__now">R$ 147,90</span>
-                </span>
-              </span>
-            </label>
+              </label>
+              <a href="https://red.track.divessencebeauty.com.br/click/1" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar kit de 1 unidade">Comprar agora</a>
+            </div>
 
-            <label class="ocard ocard--best">
-              <input type="radio" name="offer" value="3"
-                     data-link="https://red.track.divessencebeauty.com.br/click/2"
-                     data-img="img/mockup-combo.webp" data-off="46% OFF"
-                     data-old="548,70" data-price="297,90" data-unit="99,30 / frasco"
-                     data-parcela="12x de R$ 24,83 sem juros" data-avista="ou R$ 283,01 à vista no Pix" />
-              <span class="ocard__tag">★ Mais vendido</span>
-              <span class="ocard__box">
-                <span class="ocard__radio"></span>
-                <span class="ocard__main">
-                  <span class="ocard__name">Compre 2, leve 3 <em class="ocard__free">+ Frete grátis</em></span>
-                  <span class="ocard__unit">R$ 99,30 por frasco · economize 46%</span>
+            <div class="ocard ocard--best">
+              <label class="ocard__select">
+                <input type="radio" name="offer" value="3"
+                       data-link="https://red.track.divessencebeauty.com.br/click/2"
+                       data-img="img/mockup-combo.webp" data-off="46% OFF"
+                       data-old="548,70" data-price="297,90" data-unit="99,30 / frasco"
+                       data-parcela="12x de R$ 24,83 sem juros" data-avista="ou R$ 283,01 à vista no Pix" />
+                <span class="ocard__tag">★ Mais vendido</span>
+                <span class="ocard__box">
+                  <span class="ocard__radio"></span>
+                  <span class="ocard__main">
+                    <span class="ocard__name">Compre 2, leve 3 <em class="ocard__free">+ Frete grátis</em></span>
+                    <span class="ocard__unit">R$ 99,30 por frasco · economize 46%</span>
+                  </span>
+                  <span class="ocard__price">
+                    <span class="ocard__old">R$ 548,70</span>
+                    <span class="ocard__now">R$ 297,90</span>
+                  </span>
                 </span>
-                <span class="ocard__price">
-                  <span class="ocard__old">R$ 548,70</span>
-                  <span class="ocard__now">R$ 297,90</span>
-                </span>
-              </span>
-            </label>
+              </label>
+              <a href="https://red.track.divessencebeauty.com.br/click/2" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar kit de 3 unidades">Comprar agora</a>
+            </div>
 
-            <label class="ocard ocard--gold">
-              <input type="radio" name="offer" value="6"
-                     data-link="https://red.track.divessencebeauty.com.br/click/3"
-                     data-img="img/mockup-combo.webp" data-off="55% OFF"
-                     data-old="1.097,40" data-price="489,90" data-unit="81,65 / frasco"
-                     data-parcela="12x de R$ 40,83 sem juros" data-avista="ou R$ 465,41 à vista no Pix" />
-              <span class="ocard__tag ocard__tag--gold">Melhor oferta · 55% OFF</span>
-              <span class="ocard__box">
-                <span class="ocard__radio"></span>
-                <span class="ocard__main">
-                  <span class="ocard__name">6 unidades <em class="ocard__free">+ Frete grátis</em></span>
-                  <span class="ocard__unit">R$ 81,65 por frasco · máxima economia</span>
+            <div class="ocard ocard--gold">
+              <label class="ocard__select">
+                <input type="radio" name="offer" value="6"
+                       data-link="https://red.track.divessencebeauty.com.br/click/3"
+                       data-img="img/mockup-combo.webp" data-off="55% OFF"
+                       data-old="1.097,40" data-price="489,90" data-unit="81,65 / frasco"
+                       data-parcela="12x de R$ 40,83 sem juros" data-avista="ou R$ 465,41 à vista no Pix" />
+                <span class="ocard__tag ocard__tag--gold">Melhor oferta · 55% OFF</span>
+                <span class="ocard__box">
+                  <span class="ocard__radio"></span>
+                  <span class="ocard__main">
+                    <span class="ocard__name">6 unidades <em class="ocard__free">+ Frete grátis</em></span>
+                    <span class="ocard__unit">R$ 81,65 por frasco · máxima economia</span>
+                  </span>
+                  <span class="ocard__price">
+                    <span class="ocard__old">R$ 1.097,40</span>
+                    <span class="ocard__now">R$ 489,90</span>
+                  </span>
                 </span>
-                <span class="ocard__price">
-                  <span class="ocard__old">R$ 1.097,40</span>
-                  <span class="ocard__now">R$ 489,90</span>
-                </span>
-              </span>
-            </label>
+              </label>
+              <a href="https://red.track.divessencebeauty.com.br/click/3" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar kit de 6 unidades">Comprar agora</a>
+            </div>
 
-            <label class="ocard ocard--sub">
-              <input type="radio" name="offer" value="assinatura"
-                     data-link="https://red.track.divessencebeauty.com.br/click/4"
-                     data-img="img/mockup-assinatura.webp" data-off="34% OFF"
-                     data-old="182,90" data-price="119,90" data-unit="119,90 / mês"
-                     data-parcela="Assinatura mensal · renova automaticamente" data-avista="Cancele quando quiser · sem fidelidade" />
-              <span class="ocard__tag ocard__tag--sub">Assine e economize</span>
-              <span class="ocard__box">
-                <span class="ocard__radio"></span>
-                <span class="ocard__main">
-                  <span class="ocard__name">Assinatura mensal <em class="ocard__free">+ Frete grátis</em></span>
-                  <span class="ocard__unit">1 frasco todo mês · cancele quando quiser</span>
+            <div class="ocard ocard--sub">
+              <label class="ocard__select">
+                <input type="radio" name="offer" value="assinatura"
+                       data-link="https://red.track.divessencebeauty.com.br/click/4"
+                       data-img="img/mockup-assinatura.webp" data-off="34% OFF"
+                       data-old="182,90" data-price="119,90" data-unit="119,90 / mês"
+                       data-parcela="Assinatura mensal · renova automaticamente" data-avista="Cancele quando quiser · sem fidelidade" />
+                <span class="ocard__tag ocard__tag--sub">Assine e economize</span>
+                <span class="ocard__box">
+                  <span class="ocard__radio"></span>
+                  <span class="ocard__main">
+                    <span class="ocard__name">Assinatura mensal <em class="ocard__free">+ Frete grátis</em></span>
+                    <span class="ocard__unit">1 frasco todo mês · cancele quando quiser</span>
+                  </span>
+                  <span class="ocard__price">
+                    <span class="ocard__old">R$ 182,90</span>
+                    <span class="ocard__now">R$ 119,90<small>/mês</small></span>
+                  </span>
                 </span>
-                <span class="ocard__price">
-                  <span class="ocard__old">R$ 182,90</span>
-                  <span class="ocard__now">R$ 119,90<small>/mês</small></span>
-                </span>
-              </span>
-            </label>
+              </label>
+              <a href="https://red.track.divessencebeauty.com.br/click/4" class="btn btn--solid btn--block ocard__cta smartplayer-click-event" data-kit-checkout aria-label="Comprar assinatura mensal">Comprar agora</a>
+            </div>
           </div>
 
           <!-- Resumo de parcelamento -->
@@ -721,8 +746,6 @@
               <em id="sumAvista">ou R$ 140,51 à vista no Pix</em>
             </div>
           </div>
-
-          <a href="https://red.track.divessencebeauty.com.br/click/1" class="btn btn--solid btn--lg btn--block checkout__cta smartplayer-click-event">Comprar agora</a>
 
           <div class="checkout__badges">
             <div class="tbadge"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> Frete Grátis</div>
@@ -949,51 +972,6 @@
   <script src="assets/js/lenis.min.js?v=20260710e"></script>
   <script src="assets/js/main.js?v=20260710e"></script>
   <script src="assets/js/effects.js?v=20260710e"></script>
-
-  <!-- RedTrack · track.js -->
-  <script type="text/javascript" src="https://red.track.divessencebeauty.com.br/track.js?"></script>
-
-  <!-- RedTrack · postback InitiateCheckout ao clicar nos botões de compra -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var urlParams = new URLSearchParams(window.location.search);
-      var clickid = urlParams.get("rtkcid");
-
-      if (clickid) {
-        document.querySelectorAll(".smartplayer-click-event").forEach(function (link) {
-          link.addEventListener("click", function (event) {
-            event.preventDefault(); // IMPEDIR navegação imediata
-            var destination = link.href;
-            var redirected = false;
-            function go() {
-              if (redirected) return;
-              redirected = true;
-              window.location.href = destination;
-            }
-
-            var postbackURL = "https://red.track.divessencebeauty.com.br/postback?clickid="
-                            + clickid + "&type=InitiateCheckout";
-
-            // Disparar postback e redirecionar APÓS completar
-            fetch(postbackURL, { method: "GET" })
-              .then(function (response) {
-                console.log("Postback InitiateCheckout disparado com sucesso");
-              })
-              .catch(function (error) {
-                console.error("Erro ao disparar postback:", error);
-              })
-              .finally(function () {
-                go(); // Só redireciona APÓS o postback
-              });
-
-            // Fallback de segurança: se demorar mais de 2s, redireciona mesmo assim
-            setTimeout(go, 2000);
-          });
-        });
-      } else {
-        console.warn("ClickID (rtkcid) não encontrado na URL. Conversão não será disparada.");
-      }
-    });
-  </script>
+  <script src="assets/js/checkout.js?v=20260717b"></script>
 </body>
 </html>

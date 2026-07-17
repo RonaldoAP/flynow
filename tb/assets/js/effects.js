@@ -181,20 +181,6 @@
     });
   }
 
-  /* ─────────── Link de checkout (Payt) por oferta selecionada ─────────── */
-  function wireCtaLinks(offersSelector, ctaSelector) {
-    var container = document.querySelector(offersSelector);
-    var cta = document.querySelector(ctaSelector);
-    if (!container || !cta) return;
-    function update(r) { if (r && r.dataset.link) cta.setAttribute('href', r.dataset.link); }
-    container.querySelectorAll('input[type="radio"]').forEach(function (r) {
-      r.addEventListener('change', function () { if (r.checked) update(r); });
-    });
-    update(container.querySelector('input[type="radio"]:checked'));
-  }
-  wireCtaLinks('.hero [data-offers]', '.shop__cta');
-  wireCtaLinks('[data-checkout]', '.checkout__cta');
-
   /* ─────────── Miniatura por unidade ao lado do checkbox (visível no mobile) ─────────── */
   Array.prototype.slice.call(document.querySelectorAll('.ocard')).forEach(function (card) {
     var input = card.querySelector('input');
