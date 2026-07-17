@@ -952,7 +952,47 @@
 
   <!-- RedTrack · track.js -->
   <script src="https://red.track.divessencebeauty.com.br/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6a5908f939d1b65f467961dd&regviewonce=false"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Observador para detectar quando o effects.js atualiza o link do checkout
+  var checkoutBtn = document.querySelector('.checkout__cta');
+  var shopBtn = document.querySelector('.shop__cta');
+  
+  // Função para atualizar o clickid nos botões
+  function updateLinks() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var clickid = urlParams.get("rtkcid");
+    if (clickid) {
+      // Atualiza o botão do checkout
+      if (checkoutBtn) {
+        var baseLink = checkoutBtn.getAttribute('href').split('?')[0];
+        checkoutBtn.setAttribute('href', baseLink + '?clickid=' + clickid + '&rtkck=');
+      }
+      // Atualiza o botão do hero
+      if (shopBtn) {
+        var baseLink = shopBtn.getAttribute('href').split('?')[0];
+        shopBtn.setAttribute('href', baseLink + '?clickid=' + clickid + '&rtkck=');
+      }
+    }
+  }
 
+  // Observador de Mutação para detectar mudanças no atributo href
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'href') {
+        updateLinks();
+      }
+    });
+  });
+
+  // Inicia a observação nos botões
+  if (checkoutBtn) observer.observe(checkoutBtn, { attributes: true });
+  if (shopBtn) observer.observe(shopBtn, { attributes: true });
+  
+  // Garante que o link esteja atualizado no carregamento
+  updateLinks();
+});
+</script>
   <!-- RedTrack · postback InitiateCheckout ao clicar nos botões de compra -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
