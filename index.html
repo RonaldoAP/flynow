@@ -1035,23 +1035,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   </script>
-  <!-- Limpar referrer vazio dos links de compra -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    function cleanReferrer() {
-      document.querySelectorAll('.smartplayer-click-event').forEach(function(link) {
+    var links = document.querySelectorAll('.smartplayer-click-event');
+    links.forEach(function(link) {
+      link.href = link.href.replace('&referrer=', '');
+      var obs = new MutationObserver(function() {
         link.href = link.href.replace('&referrer=', '');
       });
-    }
-    cleanReferrer();
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        if (m.type === 'attributes' && m.attributeName === 'href') {
-          m.target.href = m.target.href.replace('&referrer=', '');
-        }
-      });
+      obs.observe(link, { attributes: true, attributeFilter: ['href'] });
     });
-    observer.observe(document.body, { attributes: true, subtree: true });
   });
 </script>
 </body>
