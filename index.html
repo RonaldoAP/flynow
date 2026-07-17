@@ -1035,17 +1035,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   </script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var links = document.querySelectorAll('.smartplayer-click-event');
-    links.forEach(function(link) {
-      link.href = link.href.replace('&referrer=', '');
-      var obs = new MutationObserver(function() {
-        link.href = link.href.replace('&referrer=', '');
-      });
-      obs.observe(link, { attributes: true, attributeFilter: ['href'] });
-    });
-  });
-</script>
 </body>
 </html>
