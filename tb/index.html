@@ -956,6 +956,17 @@
       </div>
     </div>
     <div class="wrap footer__bottom">
+      <div class="lgl-legal">
+        <p class="lgl-company">FLY NOW AGENCIA DIGITAL LTDA — CNPJ 44.545.447/0001-11</p>
+        <p class="lgl-addr">Rua Amapá, 136 — Dihel, Sapucaia do Sul/RS — CEP 93210-040</p>
+        <p class="lgl-contact">Contato: <a href="mailto:contato@divessencebeauty.com.br">contato@divessencebeauty.com.br</a> · WhatsApp <a href="https://wa.me/5511936219724" target="_blank" rel="noopener">(11) 93621-9724</a></p>
+        <p class="lgl-links">
+          <a href="#" data-modal="disclaimer">Disclaimer</a>
+          <a href="#" data-modal="isencao">Isenção de Responsabilidade</a>
+          <a href="#" data-modal="privacidade">Política de Privacidade</a>
+          <a href="#" data-modal="reembolso">Política de Reembolso</a>
+        </p>
+      </div>
       <span>© 2026 Divessence. Todos os direitos reservados.</span>
     </div>
   </footer>
@@ -973,5 +984,90 @@
   <script src="assets/js/main.js?v=20260710e"></script>
   <script src="assets/js/effects.js?v=20260710e"></script>
   <script src="assets/js/checkout.js?v=20260717b"></script>
+  <!-- ===== LEGAL (so Taboola) ===== -->
+  <style>
+    .lgl-legal{width:100%;margin:0 0 16px;font-size:13px;line-height:1.65;opacity:.82;text-align:left}
+    .lgl-legal p{margin:3px 0}
+    .lgl-company{font-weight:600;opacity:1}
+    .lgl-legal a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+    .lgl-links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px!important}
+    .lgl-links a{cursor:pointer}
+    .lgl-modal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.62)}
+    .lgl-modal.is-open{display:flex}
+    .lgl-modal__box{position:relative;background:#fff;color:#1a1a1a;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;border-radius:16px;padding:30px 28px;box-shadow:0 24px 70px rgba(0,0,0,.32)}
+    .lgl-modal__box h3{margin:0 34px 16px 0;font-size:21px;line-height:1.25}
+    .lgl-modal__box h4{margin:18px 0 4px;font-size:14.5px}
+    .lgl-modal__box p{margin:0 0 11px;font-size:14px;line-height:1.7}
+    .lgl-modal__close{position:absolute;top:16px;right:16px;border:0;background:#f0f0f0;width:34px;height:34px;border-radius:50%;font-size:19px;cursor:pointer;line-height:1;color:#333}
+    .lgl-modal__close:hover{background:#e2e2e2}
+  </style>
+
+  <div class="lgl-modal" id="lgl-disclaimer" role="dialog" aria-modal="true" aria-label="Disclaimer">
+    <div class="lgl-modal__box">
+      <button class="lgl-modal__close" aria-label="Fechar">×</button>
+      <h3>Disclaimer</h3>
+      <p>Esta página tem caráter publicitário e finalidade informativa e comercial sobre os produtos Divessence, comercializados por FLY NOW AGENCIA DIGITAL LTDA (CNPJ 44.545.447/0001-11).</p>
+      <p>Os depoimentos, avaliações e imagens de resultados apresentados são individuais e ilustrativos, não constituindo garantia de resultados idênticos. Os resultados podem variar de pessoa para pessoa conforme o tipo de pele, a frequência e a forma de uso e as características individuais de cada consumidor.</p>
+      <p>Este é um produto cosmético de uso tópico e não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
+    </div>
+  </div>
+
+  <div class="lgl-modal" id="lgl-isencao" role="dialog" aria-modal="true" aria-label="Isencao de Responsabilidade">
+    <div class="lgl-modal__box">
+      <button class="lgl-modal__close" aria-label="Fechar">×</button>
+      <h3>Isenção de Responsabilidade</h3>
+      <p>Os produtos comercializados são dermocosméticos de uso externo e devem ser utilizados conforme as instruções do rótulo e da embalagem.</p>
+      <p>As informações contidas nesta página não substituem a consulta, o diagnóstico ou o acompanhamento de médico dermatologista ou de outro profissional de saúde qualificado. Em caso de irritação, alergia ou qualquer reação adversa, suspenda o uso imediatamente e procure orientação profissional.</p>
+      <p>A FLY NOW AGENCIA DIGITAL LTDA não se responsabiliza por uso indevido do produto nem por reações decorrentes de sensibilidade individual a qualquer componente da fórmula. Mantenha fora do alcance de crianças. Uso externo.</p>
+    </div>
+  </div>
+
+  <div class="lgl-modal" id="lgl-privacidade" role="dialog" aria-modal="true" aria-label="Politica de Privacidade">
+    <div class="lgl-modal__box">
+      <button class="lgl-modal__close" aria-label="Fechar">×</button>
+      <h3>Política de Privacidade</h3>
+      <p>A sua privacidade é importante para nós. Esta Política descreve como a FLY NOW AGENCIA DIGITAL LTDA (CNPJ 44.545.447/0001-11) coleta, utiliza e protege seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+      <h4>Dados que coletamos</h4>
+      <p>Nome, e-mail, telefone e endereço fornecidos no momento da compra; e dados de navegação (páginas visitadas, origem do acesso e dispositivo), coletados automaticamente por cookies e ferramentas de rastreamento.</p>
+      <h4>Finalidade</h4>
+      <p>Processar pedidos e pagamentos, realizar entregas, prestar atendimento, enviar comunicações sobre produtos e ofertas e mensurar o desempenho das nossas campanhas de publicidade.</p>
+      <h4>Cookies e rastreamento</h4>
+      <p>Utilizamos cookies e ferramentas de análise de terceiros (incluindo plataformas de rastreamento de conversão e redes de anúncios) para medir a eficácia das campanhas. Você pode desativar os cookies nas configurações do seu navegador.</p>
+      <h4>Compartilhamento</h4>
+      <p>Seus dados podem ser compartilhados com operadores de pagamento, transportadoras e plataformas de tecnologia, estritamente para viabilizar a compra. Não vendemos seus dados a terceiros.</p>
+      <h4>Seus direitos</h4>
+      <p>Você pode solicitar, a qualquer momento, o acesso, a correção, a portabilidade ou a exclusão dos seus dados, bem como revogar consentimentos, pelo e-mail contato@divessencebeauty.com.br.</p>
+      <h4>Controlador</h4>
+      <p>FLY NOW AGENCIA DIGITAL LTDA — Rua Amapá, 136, Dihel, Sapucaia do Sul/RS, CEP 93210-040 — contato@divessencebeauty.com.br.</p>
+    </div>
+  </div>
+
+  <div class="lgl-modal" id="lgl-reembolso" role="dialog" aria-modal="true" aria-label="Politica de Reembolso">
+    <div class="lgl-modal__box">
+      <button class="lgl-modal__close" aria-label="Fechar">×</button>
+      <h3>Política de Reembolso</h3>
+      <h4>Direito de arrependimento</h4>
+      <p>Nos termos do art. 49 do Código de Defesa do Consumidor, você pode desistir da compra em até 7 (sete) dias corridos, contados do recebimento do produto, sem necessidade de justificativa. Nesse caso, o valor pago é integralmente reembolsado, incluindo o frete.</p>
+      <h4>Garantia de satisfação</h4>
+      <p>Além do direito legal, oferecemos garantia de 30 (trinta) dias. Se não ficar satisfeito com o produto, entre em contato dentro desse prazo para solicitar a devolução e o reembolso.</p>
+      <h4>Como solicitar</h4>
+      <p>Envie um e-mail para contato@divessencebeauty.com.br ou uma mensagem para o WhatsApp (11) 93621-9724, informando o número do pedido e o motivo. Nossa equipe orientará sobre a devolução.</p>
+      <h4>Prazo de reembolso</h4>
+      <p>Após o recebimento e a conferência do produto devolvido, o reembolso é processado em até 7 (sete) dias úteis, pelo mesmo meio de pagamento utilizado na compra. O prazo de estorno pode variar conforme a operadora do cartão ou a instituição financeira.</p>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      document.querySelectorAll('[data-modal]').forEach(function(a){
+        a.addEventListener('click',function(e){e.preventDefault();var m=document.getElementById('lgl-'+a.getAttribute('data-modal'));if(m){m.classList.add('is-open');document.body.style.overflow='hidden';}});
+      });
+      document.querySelectorAll('.lgl-modal').forEach(function(m){
+        m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('lgl-modal__close')){m.classList.remove('is-open');document.body.style.overflow='';}});
+      });
+      document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.lgl-modal.is-open').forEach(function(m){m.classList.remove('is-open');});document.body.style.overflow='';}});
+    })();
+  </script>
+
 </body>
 </html>
