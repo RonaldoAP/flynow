@@ -1,37 +1,60 @@
 (function () {
   'use strict';
 
-  function preservePageParams(link) {
+  function preservePageParams(link, trackedParams) {
     var destination = new URL(link.getAttribute('href'), window.location.href);
     var currentParams = new URLSearchParams(window.location.search);
 
-    currentParams.forEach(function (value, key) {
-      if (!destination.searchParams.has(key)) {
-        destination.searchParams.append(key, value);
-      }
+    [currentParams, trackedParams].forEach(function (params) {
+      if (!params) return;
+      params.forEach(function (value, key) {
+        if (!destination.searchParams.has(key)) {
+          destination.searchParams.append(key, value);
+        }
+      });
     });
 
     link.setAttribute('href', destination.toString());
   }
 
+  function syncSelectedCheckout(button) {
+    var sourceId = button.getAttribute('data-checkout-source');
+    var source = sourceId ? document.getElementById(sourceId) : null;
+    var offer = source
+      ? source.querySelector('input[type="radio"]:checked')
+      : null;
+
+    if (!offer || !offer.dataset.link) return null;
+
+    var trackedParams = new URL(button.href, window.location.href).searchParams;
+    button.setAttribute('href', offer.dataset.link);
+    preservePageParams(button, trackedParams);
+    return offer;
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var checkoutButtons = document.querySelectorAll(
-      '[data-kit-checkout].smartplayer-click-event'
+      '[data-checkout-button].smartplayer-click-event'
     );
     var urlParams = new URLSearchParams(window.location.search);
     var clickid = urlParams.get('rtkcid');
 
     checkoutButtons.forEach(function (button) {
-      preservePageParams(button);
+      var sourceId = button.getAttribute('data-checkout-source');
+      var source = sourceId ? document.getElementById(sourceId) : null;
+
+      if (source) {
+        source.querySelectorAll('input[type="radio"]').forEach(function (offer) {
+          offer.addEventListener('change', function () {
+            if (offer.checked) syncSelectedCheckout(button);
+          });
+        });
+      }
+
+      syncSelectedCheckout(button);
 
       button.addEventListener('click', function () {
-        var card = button.closest('.ocard');
-        var offer = card ? card.querySelector('input[type="radio"]') : null;
-
-        if (offer && !offer.checked) {
-          offer.checked = true;
-          offer.dispatchEvent(new Event('change', { bubbles: true }));
-        }
+        syncSelectedCheckout(button);
       });
 
       if (clickid) {
