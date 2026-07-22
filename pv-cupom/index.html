@@ -13,6 +13,12 @@
     <meta name="theme-color" content="#0b6fb8" />
     <link rel="icon" type="image/png" href="img/favico.png" />
 
+    <!-- RedTrack · carregamento base conforme flynow-main -->
+    <script
+      type="text/javascript"
+      src="https://red.track.divessencebeauty.com.br/track.js?"
+    ></script>
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Divessence" />
@@ -32,7 +38,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/7-motivos.css?v=20260716b" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/7-motivos.css?v=20260721d" />
+    <link rel="stylesheet" href="assets/css/inline-checkout.css?v=20260721a" />
   </head>
   <body>
     <svg class="svg-sprite" aria-hidden="true">
@@ -48,6 +59,27 @@
         <path d="M3 6h11v11H3zM14 10h4l3 4v3h-7z" />
         <circle cx="7" cy="18" r="2" />
         <circle cx="18" cy="18" r="2" />
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24">
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+        <path d="M15 18H9" />
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+        <circle cx="17" cy="18" r="2" />
+        <circle cx="7" cy="18" r="2" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+        <path d="m9 12 2 2 4-4" />
+      </symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24">
+        <rect x="3" y="8" width="18" height="4" rx="1" />
+        <path d="M12 8v13" />
+        <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+        <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
       </symbol>
     </svg>
 
@@ -470,33 +502,305 @@
               </p>
             </div>
 
-            <div class="testimonials reveal">
-              <div class="quote-grid">
-                <blockquote>
-                  <span class="stars">★★★★★</span>
-                  <p>
-                    “Minha pele tá mais firme, notei em umas 2 semanas. Amei o
-                    resultado!”
-                  </p>
-                  <footer>Daiana A. L. <b>✓ Cliente verificada</b></footer>
-                </blockquote>
-                <blockquote>
-                  <span class="stars">★★★★★</span>
-                  <p>
-                    “Super amei, o resultado no pescoço foi o que mais me
-                    surpreendeu.”
-                  </p>
-                  <footer>Sirlaine F. D. S. <b>✓ Cliente verificada</b></footer>
-                </blockquote>
-                <blockquote>
-                  <span class="stars">★★★★★</span>
-                  <p>
-                    “Sem palavras, minha pele nunca esteve tão hidratada e
-                    macia.”
-                  </p>
-                  <footer>Ângela O. <b>✓ Cliente verificada</b></footer>
-                </blockquote>
+            <div class="testimonials reveal" data-testimonial-tabs>
+              <div
+                class="testimonials__tabs"
+                role="tablist"
+                aria-label="Tipos de depoimentos"
+              >
+                <button
+                  type="button"
+                  id="tab-midia"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="painel-midia"
+                  data-testimonial-tab="midia"
+                >
+                  Vídeos e fotos
+                </button>
+                <button
+                  type="button"
+                  id="tab-textos"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="painel-textos"
+                  tabindex="-1"
+                  data-testimonial-tab="textos"
+                >
+                  Depoimentos em texto
+                </button>
               </div>
+
+              <section
+                class="testimonials__panel"
+                id="painel-midia"
+                role="tabpanel"
+                aria-labelledby="tab-midia"
+                data-testimonial-panel="midia"
+              >
+                <div class="testimonials__panel-head">
+                  <div>
+                    <strong>Clientes que compraram e aprovaram</strong>
+                    <span>Relatos e registros enviados pelas próprias clientes.</span>
+                  </div>
+                  <span class="testimonials__pending">3 vídeos · 3 fotos</span>
+                </div>
+
+                <div class="media-testimonials">
+                  <article class="media-testimonial media-testimonial--video media-testimonial--ready">
+                    <div class="media-testimonial__frame">
+                      <span class="media-testimonial__type">Depoimento em vídeo</span>
+                      <video
+                        controls
+                        playsinline
+                        preload="none"
+                        poster="img/depoimentos/poster-claudia.webp"
+                        data-lazy-testimonial-video
+                        aria-label="Depoimento em vídeo de Claudia"
+                      >
+                        <source data-src="media/depoimentos/claudia.mp4" type="video/mp4" />
+                        Seu navegador não suporta a reprodução deste vídeo.
+                      </video>
+                      <button
+                        class="media-testimonial__play"
+                        type="button"
+                        data-lazy-testimonial-play
+                        aria-label="Reproduzir depoimento em vídeo de Claudia"
+                      >
+                        <span aria-hidden="true">▶</span>
+                        <small>Toque para assistir</small>
+                      </button>
+                    </div>
+                    <p>Claudia <span>· Cliente Divessence</span></p>
+                  </article>
+                  <article class="media-testimonial media-testimonial--video media-testimonial--ready">
+                    <div class="media-testimonial__frame">
+                      <span class="media-testimonial__type">Depoimento em vídeo</span>
+                      <video
+                        controls
+                        playsinline
+                        preload="none"
+                        poster="img/depoimentos/poster-fernanda.webp"
+                        data-lazy-testimonial-video
+                        aria-label="Depoimento em vídeo de Fernanda"
+                      >
+                        <source data-src="media/depoimentos/fernanda.mp4" type="video/mp4" />
+                        Seu navegador não suporta a reprodução deste vídeo.
+                      </video>
+                      <button
+                        class="media-testimonial__play"
+                        type="button"
+                        data-lazy-testimonial-play
+                        aria-label="Reproduzir depoimento em vídeo de Fernanda"
+                      >
+                        <span aria-hidden="true">▶</span>
+                        <small>Toque para assistir</small>
+                      </button>
+                    </div>
+                    <p>Fernanda <span>· Cliente Divessence</span></p>
+                  </article>
+                  <article class="media-testimonial media-testimonial--video media-testimonial--ready">
+                    <div class="media-testimonial__frame">
+                      <span class="media-testimonial__type">Depoimento em vídeo</span>
+                      <video
+                        controls
+                        playsinline
+                        preload="none"
+                        poster="img/depoimentos/poster-bruna.webp"
+                        data-lazy-testimonial-video
+                        aria-label="Depoimento em vídeo de Bruna"
+                      >
+                        <source data-src="media/depoimentos/bruna.mp4" type="video/mp4" />
+                        Seu navegador não suporta a reprodução deste vídeo.
+                      </video>
+                      <button
+                        class="media-testimonial__play"
+                        type="button"
+                        data-lazy-testimonial-play
+                        aria-label="Reproduzir depoimento em vídeo de Bruna"
+                      >
+                        <span aria-hidden="true">▶</span>
+                        <small>Toque para assistir</small>
+                      </button>
+                    </div>
+                    <p>Bruna <span>· Cliente Divessence</span></p>
+                  </article>
+                  <article class="media-testimonial media-testimonial--photo media-testimonial--ready">
+                    <div class="media-testimonial__frame" data-photo-testimonial-gallery>
+                      <span class="media-testimonial__type" data-photo-testimonial-count>Foto 1 de 3</span>
+                      <img
+                        class="media-testimonial__photo"
+                        src="img/depoimentos/catarina-1.webp"
+                        alt="Foto enviada por Catarina mostrando o frasco do Sérum GHK-Cu"
+                        width="768"
+                        height="1376"
+                        loading="lazy"
+                        data-photo-testimonial-main
+                      />
+                      <div class="media-testimonial__thumbs" aria-label="Fotos enviadas por Catarina">
+                        <button
+                          type="button"
+                          aria-label="Mostrar foto 1 de Catarina"
+                          aria-pressed="true"
+                          data-photo-testimonial-src="img/depoimentos/catarina-1.webp"
+                          data-photo-testimonial-alt="Foto enviada por Catarina mostrando o frasco do Sérum GHK-Cu"
+                        ><img src="img/depoimentos/catarina-1.webp" alt="" width="48" height="64" loading="lazy" /></button>
+                        <button
+                          type="button"
+                          aria-label="Mostrar foto 2 de Catarina"
+                          aria-pressed="false"
+                          data-photo-testimonial-src="img/depoimentos/catarina-2.webp"
+                          data-photo-testimonial-alt="Segunda foto enviada por Catarina com o frasco do Sérum GHK-Cu"
+                        ><img src="img/depoimentos/catarina-2.webp" alt="" width="48" height="64" loading="lazy" /></button>
+                        <button
+                          type="button"
+                          aria-label="Mostrar foto 3 de Catarina"
+                          aria-pressed="false"
+                          data-photo-testimonial-src="img/depoimentos/catarina-3.webp"
+                          data-photo-testimonial-alt="Terceira foto enviada por Catarina com o frasco do Sérum GHK-Cu"
+                        ><img src="img/depoimentos/catarina-3.webp" alt="" width="48" height="64" loading="lazy" /></button>
+                      </div>
+                    </div>
+                    <p>Catarina <span>· 3 fotos enviadas pela cliente</span></p>
+                  </article>
+                </div>
+              </section>
+
+              <section
+                class="testimonials__panel"
+                id="painel-textos"
+                role="tabpanel"
+                aria-labelledby="tab-textos"
+                data-testimonial-panel="textos"
+                hidden
+              >
+                <div class="text-testimonials" data-text-testimonials>
+                  <div class="text-testimonials__head">
+                    <div>
+                      <strong>Relatos coletados pela nossa equipe</strong>
+                      <span data-text-testimonials-status aria-live="polite">1–3 de 19</span>
+                    </div>
+                    <div class="text-testimonials__arrows">
+                      <button
+                        type="button"
+                        data-text-testimonials-prev
+                        aria-label="Ver depoimentos anteriores"
+                        disabled
+                      >
+                        ←
+                      </button>
+                      <button
+                        type="button"
+                        data-text-testimonials-next
+                        aria-label="Ver próximos depoimentos"
+                      >
+                        →
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="text-testimonials__viewport" data-text-testimonials-viewport>
+                    <div class="text-testimonials__track">
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Minha pele tá mais firme, notei em umas 2 semanas. Amei o resultado!”</p>
+                        <footer>Daiana A. L. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Uso de manhã e à noite, rapidinho. Pele mais lisa já nas primeiras semanas.”</p>
+                        <footer>Nice A. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“O produto em si é ótimo, só achei o vidro pequeno mas rende bastante.”</p>
+                        <footer>Jessica <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Super amei, o resultado no pescoço foi o que mais me surpreendeu.”</p>
+                        <footer>Sirlaine F. D. S. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Sem palavras, minha pele nunca esteve tão hidratada e macia.”</p>
+                        <footer>Ângela O. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Estou gostando muito, as linhas finas suavizaram bastante.”</p>
+                        <footer>Catia R. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Estou amando! É meu segundo frasco e eu estou amando 🫶🏻🩵💙”</p>
+                        <footer>Patrícia M. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“O meu GHK-Cu da Divessence chegou hoje, junto com o meu sérum de vitamina C e o protetor solar. Tenho certeza que vou amar! 🩵”</p>
+                        <footer>Renata C. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Comprei pela primeira vez e tô gostando muito. Tô me sentindo ótima, me olhando no espelho e me achando bonita de novo. Vou comprar novamente, vou virar cliente fixa. 💙”</p>
+                        <footer>Juliana A. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Textura leve e de rápida absorção. Percebi mais firmeza e viço, linhas de expressão mais suaves e o rosto mais descansado. Virou parte da minha rotina. Super aprovado! ⭐⭐⭐⭐⭐ 🩵”</p>
+                        <footer>Márcia R. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Um produto maravilhoso, completo, tudo que eu precisava para cuidar das minhas rugas, manchas e flacidez. 💙”</p>
+                        <footer>Elaine S. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Estou amando muito! Já fiz minha segunda compra, mas não vou ficar só no GHK-Cu: vou querer os outros produtos da Divessence. 🩵”</p>
+                        <footer>Camila F. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Chegou antes do prazo, realmente tem uma boa textura. Comprarei novamente! 💙”</p>
+                        <footer>Adriana P. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Muito bom! Chegou rapidinho. 🩵”</p>
+                        <footer>Luciana M. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“A textura é leve, absorve rápido e é fácil de aplicar. Amei! Se eu te ajudei, curte meu comentário 🙏🏻💙”</p>
+                        <footer>Tatiane G. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Desempenho surreal, gente do céu! Maravilhoso. Eu usei e me surpreendeu, funciona 100%. Nota 1.000! 🩵”</p>
+                        <footer>Simone R. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Super amei, os resultados são incríveis. Vi diferença no primeiro uso, pele de bebê. Quem ainda não pediu, peça já. Tenho certeza de que vocês não vão se arrepender. 💙”</p>
+                        <footer>Cristina A. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Estou gostando do produto. Chegou rápido e ainda não tem um mês que estou usando, mas já sinto a pele mais macia e o cheirinho é uma delícia. 🩵”</p>
+                        <footer>Daniela P. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                      <blockquote class="text-testimonial">
+                        <span class="stars">★★★★★</span>
+                        <p>“Estou usando há dois meses e já vejo diferença, principalmente nas linhas da testa. Já tentei retinol e minha pele descascava toda; esse foi o único que não me irritou. Tenho a pele muito sensível. 💙”</p>
+                        <footer>Rosângela M. <b>✓ Cliente verificada</b></footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </section>
@@ -687,8 +991,11 @@
             </div>
 
             <a
-              href="https://divessencebeauty.com.br/pv-checkout"
-              class="checkout-cta smartplayer-click-event"
+              href="#checkout-inline"
+              class="checkout-cta"
+              data-reveal-checkout
+              aria-controls="checkout-inline"
+              aria-expanded="false"
             >
               QUERO VERIFICAR A DISPONIBILIDADE
             </a>
@@ -710,6 +1017,296 @@
           </div>
         </div>
       </section>
+
+      <div
+        class="inline-checkout"
+        id="checkout-inline"
+        data-inline-checkout
+        aria-hidden="true"
+        hidden
+      >
+        <div class="inline-checkout__wrap shop">
+          <div class="shop__gallery">
+            <figure class="gblock gblock--wide">
+              <img
+                src="img/mockup-serum-hero.webp"
+                alt="Sérum GHK-Cu Divessence"
+                width="1000"
+                height="640"
+                loading="lazy"
+              />
+              <span class="gal__flag">GHK-Cu · 30ml</span>
+            </figure>
+            <figure class="gblock">
+              <img
+                src="img/mockup-unidade.webp"
+                alt="Frasco do Sérum GHK-Cu"
+                width="600"
+                height="600"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="gblock">
+              <img
+                src="img/faq-suporte.webp"
+                alt="Textura do sérum"
+                width="600"
+                height="600"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="gblock">
+              <img
+                src="img/galeria-scroll-dir.webp"
+                alt="Sérum GHK-Cu em uso"
+                width="600"
+                height="600"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="gblock">
+              <img
+                src="img/mockup-serum-hero2.png"
+                alt="Sérum GHK-Cu"
+                width="600"
+                height="600"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+
+          <div class="shop__panel">
+            <span class="shop__pill">Peptídeo biomimético de cobre</span>
+            <h2 class="shop__title" id="checkout-inline-title" tabindex="-1">
+              Sérum GHK-Cu com Peptídeos de Cobre, Niacinamide e Ácido
+              Hialurônico
+            </h2>
+
+            <div class="shop__rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9 · +2.420 avaliações</span>
+            </div>
+
+            <p class="shop__desc">
+              Fórmula que favorece firmeza e elasticidade, aprofunda a
+              hidratação e promove renovação cutânea progressiva com o uso
+              contínuo.
+            </p>
+
+            <div class="offers" id="inlineCheckoutOffers" data-offers>
+              <span class="offers__label">Escolha seu kit</span>
+
+              <div class="ocard">
+                <label class="ocard__select">
+                  <input
+                    type="radio"
+                    name="inline-checkout-offer"
+                    value="1"
+                    data-link="https://red.track.divessencebeauty.com.br/click/1"
+                    data-img="img/mockup-unidade.webp"
+                    data-off="19% OFF"
+                    data-old="182,90"
+                    data-price="147,90"
+                    data-unit="147,90 / frasco"
+                    data-parcela="12x de R$ 12,33 sem juros"
+                    data-avista="ou R$ 140,51 à vista no Pix"
+                    checked
+                  />
+                  <span class="ocard__box">
+                    <span class="ocard__radio"></span>
+                    <span class="ocard__main">
+                      <span class="ocard__name">1 unidade</span>
+                      <span class="ocard__unit">R$ 147,90 por frasco</span>
+                    </span>
+                    <span class="ocard__price">
+                      <span class="ocard__old">R$ 182,90</span>
+                      <span class="ocard__now">R$ 147,90</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="scratch" data-inline-scratch>
+                <div class="scratch__offers">
+                  <div class="ocard ocard--best">
+                    <label class="ocard__select">
+                      <input
+                        type="radio"
+                        name="inline-checkout-offer"
+                        value="3"
+                        data-link="https://red.track.divessencebeauty.com.br/click/2"
+                        data-img="img/mockup-combo.webp"
+                        data-off="46% OFF"
+                        data-old="548,70"
+                        data-price="297,90"
+                        data-unit="99,30 / frasco"
+                        data-parcela="12x de R$ 24,83 sem juros"
+                        data-avista="ou R$ 283,01 à vista no Pix"
+                      />
+                      <span class="ocard__tag">★ Mais vendido</span>
+                      <span class="ocard__box">
+                        <span class="ocard__radio"></span>
+                        <span class="ocard__main">
+                          <span class="ocard__name">Compre 2, leve 3</span>
+                          <span class="ocard__unit"
+                            >R$ 99,30 por frasco · economize 46%</span
+                          >
+                        </span>
+                        <span class="ocard__price">
+                          <span class="ocard__old">R$ 548,70</span>
+                          <span class="ocard__now">R$ 297,90</span>
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="ocard ocard--gold">
+                    <label class="ocard__select">
+                      <input
+                        type="radio"
+                        name="inline-checkout-offer"
+                        value="6"
+                        data-link="https://red.track.divessencebeauty.com.br/click/3"
+                        data-img="img/mockup-combo.webp"
+                        data-off="55% OFF"
+                        data-old="1.097,40"
+                        data-price="489,90"
+                        data-unit="81,65 / frasco"
+                        data-parcela="12x de R$ 40,83 sem juros"
+                        data-avista="ou R$ 465,41 à vista no Pix"
+                      />
+                      <span class="ocard__tag ocard__tag--gold"
+                        >Melhor oferta · 55% OFF</span
+                      >
+                      <span class="ocard__box">
+                        <span class="ocard__radio"></span>
+                        <span class="ocard__main">
+                          <span class="ocard__name">6 unidades</span>
+                          <span class="ocard__unit"
+                            >R$ 81,65 por frasco · máxima economia</span
+                          >
+                        </span>
+                        <span class="ocard__price">
+                          <span class="ocard__old">R$ 1.097,40</span>
+                          <span class="ocard__now">R$ 489,90</span>
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="ocard ocard--sub">
+                    <label class="ocard__select">
+                      <input
+                        type="radio"
+                        name="inline-checkout-offer"
+                        value="assinatura"
+                        data-link="https://red.track.divessencebeauty.com.br/click/4"
+                        data-img="img/mockup-assinatura.webp"
+                        data-off="34% OFF"
+                        data-old="182,90"
+                        data-price="119,90"
+                        data-unit="119,90 / mês"
+                        data-parcela="Assinatura mensal · renova automaticamente"
+                        data-avista="Cancele quando quiser · sem fidelidade"
+                      />
+                      <span class="ocard__tag ocard__tag--sub"
+                        >Assine e economize</span
+                      >
+                      <span class="ocard__box">
+                        <span class="ocard__radio"></span>
+                        <span class="ocard__main">
+                          <span class="ocard__name">Assinatura mensal</span>
+                          <span class="ocard__unit"
+                            >1 frasco todo mês · cancele quando quiser</span
+                          >
+                        </span>
+                        <span class="ocard__price">
+                          <span class="ocard__old">R$ 182,90</span>
+                          <span class="ocard__now"
+                            >R$ 119,90<small>/mês</small></span
+                          >
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <canvas
+                  class="scratch__cover"
+                  data-inline-scratch-cover
+                  role="button"
+                  tabindex="0"
+                  aria-label="Raspe ou pressione Enter para revelar os kits promocionais"
+                ></canvas>
+                <div class="scratch__hint">
+                  <svg class="ico ico--lg" aria-hidden="true">
+                    <use href="#i-gift" />
+                  </svg>
+                  <strong>Raspe e descubra os kits</strong>
+                  <em>Deslize o dedo para revelar</em>
+                </div>
+              </div>
+
+              <a
+                href="https://red.track.divessencebeauty.com.br/click/1"
+                class="checkout-buy-button selection__cta smartplayer-click-event"
+                data-checkout-button
+                data-checkout-source="inlineCheckoutOffers"
+                aria-label="Comprar o kit selecionado"
+                >Comprar agora</a
+              >
+            </div>
+
+            <div class="upsell">
+              <div class="upsell__head">
+                <strong>Dê um upgrade em sua compra</strong>
+                <span>Desbloqueie promoções e prêmios ao raspar</span>
+              </div>
+
+              <div class="upsell__prizes">
+                <div class="prize is-locked">
+                  <span class="prize__ico">
+                    <svg class="ico" aria-hidden="true">
+                      <use href="#i-truck" />
+                    </svg>
+                  </span>
+                  <span class="prize__body">
+                    <span class="prize__name">Frete Grátis · kit 3 unidades</span>
+                    <span class="prize__lockedname">Bloqueado</span>
+                  </span>
+                  <span class="prize__val prize__val--free">Grátis</span>
+                </div>
+                <div class="prize is-locked">
+                  <span class="prize__ico">
+                    <svg class="ico" aria-hidden="true">
+                      <use href="#i-gift" />
+                    </svg>
+                  </span>
+                  <span class="prize__body">
+                    <span class="prize__name">Brinde surpresa · kit 6 unidades</span>
+                    <span class="prize__lockedname">Bloqueado</span>
+                  </span>
+                  <span class="prize__val prize__val--gift">Surpresa</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="shop__trust">
+              <span>
+                <svg class="ico" aria-hidden="true"><use href="#i-lock" /></svg>
+                Compra segura
+              </span>
+              <span>
+                <svg class="ico" aria-hidden="true"><use href="#i-truck" /></svg>
+                Frete grátis
+              </span>
+              <span>
+                <svg class="ico" aria-hidden="true"><use href="#i-shield" /></svg>
+                Garantia de 30 dias
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -778,6 +1375,7 @@
     <a href="#comprar" class="sticky-buy" data-sticky-buy
       >Ver disponibilidade</a
     >
-    <script src="assets/js/7-motivos.js?v=20260717a" defer></script>
+    <script src="assets/js/7-motivos.js?v=20260721e" defer></script>
+    <script src="assets/js/checkout.js?v=20260721a" defer></script>
   </body>
 </html>
