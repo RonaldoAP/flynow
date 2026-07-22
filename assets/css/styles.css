@@ -281,6 +281,20 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 .ocard__main { flex: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .ocard__name { font-weight: 700; font-size: 1.02rem; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .ocard__free { font-style: normal; font-size: 0.72rem; font-weight: 700; color: var(--copper-dp); background: var(--blush); padding: 2px 8px; border-radius: 100px; }
+.ocard__gift-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: #dceefa;
+  color: #075f9d;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  padding: 4px 11px;
+  white-space: nowrap;
+}
 .ocard__unit { font-size: 0.84rem; color: var(--stone); }
 .ocard__placeholder {
   font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
@@ -299,6 +313,22 @@ p, .lead, blockquote, .sstep__list li { text-wrap: pretty; }
 }
 .ocard__tag--gold { background: linear-gradient(90deg, #C7962E, #E8B84B); color: #2B2100; }
 .ocard__tag--sub { background: var(--ink); color: #fff; }
+.ocard__shipping-tag {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  z-index: 2;
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0 50%);
+  background: #07090b;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 7px 16px 7px 18px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 .selection__cta {
   min-height: 48px;
   padding: 13px 24px;

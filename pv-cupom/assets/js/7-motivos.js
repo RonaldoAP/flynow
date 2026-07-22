@@ -5,6 +5,20 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* O <base> da página mantém os assets na rota /pv-cupom, mas faria os
+     links de âncora perderem UTMs e rtkcid. Reaplicamos a query atual. */
+  function preserveQueryOnHashLinks() {
+    var pathAndQuery = window.location.pathname + window.location.search;
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      var hash = link.getAttribute("href");
+      if (!hash || hash === "#") return;
+      link.setAttribute("href", pathAndQuery + hash);
+    });
+  }
+
+  preserveQueryOnHashLinks();
+
   /* Entrada suave dos blocos editoriais. */
   var reveals = document.querySelectorAll(".reveal");
   if (reducedMotion || !("IntersectionObserver" in window)) {
