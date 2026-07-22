@@ -4,6 +4,19 @@
 (function () {
   'use strict';
 
+  /* Mantém UTMs e rtkcid quando a navegação acontece dentro da própria página. */
+  function preserveQueryOnHashLinks() {
+    var pathAndQuery = window.location.pathname + window.location.search;
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      var hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      link.setAttribute('href', pathAndQuery + hash);
+    });
+  }
+
+  preserveQueryOnHashLinks();
+
   /* ── Header shadow on scroll ── */
   var header = document.getElementById('header');
   var buybar = document.getElementById('buybar');
