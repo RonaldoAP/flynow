@@ -28,6 +28,683 @@
     });
   }
 
+  /* Faixa de relatos reais com post detalhado em modal. */
+  var customerReviews = [
+    {
+      name: "Mariana A. S.",
+      text: "Estou amando, é meu segundo frasco e eu estou amando 🫶🏻🩷🩷🩷",
+      media: [
+        {
+          type: "video",
+          src: "media/depoimentos/fernanda.mp4",
+          poster: "img/depoimentos/poster-fernanda.webp",
+          thumb: "img/depoimentos/poster-fernanda.webp",
+        },
+      ],
+    },
+    {
+      name: "Patrícia M. F.",
+      text: "O meu GHK-Cu da Divessence chegou hj, junto com o meu sérum de vitamina C e o protetor solar, tenho certeza que vou amar!",
+      media: [
+        {
+          type: "video",
+          src: "media/depoimentos/bruna.mp4",
+          poster: "img/depoimentos/poster-bruna.webp",
+          thumb: "img/depoimentos/poster-bruna.webp",
+        },
+      ],
+    },
+    {
+      name: "Renata C.",
+      text: "Amei que veio a escovinha junto, que linda. Já tô usando todo dia, mudou muito minha pele.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-3-1.webp",
+          thumb: "img/reviews/review-3-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-3-2.webp",
+          thumb: "img/reviews/review-3-2-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-3-3.webp",
+          thumb: "img/reviews/review-3-3-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Juliana P. S.",
+      text: "Comprei pela primeira vez e tô gostando mto. Tô me sentindo ótima, me olhando no espelho e me achando bonita de novo. Vou comprar novamente, vou virar cliente fixa.",
+      media: [
+        {
+          type: "video",
+          src: "media/depoimentos/claudia.mp4",
+          poster: "img/depoimentos/poster-claudia.webp",
+          thumb: "img/depoimentos/poster-claudia.webp",
+        },
+      ],
+    },
+    {
+      name: "Adriana L.",
+      text: "Quero compartilhar minha experiência com o GHK-Cu da Divessence. Estou muito satisfeita com o produto! Além de ter uma textura leve e de rápida absorção, ele me ajudou a recuperar a firmeza e o viço da minha pele. Tenho percebido as linhas de expressão mais suaves e o rosto visivelmente mais descansado, e estou gostando bastante dos resultados. O GHK-Cu da Divessence se tornou parte da minha rotina de cuidados, e a praticidade de usar em casa, sem precisar de procedimentos caros, é um grande diferencial. Recomendo para quem busca um produto de qualidade e quer cuidar mais da pele e da autoestima. Estou adorando a experiência e continuarei usando. Super aprovado! ⭐⭐⭐⭐⭐ 💖 GHK-Cu Divessence: firmeza, viço e autoestima renovada para a sua pele.",
+      media: [
+        {
+          type: "video",
+          src: "media/reviews/review-5.mp4",
+          poster: "img/reviews/review-5-poster.webp",
+          thumb: "img/reviews/review-5-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Camila R.",
+      text: "Muitoooooo bom, eu amei demais 😍💙 Inclusive estou aguardando retorno da marca pra começar a divulgar 🫶🏻🥹",
+      media: [
+        {
+          type: "video",
+          src: "media/reviews/review-6.mp4",
+          poster: "img/reviews/review-6-poster.webp",
+          thumb: "img/reviews/review-6-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Vanessa M.",
+      text: "Um produto maravilhoso, completo, tudo que eu precisava pra cuidar das minhas rugas, machas e flacidez.",
+      media: [
+        {
+          type: "video",
+          src: "media/reviews/review-7.mp4",
+          poster: "img/reviews/review-7-poster.webp",
+          thumb: "img/reviews/review-7-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Simone A.",
+      text: "Estou amando muito, já fiz a minha segunda compra, mas não vou ficar só no GHK-Cu, vou querer os outros produtos da Divessence.",
+      media: [
+        {
+          type: "video",
+          src: "media/reviews/review-8.mp4",
+          poster: "img/reviews/review-8-poster.webp",
+          thumb: "img/reviews/review-8-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Luciana F.",
+      text: "Chegou antes do prazo, realmente boa textura, comprare nuevamente!!",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-9.webp",
+          thumb: "img/reviews/review-9-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Bruna S.",
+      text: "Muito bom! chegou rapidinho.",
+      media: [
+        {
+          type: "video",
+          src: "media/reviews/review-10.mp4",
+          poster: "img/reviews/review-10-poster.webp",
+          thumb: "img/reviews/review-10-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Fabiana C.",
+      text: "Textura: A textura é leve, absorve rápido, eu gostei. Desempenho: Fácil de aplicar, amei. Se eu te ajudei, curte meu comentário 🙏🏻💙",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-11-1.webp",
+          thumb: "img/reviews/review-11-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-11-2.webp",
+          thumb: "img/reviews/review-11-2-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-11-3.webp",
+          thumb: "img/reviews/review-11-3-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Débora M.",
+      text: "Chegou certinho igual o anúncio, espero cumprir cm o q diz…",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-12-1.webp",
+          thumb: "img/reviews/review-12-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-12-2.webp",
+          thumb: "img/reviews/review-12-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Tatiane R.",
+      text: "Acabou de chegar, veio bem embalado e conforme o anúncio. Bom, vou começar a usar amanhã.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-13-1.webp",
+          thumb: "img/reviews/review-13-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-13-2.webp",
+          thumb: "img/reviews/review-13-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Priscila A.",
+      text: "Chegou agora, ainda não usei mas parece muito bom, depois volto pra contar.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-14-1.webp",
+          thumb: "img/reviews/review-14-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-14-2.webp",
+          thumb: "img/reviews/review-14-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Elaine S.",
+      text: "Desempenho surreal, gente do céu, maravilhoso. Eu usei e me surpreendeu, funciona 100%, nota 1.000,00.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-15-1.webp",
+          thumb: "img/reviews/review-15-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-15-2.webp",
+          thumb: "img/reviews/review-15-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Rosângela M.",
+      text: "Chegou tudo dinheiro e bem rápido. Vou testa e depois volto pra contar, mais muita gente me falaram muito bem sobre ele.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-16-1.webp",
+          thumb: "img/reviews/review-16-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-16-2.webp",
+          thumb: "img/reviews/review-16-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Cristina L.",
+      text: "Chegou super rápido, bem embalado e a embalagem original. Ainda não experimentei, mais ja estou ansiosa pra breve ver resultados dessa bb aqui.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-17-1.webp",
+          thumb: "img/reviews/review-17-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-17-2.webp",
+          thumb: "img/reviews/review-17-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Michele P.",
+      text: "Kit: escolhe o de 3 potes. Ainda não testei, espero resultado como vejo nos vídeos.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-18-1.webp",
+          thumb: "img/reviews/review-18-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-18-2.webp",
+          thumb: "img/reviews/review-18-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Aline G.",
+      text: "Super amei, resultados são incríveis, ver a diferença no primeiro uso, pele de bebê. Quem ainda não pediu seu peça já. Tenho certeza, assim como eu, vocês não vão arrepender.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-19-1.webp",
+          thumb: "img/reviews/review-19-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-19-2.webp",
+          thumb: "img/reviews/review-19-2-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Sandra R.",
+      text: "Estou gostando do produto, chegou rápido, ainda não tem 1 mês q estou usando, mais já sinto a pele mais macia e o cheirinho é uma delícia.",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-20-1.webp",
+          thumb: "img/reviews/review-20-1-thumb.webp",
+        },
+      ],
+    },
+    {
+      name: "Carla D.",
+      text: "Estou usando tem 2 meses e já vejo diferença, principalmente nas linhas da testa. Já tentei retinol e minha pele descascava toda, esse foi o único que não me irritou, tenho pele muito sensível 😓",
+      media: [
+        {
+          type: "image",
+          src: "img/reviews/review-21-1.webp",
+          thumb: "img/reviews/review-21-1-thumb.webp",
+        },
+        {
+          type: "image",
+          src: "img/reviews/review-21-2.webp",
+          thumb: "img/reviews/review-21-2-thumb.webp",
+        },
+      ],
+    },
+  ];
+
+  var reviewShowcase = document.querySelector("[data-review-showcase]");
+  var customerReviewModal = document.querySelector(
+    "[data-customer-review-modal]",
+  );
+
+  if (reviewShowcase && customerReviewModal) {
+    var reviewRows = Array.prototype.slice.call(
+      reviewShowcase.querySelectorAll("[data-review-row]"),
+    );
+    var modalName = customerReviewModal.querySelector(
+      "[data-customer-review-name]",
+    );
+    var modalText = customerReviewModal.querySelector(
+      "[data-customer-review-text]",
+    );
+    var modalImage = customerReviewModal.querySelector(
+      "[data-customer-review-image]",
+    );
+    var modalVideo = customerReviewModal.querySelector(
+      "[data-customer-review-video]",
+    );
+    var modalThumbnails = customerReviewModal.querySelector(
+      "[data-customer-review-thumbnails]",
+    );
+    var activeReviewIndex = 0;
+    var activeMediaIndex = 0;
+    var lastReviewTrigger = null;
+
+    function createReviewCard(review, index) {
+      var card = document.createElement("button");
+      var media = document.createElement("span");
+      var avatar = document.createElement("img");
+      var body = document.createElement("span");
+      var meta = document.createElement("span");
+      var name = document.createElement("strong");
+      var verified = document.createElement("span");
+      var stars = document.createElement("span");
+      var excerpt = document.createElement("p");
+      var primaryMedia = review.media[0];
+
+      card.type = "button";
+      card.className = "mini-review";
+      card.setAttribute("aria-label", "Abrir depoimento de " + review.name);
+      card.dataset.customerReviewIndex = String(index);
+
+      media.className = "mini-review__media";
+      avatar.className = "mini-review__avatar";
+      avatar.src = primaryMedia.thumb || primaryMedia.poster || primaryMedia.src;
+      avatar.alt = "";
+      avatar.width = 68;
+      avatar.height = 68;
+      avatar.loading = "lazy";
+      media.appendChild(avatar);
+
+      if (primaryMedia.type === "video") {
+        var play = document.createElement("span");
+        play.className = "mini-review__play";
+        play.setAttribute("aria-hidden", "true");
+        play.textContent = "▶";
+        media.appendChild(play);
+      }
+
+      body.className = "mini-review__body";
+      meta.className = "mini-review__meta";
+      name.textContent = review.name;
+      verified.className = "mini-review__verified";
+      verified.setAttribute("aria-label", "Cliente verificada");
+      verified.textContent = "✓";
+      meta.appendChild(name);
+      meta.appendChild(verified);
+
+      stars.className = "stars";
+      stars.setAttribute("aria-hidden", "true");
+      stars.textContent = "★★★★★";
+      excerpt.textContent = review.text;
+      body.appendChild(meta);
+      body.appendChild(stars);
+      body.appendChild(excerpt);
+
+      card.appendChild(media);
+      card.appendChild(body);
+      return card;
+    }
+
+    var reviewRowIndexes = [
+      customerReviews.map(function (_, index) {
+        return index;
+      }).slice(0, 11),
+      customerReviews.map(function (_, index) {
+        return index;
+      }).slice(11),
+    ];
+
+    reviewRows.forEach(function (row, rowIndex) {
+      var group = document.createElement("div");
+      group.className = "reviews-strip__loop-group";
+
+      reviewRowIndexes[rowIndex].forEach(function (reviewIndex) {
+        group.appendChild(
+          createReviewCard(customerReviews[reviewIndex], reviewIndex),
+        );
+      });
+
+      var clone = group.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.querySelectorAll("button").forEach(function (button) {
+        button.tabIndex = -1;
+      });
+
+      row.appendChild(group);
+      row.appendChild(clone);
+    });
+
+    function stopModalVideo() {
+      if (!modalVideo) return;
+      modalVideo.pause();
+      modalVideo.removeAttribute("src");
+      modalVideo.removeAttribute("poster");
+      modalVideo.load();
+    }
+
+    function renderReviewMedia() {
+      var review = customerReviews[activeReviewIndex];
+      var item = review.media[activeMediaIndex];
+      if (!item || !modalImage || !modalVideo) return;
+
+      stopModalVideo();
+      modalImage.hidden = true;
+      modalVideo.hidden = true;
+
+      if (item.type === "video") {
+        modalVideo.poster = item.poster || item.thumb || "";
+        modalVideo.src = item.src;
+        modalVideo.hidden = false;
+      } else {
+        modalImage.src = item.src;
+        modalImage.alt =
+          "Imagem " +
+          String(activeMediaIndex + 1) +
+          " do depoimento de " +
+          review.name;
+        modalImage.hidden = false;
+      }
+
+      Array.prototype.slice
+        .call(modalThumbnails.querySelectorAll("button"))
+        .forEach(function (button, index) {
+          button.classList.toggle("is-active", index === activeMediaIndex);
+          button.setAttribute(
+            "aria-pressed",
+            index === activeMediaIndex ? "true" : "false",
+          );
+        });
+    }
+
+    function renderReviewThumbnails(review) {
+      modalThumbnails.replaceChildren();
+
+      review.media.forEach(function (item, index) {
+        var button = document.createElement("button");
+        var image = document.createElement("img");
+        button.type = "button";
+        button.className = "customer-review-modal__thumbnail";
+        button.setAttribute(
+          "aria-label",
+          "Abrir mídia " + String(index + 1) + " de " + String(review.media.length),
+        );
+        image.src = item.thumb || item.poster || item.src;
+        image.alt = "";
+        image.loading = "lazy";
+        button.appendChild(image);
+
+        if (item.type === "video") {
+          var play = document.createElement("b");
+          play.setAttribute("aria-hidden", "true");
+          play.textContent = "▶";
+          button.appendChild(play);
+        }
+
+        button.addEventListener("click", function () {
+          activeMediaIndex = index;
+          renderReviewMedia();
+        });
+        modalThumbnails.appendChild(button);
+      });
+    }
+
+    function renderCustomerReview(index) {
+      activeReviewIndex =
+        (index + customerReviews.length) % customerReviews.length;
+      activeMediaIndex = 0;
+
+      var review = customerReviews[activeReviewIndex];
+      modalName.textContent = review.name;
+      modalText.textContent = review.text;
+      renderReviewThumbnails(review);
+      renderReviewMedia();
+    }
+
+    function openCustomerReview(index, trigger) {
+      lastReviewTrigger = trigger || document.activeElement;
+      renderCustomerReview(index);
+      customerReviewModal.hidden = false;
+      document.body.classList.add("customer-review-modal-open");
+
+      window.requestAnimationFrame(function () {
+        var closeButton = customerReviewModal.querySelector(
+          "[data-customer-review-close]:not(.customer-review-modal__backdrop)",
+        );
+        if (closeButton) closeButton.focus();
+      });
+    }
+
+    function closeCustomerReview() {
+      stopModalVideo();
+      customerReviewModal.hidden = true;
+      document.body.classList.remove("customer-review-modal-open");
+      if (lastReviewTrigger && typeof lastReviewTrigger.focus === "function") {
+        lastReviewTrigger.focus({ preventScroll: true });
+      }
+
+      /* O foco retorna ao card por acessibilidade, mas a esteira deve continuar. */
+      reviewLoopFocused = false;
+      reviewLoopPauseUntil = 0;
+      reviewLoopLastFrame = 0;
+    }
+
+    reviewShowcase.addEventListener("click", function (event) {
+      var card = event.target.closest("[data-customer-review-index]");
+      if (!card) return;
+      openCustomerReview(
+        Number(card.getAttribute("data-customer-review-index")),
+        card,
+      );
+    });
+
+    reviewShowcase
+      .querySelectorAll("[data-review-scroll]")
+      .forEach(function (button) {
+        button.addEventListener("click", function () {
+          reviewLoopPauseUntil = Date.now() + 2200;
+          var direction = Number(button.getAttribute("data-review-scroll")) || 1;
+          reviewRows.forEach(function (row) {
+            row.scrollBy({
+              left: direction * 346,
+              behavior: reducedMotion ? "auto" : "smooth",
+            });
+          });
+        });
+      });
+
+    var reviewLoopPauseUntil = 0;
+    var reviewLoopFocused = false;
+    var reviewLoopLastFrame = 0;
+    var reviewLoopSpeed = 29 / 1000;
+    var reviewLoopWidths = [];
+
+    function getReviewLoopWidth(row) {
+      var group = row.querySelector(".reviews-strip__loop-group");
+      if (!group) return 0;
+      var styles = window.getComputedStyle(row);
+      var gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+      return group.getBoundingClientRect().width + gap;
+    }
+
+    function prepareReviewLoop() {
+      reviewRows.forEach(function (row, index) {
+        var loopWidth = getReviewLoopWidth(row);
+        reviewLoopWidths[index] = loopWidth;
+        if (index === 1 && loopWidth > 0 && row.scrollLeft < 1) {
+          row.scrollLeft = loopWidth;
+        }
+      });
+    }
+
+    function moveReviewLoop(timestamp) {
+      if (!reviewLoopLastFrame) reviewLoopLastFrame = timestamp;
+      var elapsed = Math.min(64, timestamp - reviewLoopLastFrame);
+      reviewLoopLastFrame = timestamp;
+
+      var shouldPause =
+        reviewLoopFocused ||
+        Date.now() < reviewLoopPauseUntil ||
+        !customerReviewModal.hidden ||
+        document.hidden;
+
+      if (!shouldPause) {
+        reviewRows.forEach(function (row, index) {
+          var loopWidth = reviewLoopWidths[index];
+          if (!loopWidth) return;
+
+          var direction = index === 0 ? 1 : -1;
+          row.scrollLeft += direction * elapsed * reviewLoopSpeed;
+
+          if (direction > 0 && row.scrollLeft >= loopWidth) {
+            row.scrollLeft -= loopWidth;
+          } else if (direction < 0 && row.scrollLeft <= 0) {
+            row.scrollLeft += loopWidth;
+          }
+        });
+      }
+
+      window.requestAnimationFrame(moveReviewLoop);
+    }
+
+    if (!reducedMotion) {
+      reviewShowcase.classList.add("is-auto-scrolling");
+      window.requestAnimationFrame(function () {
+        prepareReviewLoop();
+        window.requestAnimationFrame(moveReviewLoop);
+      });
+
+      reviewShowcase.addEventListener("focusin", function () {
+        reviewLoopFocused = true;
+      });
+      reviewShowcase.addEventListener("focusout", function (event) {
+        reviewLoopFocused = reviewShowcase.contains(event.relatedTarget);
+      });
+      reviewShowcase.addEventListener("pointerdown", function () {
+        reviewLoopPauseUntil = Date.now() + 3000;
+      });
+      window.addEventListener("pointerup", function () {
+        reviewLoopPauseUntil = Math.max(
+          reviewLoopPauseUntil,
+          Date.now() + 1800,
+        );
+      });
+      window.addEventListener("resize", function () {
+        reviewLoopPauseUntil = Date.now() + 300;
+        prepareReviewLoop();
+      });
+    }
+
+    customerReviewModal
+      .querySelectorAll("[data-customer-review-close]")
+      .forEach(function (button) {
+        button.addEventListener("click", closeCustomerReview);
+      });
+
+    customerReviewModal
+      .querySelector("[data-customer-review-previous]")
+      .addEventListener("click", function () {
+        renderCustomerReview(activeReviewIndex - 1);
+      });
+
+    customerReviewModal
+      .querySelector("[data-customer-review-next]")
+      .addEventListener("click", function () {
+        renderCustomerReview(activeReviewIndex + 1);
+      });
+
+    customerReviewModal
+      .querySelector("[data-customer-review-cta]")
+      .addEventListener("click", closeCustomerReview);
+
+    document.addEventListener("keydown", function (event) {
+      if (customerReviewModal.hidden) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeCustomerReview();
+      } else if (event.key === "ArrowLeft" && event.target !== modalVideo) {
+        renderCustomerReview(activeReviewIndex - 1);
+      } else if (event.key === "ArrowRight" && event.target !== modalVideo) {
+        renderCustomerReview(activeReviewIndex + 1);
+      }
+    });
+  }
+
   /* Abas de depoimentos: midia enviada pelas clientes e relatos em texto. */
   document.querySelectorAll("[data-testimonial-tabs]").forEach(function (root) {
     var tabs = Array.prototype.slice.call(
@@ -277,6 +954,7 @@
     var hitCells = {};
     var hitCount = 0;
     var totalCells = gridColumns * gridRows;
+    var unlockRatio = 0.6;
 
     function paintCover(width, height) {
       var gradient = context.createLinearGradient(0, 0, width, height);
@@ -386,7 +1064,7 @@
     }
 
     function maybeUnlock() {
-      if (!scratched && hitCount / totalCells >= 0.28) unlockScratch();
+      if (!scratched && hitCount / totalCells >= unlockRatio) unlockScratch();
     }
 
     function pointFromEvent(event) {
