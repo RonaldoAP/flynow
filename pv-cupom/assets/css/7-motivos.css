@@ -2050,6 +2050,35 @@ body.customer-review-modal-open {
   line-height: 1.65;
 }
 
+.site-footer__legal {
+  max-width: 1040px;
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.site-footer__legal h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer__legal p {
+  max-width: 96ch;
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.73rem;
+  line-height: 1.7;
+}
+
+.site-footer__legal .site-footer__company {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
 .sticky-buy {
   position: fixed;
   right: 18px;
