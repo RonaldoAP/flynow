@@ -2053,7 +2053,6 @@ body.customer-review-modal-open {
 .site-footer__legal {
   display: grid;
   grid-template-columns: minmax(150px, 0.36fr) minmax(0, 1.64fr);
-  width: 100%;
   margin-top: 34px;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
@@ -2062,10 +2061,12 @@ body.customer-review-modal-open {
 
 .site-footer__legal h2 {
   margin: 3px 0 0;
+  justify-self: center;
   color: #fff;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -2249,7 +2250,9 @@ body.customer-review-modal-open {
 
   .site-footer__legal h2 {
     margin-top: 0;
+    justify-self: start;
     font-size: 0.76rem;
+    text-align: left;
   }
 
   .site-footer__legal p {
