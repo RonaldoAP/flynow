@@ -2050,6 +2050,42 @@ body.customer-review-modal-open {
   line-height: 1.65;
 }
 
+.site-footer__legal {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.36fr) minmax(0, 1.64fr);
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  column-gap: clamp(32px, 6vw, 92px);
+}
+
+.site-footer__legal h2 {
+  margin: 3px 0 0;
+  justify-self: center;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.site-footer__legal-copy {
+  min-width: 0;
+}
+
+.site-footer__legal p {
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.73rem;
+  line-height: 1.7;
+}
+
+.site-footer__legal .site-footer__company {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
 .sticky-buy {
   position: fixed;
   right: 18px;
@@ -2199,6 +2235,30 @@ body.customer-review-modal-open {
 @media (max-width: 760px) {
   .container {
     width: min(100% - 28px, 620px);
+  }
+
+  .site-footer {
+    padding-block: 42px;
+  }
+
+  .site-footer__legal {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    margin-top: 28px;
+    padding-top: 22px;
+  }
+
+  .site-footer__legal h2 {
+    margin-top: 0;
+    justify-self: start;
+    font-size: 0.76rem;
+    text-align: left;
+  }
+
+  .site-footer__legal p {
+    margin-bottom: 14px;
+    font-size: 0.76rem;
+    line-height: 1.68;
   }
 
   .section-shell {
