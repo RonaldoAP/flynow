@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   DIVESSENCE · /dis-quiz — parametros de checkout (Payt)
+   DIVESSENCE · /backend — parametros de checkout (Payt)
 
    Esta pagina recebe trafego de disparo de backend (WhatsApp), nao de
    trafego pago. Por isso ela NAO usa RedTrack: a atribuicao vem inteira
@@ -41,7 +41,7 @@
   var KIT_PARAM = 'utm_content';
 
   /* Se o disparo esquecer o ?src=, a venda ainda chega atribuida. */
-  var DEFAULT_SRC = 'dis-quiz';
+  var DEFAULT_SRC = 'backend';
 
   function readStorage() {
     try {

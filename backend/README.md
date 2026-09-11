@@ -1,4 +1,4 @@
-# /dis-quiz — página de disparo (backend / WhatsApp)
+# /backend — página de disparo (WhatsApp)
 
 Cópia da página principal (`/`) adaptada para o tráfego de disparo.
 **Não usa RedTrack** — a atribuição vem inteira dos parâmetros da URL.
@@ -6,12 +6,12 @@ Cópia da página principal (`/`) adaptada para o tráfego de disparo.
 ## Como montar a URL do disparo
 
 ```
-https://divessencebeauty.com.br/dis-quiz?src=SUA-CAMPANHA&utm_source=whatsapp&utm_medium=disparo-dv&full_name=NOME&email=EMAIL&phone=TELEFONE
+https://divessencebeauty.com.br/backend?src=SUA-CAMPANHA&utm_source=whatsapp&utm_medium=disparo-dv&full_name=NOME&email=EMAIL&phone=TELEFONE
 ```
 
 | Parâmetro | Para que serve | Obrigatório |
 |---|---|---|
-| `src` | origem do disparo (lista, data, criativo) | recomendado — sem ele usa `dis-quiz` |
+| `src` | origem do disparo (lista, data, criativo) | recomendado — sem ele usa `backend` |
 | `utm_source`, `utm_medium`, `utm_campaign`, `utm_term` | rastreio de campanha | opcional |
 | `full_name` | **pré-preenche** NOME COMPLETO no checkout | opcional |
 | `email` | **pré-preenche** E-MAIL no checkout | opcional |
