@@ -216,7 +216,7 @@
     if (checkedNow) updateCheckout(checkedNow);
   }
 
-  /* ─────────── Raspe e descubra a oferta (scratch card) ─────────── */
+  /* ─────────── Raspadinha dos kits promocionais ─────────── */
   var scratchEl = document.getElementById('scratch');
   var scratchCanvas = document.getElementById('scratchCover');
   if (scratchEl && scratchCanvas && scratchCanvas.getContext) {
@@ -224,8 +224,11 @@
     var scratchDone = false;
     var pressing = false;
     var cssW = 0, cssH = 0;
+    var brushRadius = 30;
+    var lastPoint = null;
+    var activePointerId = null;
     // grade de cobertura: detecta "quanto foi raspado" sem depender de getImageData
-    var GRID_COLS = 12, GRID_ROWS = 4;
+    var GRID_COLS = 10, GRID_ROWS = 5;
     var hitCells = {};
     var hitCount = 0;
     var TOTAL_CELLS = GRID_COLS * GRID_ROWS;
@@ -253,6 +256,10 @@
       var rect = scratchEl.getBoundingClientRect();
       if (rect.width < 2 || rect.height < 2) return;
       cssW = rect.width; cssH = rect.height;
+      brushRadius = Math.max(30, Math.min(42, rect.width * 0.09));
+      hitCells = {};
+      hitCount = 0;
+      lastPoint = null;
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
       scratchCanvas.width = Math.round(rect.width * dpr);
       scratchCanvas.height = Math.round(rect.height * dpr);
@@ -261,52 +268,111 @@
       // canvas já pintado: remove a cobertura CSS para que a raspagem revele a oferta
       scratchCanvas.style.background = 'transparent';
     }
-    function markCell(x, y) {
+    function markCells(x, y) {
       if (!cssW || !cssH) return;
-      var col = Math.max(0, Math.min(GRID_COLS - 1, Math.floor(x / cssW * GRID_COLS)));
-      var row = Math.max(0, Math.min(GRID_ROWS - 1, Math.floor(y / cssH * GRID_ROWS)));
-      var key = row * GRID_COLS + col;
-      if (!hitCells[key]) { hitCells[key] = 1; hitCount++; }
+      var cellW = cssW / GRID_COLS;
+      var cellH = cssH / GRID_ROWS;
+      var minCol = Math.max(0, Math.floor((x - brushRadius) / cellW));
+      var maxCol = Math.min(GRID_COLS - 1, Math.floor((x + brushRadius) / cellW));
+      var minRow = Math.max(0, Math.floor((y - brushRadius) / cellH));
+      var maxRow = Math.min(GRID_ROWS - 1, Math.floor((y + brushRadius) / cellH));
+      var reach = brushRadius + Math.max(cellW, cellH) * 0.35;
+
+      for (var row = minRow; row <= maxRow; row++) {
+        for (var col = minCol; col <= maxCol; col++) {
+          var centerX = (col + 0.5) * cellW;
+          var centerY = (row + 0.5) * cellH;
+          var dx = centerX - x;
+          var dy = centerY - y;
+          if (dx * dx + dy * dy > reach * reach) continue;
+          var key = row * GRID_COLS + col;
+          if (!hitCells[key]) { hitCells[key] = 1; hitCount++; }
+        }
+      }
     }
     function eraseAt(x, y) {
       sctx.globalCompositeOperation = 'destination-out';
       sctx.beginPath();
-      sctx.arc(x, y, 24, 0, Math.PI * 2);
+      sctx.arc(x, y, brushRadius, 0, Math.PI * 2);
       sctx.fill();
-      markCell(x, y);
+      markCells(x, y);
+    }
+    function eraseLine(from, to) {
+      var dx = to.x - from.x;
+      var dy = to.y - from.y;
+      var distance = Math.sqrt(dx * dx + dy * dy);
+      var steps = Math.max(1, Math.ceil(distance / (brushRadius * 0.55)));
+      for (var i = 1; i <= steps; i++) {
+        eraseAt(from.x + dx * i / steps, from.y + dy * i / steps);
+      }
     }
     function revealPrizes() {
       if (scratchDone) return;
       scratchDone = true;
+      pressing = false;
+      lastPoint = null;
       scratchEl.classList.add('is-revealed');
-      var box = scratchEl.closest('.upsell') || document;
+      scratchCanvas.setAttribute('aria-hidden', 'true');
+      scratchCanvas.setAttribute('tabindex', '-1');
+      var panel = scratchEl.closest('.shop__panel');
+      var box = panel ? panel.querySelector('.upsell') : null;
+      box = box || document;
       box.querySelectorAll('.prize').forEach(function (p) { p.classList.remove('is-locked'); });
     }
     function maybeReveal() {
-      if (!scratchDone && hitCount / TOTAL_CELLS >= 0.5) revealPrizes();
+      if (!scratchDone && hitCount / TOTAL_CELLS >= 0.28) revealPrizes();
     }
     function pointFromEvent(e) {
       var rect = scratchCanvas.getBoundingClientRect();
       var t = (e.touches && e.touches[0]) || e;
       return { x: t.clientX - rect.left, y: t.clientY - rect.top };
     }
-    function onDown(e) { pressing = true; var p = pointFromEvent(e); eraseAt(p.x, p.y); maybeReveal(); e.preventDefault(); }
-    function onMove(e) {
-      if (!pressing || scratchDone) return;
-      var p = pointFromEvent(e);
-      eraseAt(p.x, p.y);
+    function onDown(e) {
+      if (scratchDone || (typeof e.button === 'number' && e.button !== 0)) return;
+      pressing = true;
+      activePointerId = typeof e.pointerId === 'number' ? e.pointerId : null;
+      if (activePointerId !== null && scratchCanvas.setPointerCapture) {
+        scratchCanvas.setPointerCapture(activePointerId);
+      }
+      scratchCanvas.classList.add('is-scratching');
+      lastPoint = pointFromEvent(e);
+      eraseAt(lastPoint.x, lastPoint.y);
       maybeReveal();
       e.preventDefault();
     }
-    function onUp() {
+    function onMove(e) {
+      if (!pressing || scratchDone) return;
+      var p = pointFromEvent(e);
+      eraseLine(lastPoint || p, p);
+      lastPoint = p;
+      maybeReveal();
+      e.preventDefault();
+    }
+    function onUp(e) {
       if (!pressing) return;
       pressing = false;
+      lastPoint = null;
+      scratchCanvas.classList.remove('is-scratching');
+      if (
+        activePointerId !== null &&
+        scratchCanvas.hasPointerCapture &&
+        scratchCanvas.hasPointerCapture(activePointerId)
+      ) {
+        scratchCanvas.releasePointerCapture(activePointerId);
+      }
+      activePointerId = null;
       maybeReveal();
     }
 
     scratchCanvas.addEventListener('pointerdown', onDown);
     scratchCanvas.addEventListener('pointermove', onMove);
     window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+    scratchCanvas.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      revealPrizes();
+    });
     // fallback touch (navegadores sem Pointer Events)
     if (!window.PointerEvent) {
       scratchCanvas.addEventListener('touchstart', onDown, { passive: false });
