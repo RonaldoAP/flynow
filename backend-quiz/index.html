@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<base href="/backend-quiz/" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz de pele — Divessence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap">
+  <img class="logo" src="assets/logo_divessence.png" alt="Divessence">
+  <div class="barra"><i id="progresso" style="width:0"></i></div>
+  <p class="eyebrow" id="passo" hidden>Pergunta 1 de 4</p>
+  <h1 class="h1" id="pergunta" tabindex="-1"></h1>
+  <p class="lead" id="ajuda" hidden></p>
+  <div id="opcoes"></div>
+
+  <!--
+    Visivel ate o modulo rodar; o primeiro render() o esconde. Sem isso, um
+    modulo que nao carrega deixa a tela sem pergunta e sem explicacao — que e
+    o que acontece ao abrir o arquivo por file://, porque o navegador bloqueia
+    <script type="module"> vindo do disco.
+  -->
+  <div id="semjs">
+    <p class="h1" style="font-size:22px">O quiz não carregou</p>
+    <p class="nota">
+      Esta página precisa ser aberta por um endereço <strong>http://</strong> ou
+      <strong>https://</strong>. Abrindo o arquivo direto do computador, o
+      navegador bloqueia o script por segurança.
+    </p>
+    <noscript>
+      <p class="nota">O seu navegador está com o JavaScript desativado.</p>
+    </noscript>
+  </div>
+
+  <button class="btn" id="avancar" hidden disabled>Continuar</button>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

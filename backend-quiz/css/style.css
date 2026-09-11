@@ -1,0 +1,68 @@
+/* css/style.css — mesma linguagem visual dos 61 e-mails */
+:root {
+  --tinta: #0B0D10;
+  --cinza: #8A96A1;
+  --borda: #E0E8F0;
+  --claro: #F0F5FA;
+  --branco: #FFFFFF;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--branco);
+  color: var(--tinta);
+  font: 400 17px/1.65 Manrope, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 600px; margin: 0 auto; padding: 32px 24px 64px; }
+.eyebrow {
+  margin: 0 0 28px; font-size: 12px; letter-spacing: 2.4px;
+  text-transform: uppercase; color: var(--cinza);
+}
+.h1 {
+  margin: 0 0 14px; font: 400 30px/1.2 Georgia, 'Times New Roman', serif;
+}
+.lead { margin: 0 0 28px; color: var(--cinza); font-size: 15px; }
+
+.barra { height: 2px; background: var(--borda); margin: 0 0 36px; }
+.barra i { display: block; height: 2px; background: var(--tinta); transition: width .3s; }
+
+.opcao {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  margin: 0 0 12px; padding: 18px 20px;
+  background: var(--branco); color: var(--tinta);
+  border: 1px solid var(--borda); border-radius: 14px;
+  font: 400 16px/1.5 Manrope, Helvetica, Arial, sans-serif;
+  transition: border-color .15s, background .15s;
+}
+.opcao:hover { border-color: var(--cinza); }
+.opcao.sel { border-color: var(--tinta); background: var(--claro); }
+
+.btn {
+  display: block; width: 100%; margin: 24px 0 0; padding: 18px 24px;
+  background: var(--tinta); color: var(--branco); border: 0; border-radius: 14px;
+  font: 400 15px/1 Manrope, Helvetica, Arial, sans-serif;
+  letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer;
+}
+.btn:disabled { background: var(--borda); color: var(--cinza); cursor: default; }
+
+.campo {
+  width: 100%; padding: 18px 20px; margin: 0 0 12px;
+  border: 1px solid var(--borda); border-radius: 14px;
+  font: 400 16px/1.4 Manrope, Helvetica, Arial, sans-serif; color: var(--tinta);
+}
+.campo:focus { outline: none; border-color: var(--tinta); }
+
+.bloco { padding: 32px 0; border-top: 1px solid var(--borda); }
+.bloco.claro { background: var(--claro); padding: 32px 24px; border-radius: 18px; border: 0; }
+.sinais { margin: 0; padding: 0 0 0 20px; }
+.sinais li { margin: 0 0 10px; }
+.nota { font-size: 15px; color: var(--cinza); }
+.rodape { margin: 48px 0 0; padding: 24px 0 0; border-top: 1px solid var(--borda);
+          font-size: 12px; line-height: 1.6; color: var(--cinza); }
+.logo { width: 180px; height: auto; display: block; margin: 0 0 40px; }
+
+@media (max-width: 420px) {
+  .wrap { padding: 24px 20px 56px; }
+  .h1 { font-size: 26px; }
+}
