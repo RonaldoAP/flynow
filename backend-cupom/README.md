@@ -42,19 +42,24 @@ relatório.
 
 O `src` é **o mesmo para todos os kits** e vem da URL do disparo.
 
-### Não use `split=12` nestes links
+### Sobre o `split=12`
 
-O parâmetro faz a Payt exibir o parcelamento em 12x **com juros** (~20,5%) como
-total em destaque, contradizendo o "12x sem juros" que a página anuncia:
+Os três kits levam `split=12`; a assinatura não, porque a Payt ignora o
+parâmetro em produto recorrente.
 
-| Card | Página anuncia | Payt com `split=12` |
+O parâmetro faz o checkout exibir o parcelamento em 12x como total em
+destaque. **Esse 12x tem juros (~20,5%)** e não é o mesmo 12x sem juros que a
+página anuncia:
+
+| Card | Página anuncia | Checkout exibe com `split=12` |
 |---|---|---|
-| 1 un | 12x R$ 7,49 (R$ 89,88) | 12x R$ 9,03 (R$ 108,36) |
-| 3 un | 12x R$ 14,99 (R$ 179,88) | 12x R$ 18,06 (R$ 216,72) |
-| 6 un | 12x R$ 23,33 (R$ 279,96) | 12x R$ 28,10 (R$ 337,20) |
+| 1 un | 12x R$ 7,49 sem juros (R$ 89,88) | 12x R$ 9,03 (R$ 108,36) |
+| 3 un | 12x R$ 14,99 sem juros (R$ 179,88) | 12x R$ 18,06 (R$ 216,72) |
+| 6 un | 12x R$ 23,33 sem juros (R$ 279,96) | 12x R$ 28,10 (R$ 337,20) |
 
-Sem o parâmetro, o checkout exibe o valor à vista real e o cliente escolhe o
-parcelamento na etapa de pagamento.
+Mantido por decisão do time, e consistente com o que a `/backend` já faz.
+Se a Payt permitir configurar 12x sem juros, habilitar lá resolve a
+divergência sem mexer na página.
 
 ## Diferenças em relação à /pv-cupom
 
