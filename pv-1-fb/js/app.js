@@ -12,7 +12,7 @@ var DELAY_SECONDS = 36 * 60 + 17;
 var TIMER_MINUTES = 20;
 
 // Domínio de tracking do RedTrack
-var REDTRACK = "https://red.track.protocolorevive.com";
+var REDTRACK = "https://red.track.divessencebeauty.com.br";
 
 // PENDÊNCIA: informe a URL da página de back redirect. 
 var BACK_REDIRECT_URL = "https://protocolorevive.com/pv-back/";
