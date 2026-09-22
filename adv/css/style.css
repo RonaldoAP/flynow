@@ -25,7 +25,14 @@ a { color: inherit; }
 .skip-link:focus { top: 12px; }
 .publication-header { max-width: 1380px; margin: 0 auto; overflow: hidden; }
 .publication-image { width: 100%; }
-.publication-image img { width: 100%; }
+.publication-frame { position: relative; container-type: inline-size; }
+.publication-image img { display: block; width: 100%; }
+/* Faixa de plantao: cobre a tarja estatica de doc-01.webp (y 143-173, x 89-1433) e a anima. */
+.news-ticker { position: absolute; top: 73.196%; left: 5.5625%; width: 84.0625%; height: 16.495%; background: #69202b; overflow: hidden; display: flex; align-items: center; }
+.news-ticker__track { display: flex; flex: none; animation: ticker-scroll 26s linear infinite; }
+.news-ticker__item { flex: none; white-space: nowrap; padding-right: 5.45cqw; color: #fff; font-size: 0.9375cqw; font-weight: 700; letter-spacing: .0375cqw; line-height: 1; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .news-ticker__track { animation: none; } }
 .page { width: min(860px, calc(100% - 48px)); margin: 23px auto 64px; }
 .article-header { margin-bottom: 26px; }
 .advertising-label { font-size: 11px; line-height: 1.5; color: #777; text-align: right; margin: 0 0 16px; }
@@ -82,7 +89,8 @@ h2 strong { font-weight: inherit; }
 body:has(.image-dialog[open]) { overflow: hidden; }
 @media (max-width: 640px) {
   .publication-image { position: relative; height: 110px; overflow: hidden; }
-  .publication-image img { position: absolute; width: 908px; max-width: none; height: 110px; left: 50%; transform: translateX(-50%); }
+  .publication-frame { position: absolute; width: 908px; height: 110px; left: 50%; transform: translateX(-50%); }
+  .publication-image img { width: 100%; max-width: none; height: 110px; }
   .page { width: calc(100% - 40px); margin-top: 12px; margin-bottom: 42px; }
   .advertising-label { margin-bottom: 13px; font-size: 10px; }
   h1 { font-size: clamp(25px, 7.45vw, 29px); line-height: 1.18; letter-spacing: -.65px; }
