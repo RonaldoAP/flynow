@@ -46,7 +46,7 @@
   var KIT_PARAM = 'utm_content';
 
   /* Se a URL vier sem ?src=, a venda ainda chega atribuida. */
-  var DEFAULT_SRC = 'blackfridey1';
+  var DEFAULT_SRC = 'blackfriday1';
 
   function readStorage() {
     try {
