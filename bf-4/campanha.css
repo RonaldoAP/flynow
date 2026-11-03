@@ -170,3 +170,19 @@ h1,h2{font-weight:700!important}
 .bf-top-static .bf-top-clock small{font-size:7px;line-height:1.3;margin-top:3px;color:#335570}
 .bf-top-clock i{font-size:15px;color:#a8c0d3;font-style:normal}
 @media(max-width:600px){.bf-bar.bf-top-static{flex-direction:column;gap:9px;padding:10px 12px;text-align:center}.bf-top-static .bf-top-label strong{font-size:10px}.bf-top-static .bf-top-label span{font-size:10px}.bf-top-static .bf-top-clock>span{min-width:40px;padding:4px}.bf-top-static .bf-top-clock b{font-size:18px}}
+.bf-bar.bf-top-static{min-height:0;padding:5px 14px;gap:18px}
+.bf-top-static .bf-top-label{gap:0}
+.bf-top-static .bf-top-label strong{font-size:10px;letter-spacing:.1em}
+.bf-top-clock{gap:4px}
+.bf-top-static .bf-top-clock>span{min-width:30px;padding:3px 4px;border-radius:3px}
+.bf-top-static .bf-top-clock b{font-size:15px}
+.bf-top-static .bf-top-clock small{font-size:6px;margin-top:1px}
+.bf-top-clock i{font-size:12px}
+@media(max-width:600px){
+ .bf-bar.bf-top-static{flex-direction:row;padding:5px 10px;gap:12px}
+ .bf-top-static .bf-top-label strong{font-size:8px;max-width:105px;line-height:1.3}
+ .bf-top-static .bf-top-clock>span{min-width:26px;padding:2px 3px}
+ .bf-top-static .bf-top-clock b{font-size:13px}
+ .bf-top-static .bf-top-clock small{font-size:5px}
+ .bf-top-clock{gap:3px}
+}
