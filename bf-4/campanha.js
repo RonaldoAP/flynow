@@ -32,6 +32,7 @@ if (!current) {
 }
 
 if (current) {
+  document.querySelector("[data-top-deadline]").textContent = current === 1 ? "Esta fase vai até 07/11 · Horário de Brasília" : "Última fase até 11/11 · Horário de Brasília";
   const deadline = Date.parse(window.DIVESSENCE_CONFIG.campaignEndsAt);
   const start = Date.parse(current === 1 ? "2026-11-01T00:00:00-03:00" : "2026-11-08T00:00:00-03:00");
   document.querySelector("[data-deadline-date]").textContent = current === 1 ? "Até 7 de novembro · Horário de Brasília" : "Até 11 de novembro · Horário de Brasília";
@@ -50,7 +51,7 @@ if (current) {
       seconds: seconds % 60
     };
     Object.entries(values).forEach(([key,value]) => {
-      document.querySelector('[data-remaining="'+key+'"]').textContent = String(value).padStart(2,"0");
+      document.querySelectorAll('[data-remaining="'+key+'"]').forEach(el => el.textContent = String(value).padStart(2,"0"));
     });
     document.querySelector("[data-phase-progress]").style.transform = "scaleX("+Math.max(0,Math.min(1,(now-start)/(deadline-start)))+")";
     if (phase(today()) !== current) location.reload();
