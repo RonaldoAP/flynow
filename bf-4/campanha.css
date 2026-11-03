@@ -1,0 +1,162 @@
+.hero,.hero img{display:block;width:100%;height:auto}.hero:focus-visible{outline:4px solid white;outline-offset:-5px;position:relative;z-index:2}
+.tape{position:relative;overflow:hidden;background:#080b10;border-block:1px solid #2978b6;transform:rotate(-2deg) scale(1.04);margin-top:-1vw;padding:7px 0;pointer-events:none}
+.track,.group{display:flex;width:max-content}.track{animation:slide 76s linear infinite}.group span{background:#edf2f6;color:#101923;font-size:clamp(12px,1.2vw,21px);font-weight:800;letter-spacing:.07em;margin-right:38px;padding-right:12px;white-space:nowrap}.group b{display:inline-block;background:#165e98;color:white;padding:3px 12px}
+.tape::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,#ffffff26 50%,transparent 60%);animation:shine 7s ease-in-out infinite}
+@keyframes slide{to{transform:translateX(-50%)}}@keyframes shine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){.track,.tape::after{animation:none}.tape::after{display:none}}
+:root{--blue:#216fbd;--deep:#124b83;--ink:#101820;--pale:#f0f5fa;--tint:#dceafa}
+.bf-hero{overflow:hidden;background:#101923;padding-bottom:1.9vw}.bf-hero .hero{display:block}.bf-bar{display:flex;align-items:center;justify-content:center;gap:clamp(5px,1vw,18px);padding:12px 8px;background:radial-gradient(ellipse at bottom,#16304b 0,transparent 55%),#090c10;border-bottom:1px solid #294561;color:#f2f5fa;font:700 clamp(9px,1vw,15px)/1.3 var(--sans);letter-spacing:.12em;text-align:center}.bf-bar strong,.bf-bar span{font-size:1.55em;color:#70b9ff}.bf-bar i{color:#70b9ff}.site-header{background:#101720;color:white}.site-header .desktop-nav a,.site-header .menu-toggle{color:#f0f6ff}.site-header .brand img{filter:brightness(0) invert(1)}.site-header .header-buy,.button-primary{background:#155b9d;color:#fff}.ingredients-section,.faq-section{border-top:1px solid #d7e4ef}.guarantee-section.guarantee-redesign,.final-cta{background:linear-gradient(115deg,#0c121b,#153859);color:#fff}.offer-section .eyebrow,.product-section .eyebrow{color:#1a5996}.presale-note{background:#102c48;color:#fff}.bf-hero .group b{color:white}
+.bf-bar{display:block;overflow:hidden;padding:11px 0;background:#0c121a;border-bottom:1px solid #29435c}.bf-flow{display:flex;width:max-content;animation:bf-scroll 55s linear infinite}.bf-flow>div{display:flex;align-items:center;gap:18px;padding-right:18px;white-space:nowrap}.bf-flow b{letter-spacing:.25em;color:#f8f7f1}.bf-flow i{color:#4b9ad7}.bf-flow strong{font-size:1.15em}.bf-flow [data-bonus]:empty{display:none}@keyframes bf-scroll{to{transform:translateX(-50%)}}
+body:has(#produto){background:#101720}#produto{--ink:#f7f5ef;--body:#e0e5ec;--muted:#b7c5d1;--line:#344355;color:var(--body);padding-top:clamp(34px,5vw,74px)}
+#produto :is(h1,h2,h3){font-family:var(--sans);font-weight:800;color:var(--ink)}
+#produto :is(.product-description,.product-tags,.product-info>p,.payment-summary,.pix-summary,.shipping-note){color:#c6d1dc}
+#produto .gallery-main,#produto .gallery-main .main-photo{background:#171e2a}
+:is(#produto,#oferta) .kit-option{background:#1a232e;border-color:#394555;color:#f6f3ed;transition:background .2s,border-color .2s}
+:is(#produto,#oferta) .kit-option.is-selected{background:#172e43;border-color:#579ce1}
+:is(#produto,#oferta) .kit-option :is(strong,b){color:#f8f6f0}
+:is(#produto,#oferta) .kit-option :is(small,del){color:#c0cbd8}
+.kit-portrait{width:100%;max-width:65px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#171e2b;border-radius:5px}.kit-portrait i{height:80%;width:24%;background:url('assets/images/frasco-grafite.png') center/auto 124% no-repeat;border-radius:24%;flex-shrink:1}
+#produto :is(.expert-quote,.product-details,.purchase-proof,.purchase-assurance,.stock-notice,.purchase-summary,.benefit-chips span,.product-details details){background:#1c2835;color:#e4e9ef;border-color:#344555}
+#produto :is(.product-details,.expert-quote,.purchase-proof,.purchase-assurance) :is(p,summary,small,strong){color:#e4e9ef}
+#produto .kit-picker legend{color:#e4e9ef}
+
+@media(prefers-reduced-motion:reduce){.bf-flow{animation:none}.kit-option{transition:none}}
+#produto .stock-notice :is(.stock-status,.stock-reference,.stock-alert,p,strong,span){color:#d6e1eb}#produto .stock-alert{background:#203041;border-color:#41576c}
+/* Whole-page campaign rhythm. */
+:root{--serif:Manrope,Arial,sans-serif;--ink:#17212b;--body:#35404b;--muted:#606b75;--pale:#f6f3ee;--tint:#e9e7e2;--line:#deded8}
+body:has(#produto){background:#f8f6f1}
+h1,h2{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
+h2{font-size:clamp(28px,3.2vw,44px);line-height:1.16}
+
+main>section>.bf-section-inner{padding-block:0}
+#produto{background:#101720;max-width:none;padding-inline:max(24px,calc((100vw - 1200px)/2))}
+#beneficios.confidence-section{background:#eeece6}
+#beneficios::before,#beneficios::after,.benefit-stage::before,.benefit-stage::after{display:none}
+.confidence-concerns article,.confidence-concerns figure{background:#fff;border-color:#deded8}
+.stage-product{background:transparent;box-shadow:none}
+.stage-product img{border-radius:18px;max-height:340px;object-fit:contain}
+.stage-product::before,.stage-product::after{display:none}
+#historias.stories-section,#ingredientes.ingredients-section,#cuidados.care-fronts-section,#duvidas.faq-section{background:#fff}
+.reason-card,.formula-reason,.review-card,.difference-cards article,.timeline li,.faq-list details{background:#fff!important;border:1px solid #e2e1dc;box-shadow:none!important;border-radius:12px}
+#ingredientes .formula-reason:first-child{background:#f1f0ea!important}
+#motivos.five-reasons-section{background:#eeece6}
+#resultados.results-section{background:#172430;padding:64px 24px;color:#e1e7ed}
+#resultados>.bf-section-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:42px;align-items:center;background:transparent}
+#resultados :is(h2,p,.eyebrow){color:#edf0f3}
+#resultados .result-stats{background:#223648;color:white;box-shadow:none}
+#resultados .result-stats :is(strong,span,small){color:#edf0f3}
+#resultados .text-link{color:#80b9ed}
+.authority-strip{background:#173149!important}
+#protocolo>.bf-section-inner{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+#oferta.offer-section{background:#101720;padding:72px 24px;color:#dce5ed}
+#oferta :is(h2,h3,p,.eyebrow,.rating,.payment-summary,.pix-summary,.shipping-note,.secure-lock){color:#e9edf2}
+#oferta .offer-visual{background:#1b2632}
+#oferta .offer-visual-caption{background:#1b2632;color:#e8edf2}
+#oferta .offer-visual-caption :is(p,h3){color:#e8edf2}
+#oferta :is(.offer-campaign,.purchase-assurance,.payment-methods){background:#1c2b39;color:#e3eaf0}
+#oferta .kit-picker legend{color:white}
+#garantia.guarantee-redesign{background:#101720;padding-top:0}
+#garantia .guarantee-stage{background:#1b2a38;border:1px solid #354a5b;box-shadow:none}
+#garantia .guarantee-art{background:#192431}
+#garantia .guarantee-product{mix-blend-mode:normal}
+#garantia .guarantee-bottom{background:#233749;color:#e9edf2}
+#garantia .guarantee-bottom :is(strong,small){color:inherit}
+#evolucao>.bf-section-inner{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.comparison-section>.bf-section-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}
+.comparison-table th,.comparison-table td{background:transparent}
+.comparison-table :is(th,td):nth-child(2){background:#e8eef2}
+#duvidas.faq-section{background:#eeece6}
+#duvidas .faq-list details{background:#fdfcf9!important}
+.reviews-dashboard{background:#eeece6}
+.reviews-summary,.reviews-certainty,.support-card{background:#eeece6!important}
+.final-cta{background:#172632!important}
+.site-footer{background:#0c131b;color:#bdcad6}
+.site-footer :is(h3,p,a,small){color:#bdcad6}
+.site-footer img{max-width:175px}
+.button,.buy-button{border-radius:9px}
+.button:not(.button-white),.buy-button{background:#1c609d}
+:is(.checkout-promo,.authority-strip,.purchase-assurance){background-image:none}
+#produto .expert-quote footer{background:transparent;color:#d1deeb}
+@media(max-width:760px){
+ #resultados>.bf-section-inner,#protocolo>.bf-section-inner,#evolucao>.bf-section-inner,.comparison-section>.bf-section-inner{grid-template-columns:1fr;gap:26px}
+ #produto{padding-inline:18px}
+ #resultados.results-section,#oferta.offer-section{padding:44px 0}
+ .bf-section-inner{width:calc(100% - 36px)}
+ .comparison-table{min-width:0}
+}
+#resultados.results-section,#protocolo.mechanism-section,#evolucao.evolution-section,.comparison-section,.all-reviews-section,.support-section{display:block;width:100%;max-width:none}
+.support-section>.bf-section-inner{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:760px){.support-section>.bf-section-inner{grid-template-columns:1fr}}
+#produto.product-section.wrap{width:100%;max-width:none;margin:0}
+#resultados.results-section{background:#172430!important}
+#oferta.offer-section{background:#101720!important}
+#garantia.guarantee-redesign .guarantee-stage{background:#1b2a38!important}
+#garantia .guarantee-bottom :is(strong,small,span){color:#e8eff5!important}
+#oferta .offer-visual-caption strong{color:#edf2f6}
+.comparison-table th:nth-child(2){color:#153959}
+#beneficios.confidence-section,#motivos.five-reasons-section{background:#eeece6!important}
+#historias.stories-section,#ingredientes.ingredients-section,#cuidados.care-fronts-section{background:#fff!important}
+#duvidas.faq-section{background:#eeece6!important}
+#duvidas .faq-list details{background:#fdfcf9!important}
+#prints{background:#f8f6f1}
+#resultados .footnote{color:#bccbd6!important}
+.sticky-purchase{background:#122231;color:#eff3f6;border-top:1px solid #405367}
+.sticky-purchase :is(strong,small,span){color:#eff3f6}
+.sticky-purchase img{border-radius:5px}
+h1,h2{font-weight:700!important}
+#duvidas .faq-list details,#duvidas .faq-list details summary,#duvidas .faq-list details[open]{background:#fdfcf9!important;border-color:#dad8d1!important}
+#duvidas .faq-list summary::after{background:#eeeae3}
+#resultados{border-radius:0}
+/* A light product chapter provides the pause after the campaign hero. */
+#produto.product-section{--ink:#18232d;--body:#37424d;--muted:#5c6873;--line:#d8d8d1;background:#f8f6f1;color:#37424d}
+#produto :is(h1,h2,h3){color:#18232d}
+#produto :is(.product-description,.product-tags,.product-info>p,.payment-summary,.pix-summary,.shipping-note){color:#465561}
+#produto .gallery-seal{background:#f8f6f1;color:#185b91;border:1px solid #bcc9d2}
+#produto .photo-tag{background:#f8f6f1;color:#293c4b}
+#produto .gallery-controls{background:#f8f6f1;color:#1a4c73}
+#produto .gallery-controls button,#produto .gallery-zoom{color:#1a4c73;background:#f8f6f1}
+#produto :is(.kit-option,.product-details,.expert-quote,.purchase-proof,.purchase-assurance,.stock-notice,.purchase-summary,.benefit-chips span,.product-details details){background:#fff;color:#354653;border-color:#d6dadb}
+#produto .kit-option.is-selected{background:#edf1f2;border-color:#246b9e}
+#produto .kit-option :is(strong,b),#produto .kit-picker legend{color:#182c3b}
+#produto .kit-option :is(small,del){color:#506471}
+#produto :is(.product-details,.expert-quote,.purchase-proof,.purchase-assurance) :is(p,summary,small,strong){color:#465561}
+#produto .stock-notice :is(.stock-status,.stock-reference,.stock-alert,p,strong,span){color:#485c69}
+#produto .stock-alert{background:#efeee8;border-color:#dbd9d2}
+#produto .expert-quote footer{background:#efeee8;color:#475a68}
+#produto .product-tags span{background:#eae8e1;color:#45525c}
+#produto .presale-note{background:#eae8e1;color:#263e50;border-color:#c2c8c9}
+#produto .purchase-summary{background:transparent}
+.differences-section.section{background:#f8f6f1!important}
+.differences-section::before,.differences-section::after{display:none!important}
+.faq-list details summary{background:#fdfcf9!important}
+.guarantee-medallion{opacity:1!important;filter:none!important}
+#produto .gallery-main,#produto .gallery-main .main-photo{background:#f0e9df}
+#produto .gallery-main img,#produto .main-photo img{background:#f0e9df!important}
+.kit-portrait{background:transparent;overflow:visible;border-radius:0}
+.kit-portrait i{flex:0 0 20px;width:20px;height:58px;background:url('assets/images/frasco-transparente.png') center/auto 100% no-repeat;border-radius:0}
+.kit-portrait i+i{margin-left:-11px}
+.bf-flow{animation:bf-scroll 24s linear infinite!important}
+.track{animation:slide 36s linear infinite!important}
+#produto .checkout-promo,#produto .checkout-promo :is(span,strong){color:#234c6c;background:transparent}
+.bf-deadline{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 0%,#23547a 0,transparent 62%),linear-gradient(135deg,#101923,#142d43)!important;color:#f8f5ee;text-align:center;padding:72px 20px 56px}
+.bf-deadline .deadline-inner{position:relative;max-width:1060px}
+.bf-deadline .eyebrow{color:#a9c8e2;letter-spacing:.22em}
+.bf-deadline h2{color:#f8f5ee;margin:16px 0 30px;font-size:clamp(30px,4vw,54px);font-weight:800}
+.deadline-badge{position:absolute;right:0;top:0;display:flex;flex-direction:column;justify-content:center;width:100px;height:100px;background:#f2ece1;color:#17354e;border-radius:50%;font-size:12px;font-weight:bold;line-height:1.2;transform:rotate(9deg);border:5px double #7894ab}
+.deadline-badge strong{font-size:29px}
+.deadline-panel{max-width:750px;margin:auto;padding:25px 32px 28px;background:#09172466;border:1px solid #7899b859;border-radius:22px;box-shadow:0 20px 50px #050d1526}
+.deadline-date{color:#b4cce0;letter-spacing:.12em;font-size:12px;text-transform:uppercase;margin:auto}
+.deadline-clock{display:flex;align-items:start;justify-content:center;gap:clamp(8px,2vw,25px);margin:20px 0 24px;font-variant-numeric:tabular-nums}
+.deadline-clock>div{flex:1;max-width:130px}
+.deadline-clock b{display:block;font:800 clamp(40px,6vw,88px)/1.08 var(--sans);letter-spacing:-.06em;color:#faf6ed}
+.deadline-clock>div:last-child b{color:#8ec5ed}
+.deadline-clock small{display:block;margin-top:10px;color:#b0c7db;font-size:10px;letter-spacing:.18em}
+.deadline-clock>span{font-size:clamp(24px,4vw,55px);line-height:1.5;color:#8daac3}
+.deadline-progress{display:flex;gap:14px;align-items:center;color:#b0c7db;font-size:10px;letter-spacing:.08em}
+.deadline-progress>div{flex:1;height:4px;background:#7393ad40;border-radius:5px;overflow:hidden}
+.deadline-progress i{display:block;height:100%;background:#87bce4;transform-origin:left;width:100%;transform:scaleX(0)}
+.deadline-explanation{max-width:610px;margin:26px auto!important;color:#d2e0eb;line-height:1.6}
+.deadline-cta{display:inline-flex;align-items:center;gap:40px;padding:16px 28px;background:#f2ece1;color:#112d43;border-radius:9px;font-weight:800}
+.deadline-cta:hover{background:#fff}
+.deadline-footnote{margin:15px auto 0!important;color:#a8c2d7;font-size:12px}
+@media(max-width:760px){.bf-deadline{padding:44px 18px}.deadline-badge{position:static;margin:0 auto 18px;width:72px;height:72px;font-size:9px}.deadline-badge strong{font-size:23px}.deadline-panel{padding:20px 12px}.deadline-clock{gap:8px}.deadline-clock b{font-size:clamp(32px,10vw,50px)}.deadline-clock small{font-size:8px}.deadline-date{font-size:10px;letter-spacing:.05em}.deadline-explanation{font-size:14px}.deadline-inner{width:100%}}
