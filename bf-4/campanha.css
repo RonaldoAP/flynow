@@ -278,3 +278,13 @@ h1,h2{font-weight:700!important}
  .campaign-photo{min-height:215px}
  #produto .presale-note strong{font-size:19px}
 }
+.campaign-seal-shipping{width:94px;height:94px;gap:2px;box-shadow:0 2px 12px #0002}
+.campaign-seal-shipping svg{width:29px;height:24px}
+.campaign-seal-shipping small{font-size:12px;line-height:1.1;font-weight:800;letter-spacing:.04em}
+.campaign-seal-shipping b{font-size:19px;line-height:1.1;letter-spacing:-.02em}
+@media(max-width:767px){
+ .campaign-seal-shipping{width:74px;height:74px;gap:1px}
+ .campaign-seal-shipping svg{width:24px;height:20px}
+ .campaign-seal-shipping small{font-size:10px}
+ .campaign-seal-shipping b{font-size:15px}
+}
