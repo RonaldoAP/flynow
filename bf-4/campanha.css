@@ -253,3 +253,9 @@ h1,h2{font-weight:700!important}
  #produto .gallery-controls{bottom:46px}
  #produto .gallery-zoom{bottom:47px}
 }
+.gallery-campaign{display:block;overflow:hidden;padding:0}
+.gallery-campaign-track{display:flex;width:max-content;animation:gallery-marquee 22s linear infinite!important;will-change:transform}
+.gallery-campaign-row{display:flex;align-items:center;gap:16px;white-space:nowrap;padding:12px 16px 12px 0;flex-shrink:0}
+.gallery-campaign-row i{color:#ffd44f;font-size:10px;font-style:normal}
+@keyframes gallery-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:767px){.gallery-campaign-row{gap:13px;padding:10px 13px 10px 0}}
