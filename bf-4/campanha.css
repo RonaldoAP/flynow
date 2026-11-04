@@ -199,3 +199,57 @@ h1,h2{font-weight:700!important}
 :is(#produto,#oferta) .kit-focus .kit-price{min-width:92px}
 :is(#produto,#oferta) .kit-focus .kit-price b{white-space:nowrap}
 @media(max-width:480px){:is(#produto,#oferta) .kit-focus .kit-price b{font-size:18px}:is(#produto,#oferta) .kit-focus .kit-badge{white-space:normal;line-height:1.35}}
+/* Campaign opening with independently sized type. */
+.bf-bar.bf-top-static{min-height:58px;padding:8px 18px}
+.bf-top-static .bf-top-label strong{font-size:13px}
+.bf-top-static .bf-top-clock b{font-size:20px}
+.bf-top-static .bf-top-clock small{font-size:7px}
+.bf-top-static .bf-top-clock>span{min-width:37px;padding:4px}
+.bf-hero{padding-bottom:0}
+.campaign-hero{position:relative;min-height:620px;height:min(740px,48vw);background:#101923;overflow:hidden}
+.campaign-photo{position:absolute;inset:0}
+.campaign-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.campaign-copy{position:relative;padding:clamp(36px,5vw,90px) 0 40px 6vw;width:52%;color:#faf7ef}
+.campaign-brand{font-size:12px;font-weight:700;letter-spacing:.2em;color:#c1d3e2;margin-bottom:24px}
+.campaign-copy h2{font-size:clamp(42px,4.7vw,82px);line-height:1;letter-spacing:-.06em;margin:0 0 24px}
+.campaign-copy h2 span{display:block;color:#38b8ff;text-shadow:0 0 22px #008cff30}
+.campaign-copy h2 strong{display:block;color:#ffd44f;font-size:1.15em;line-height:1.05}
+.campaign-promise{font-size:clamp(16px,1.6vw,24px);line-height:1.4}
+.campaign-pix{display:inline-block;background:#1675bb;color:#fff;font-size:clamp(22px,2.4vw,38px);font-weight:800;line-height:1.25;padding:7px 12px;margin:12px 0 24px}
+.campaign-action{display:flex;align-items:center;gap:24px}
+.campaign-action a{display:inline-flex;align-items:center;gap:30px;background:#0985e7;color:#fff;padding:16px 24px;border-radius:40px;font-size:18px;font-weight:800;box-shadow:0 4px 20px #008cff25}
+.campaign-action a:hover{background:#1671b7}
+.campaign-seal{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#ffd44f;color:#101923;border:2px solid #0c131b;border-radius:50%;width:86px;height:86px}
+.campaign-seal b{font-size:40px;line-height:1;font-weight:800}
+.campaign-seal small{font-size:15px;font-weight:800}
+.gallery-campaign{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:18px;z-index:3;padding:12px 8px;background:#14283eee;color:#f7f4ed;font-size:11px;letter-spacing:.08em;pointer-events:none}
+.gallery-campaign strong{color:#ffd44f;font-size:13px}
+#produto .gallery-controls{bottom:54px}
+#produto .gallery-zoom{bottom:55px}
+@media(max-width:767px){
+ .bf-bar.bf-top-static{height:62px;padding:6px 12px;gap:14px}
+ .bf-top-static .bf-top-label strong{font-size:10px;max-width:110px}
+ .bf-top-static .bf-top-clock>span{min-width:32px;padding:4px 3px}
+ .bf-top-static .bf-top-clock b{font-size:17px}
+ .bf-top-static .bf-top-clock small{font-size:6px}
+ .campaign-hero{display:flex;flex-direction:column;height:calc(100svh - 94px);min-height:550px}
+ .campaign-photo{position:relative;inset:auto;flex:1;min-height:245px}
+ .campaign-photo img{position:absolute;inset:0;object-position:89% 40%}
+ .campaign-photo::after{content:"";position:absolute;inset:auto 0 0;height:75px;background:linear-gradient(transparent,#101923)}
+ .campaign-copy{padding:0 22px 16px;width:100%;text-align:center;background:#101923}
+ .campaign-brand{display:none}
+ .campaign-copy h2{font-size:clamp(34px,10.8vw,52px);margin:0 0 10px;letter-spacing:-.055em}
+ .campaign-copy h2 strong{font-size:1.13em}
+ .campaign-promise{font-size:14px;line-height:1.35;margin:auto}
+ .campaign-pix{font-size:clamp(21px,6.2vw,28px);margin:9px 0 12px;padding:5px 10px}
+ .campaign-action{justify-content:center;gap:16px}
+ .campaign-action a{padding:12px 22px;font-size:16px;gap:22px}
+ .campaign-seal{width:63px;height:63px;flex-shrink:0}
+ .campaign-seal b{font-size:30px}
+ .campaign-seal small{font-size:11px}
+ .bf-hero .tape{margin-top:0;padding:5px 0;transform:none;height:32px}
+ .gallery-campaign{gap:10px;padding:10px 6px;font-size:9px}
+ .gallery-campaign strong{font-size:11px}
+ #produto .gallery-controls{bottom:46px}
+ #produto .gallery-zoom{bottom:47px}
+}
