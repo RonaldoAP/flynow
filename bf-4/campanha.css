@@ -264,3 +264,17 @@ h1,h2{font-weight:700!important}
  .bf-hero .tape{transform:rotate(-2deg) scale(1.04);height:34px;margin-top:0;margin-bottom:0}
  .bf-hero{padding-bottom:8px}
 }
+.hero-shipping{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;background:#ffd44f;color:#111e2a;border-radius:5px;padding:7px 14px;margin:0 0 16px;font-size:15px;font-weight:800;letter-spacing:.04em;line-height:1.2}
+.hero-shipping svg{width:24px;height:19px}
+#produto .presale-note{display:flex;justify-content:center;align-items:center;gap:14px;background:#152b3d;color:#ffd44f;border:1px solid #294a65;border-radius:9px;padding:17px 14px}
+#produto .presale-note>svg{width:33px;height:27px;flex-shrink:0}
+#produto .presale-note>span{display:flex;flex-direction:column;gap:3px}
+#produto .presale-note strong{color:#ffd44f;font-size:21px;font-weight:800;letter-spacing:.04em;line-height:1.2}
+#produto .presale-note small{color:#eef3f7;font-size:12px;line-height:1.35}
+@media(max-width:767px){
+ .hero-shipping{margin:0 auto 10px;padding:5px 12px;font-size:13px;gap:8px}
+ .hero-shipping svg{width:21px;height:17px}
+ .campaign-pix{margin-bottom:9px}
+ .campaign-photo{min-height:215px}
+ #produto .presale-note strong{font-size:19px}
+}
