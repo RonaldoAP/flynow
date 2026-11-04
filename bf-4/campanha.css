@@ -288,3 +288,27 @@ h1,h2{font-weight:700!important}
  .campaign-seal-shipping small{font-size:10px}
  .campaign-seal-shipping b{font-size:15px}
 }
+
+/* Free-shipping burst with live, readable lettering. */
+.campaign-seal-shipping{
+ position:relative;isolation:isolate;width:120px;height:120px;border:0;border-radius:0;
+ background:transparent;box-shadow:none;transform:rotate(-7deg);gap:2px;
+ filter:drop-shadow(0 4px 0 #0005) drop-shadow(0 4px 12px #0002);
+}
+.campaign-seal-shipping::before{
+ content:"";position:absolute;inset:0;z-index:-2;
+ background:linear-gradient(145deg,#ffe980,#ffd035 65%,#f6bc20);
+ clip-path:polygon(50.000% 0.000%, 56.727% 7.529%, 65.451% 2.447%, 69.522% 11.687%, 79.389% 9.549%, 80.406% 19.594%, 90.451% 20.611%, 88.313% 30.478%, 97.553% 34.549%, 92.471% 43.273%, 100.000% 50.000%, 92.471% 56.727%, 97.553% 65.451%, 88.313% 69.522%, 90.451% 79.389%, 80.406% 80.406%, 79.389% 90.451%, 69.522% 88.313%, 65.451% 97.553%, 56.727% 92.471%, 50.000% 100.000%, 43.273% 92.471%, 34.549% 97.553%, 30.478% 88.313%, 20.611% 90.451%, 19.594% 80.406%, 9.549% 79.389%, 11.687% 69.522%, 2.447% 65.451%, 7.529% 56.727%, 0.000% 50.000%, 7.529% 43.273%, 2.447% 34.549%, 11.687% 30.478%, 9.549% 20.611%, 19.594% 19.594%, 20.611% 9.549%, 30.478% 11.687%, 34.549% 2.447%, 43.273% 7.529%);
+}
+.campaign-seal-shipping::after{
+ content:"";position:absolute;inset:19%;z-index:-1;border:1px solid #8b650044;border-radius:50%;
+}
+.campaign-seal-shipping svg{width:29px;height:24px;margin-bottom:1px;stroke-width:2}
+.campaign-seal-shipping small{font-size:14px;letter-spacing:.06em;font-weight:800}
+.campaign-seal-shipping b{font-size:23px;letter-spacing:-.045em;font-weight:800}
+@media(max-width:767px){
+ .campaign-seal-shipping{width:96px;height:96px;gap:1px}
+ .campaign-seal-shipping svg{width:24px;height:20px}
+ .campaign-seal-shipping small{font-size:11px}
+ .campaign-seal-shipping b{font-size:19px}
+}
