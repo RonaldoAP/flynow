@@ -259,3 +259,8 @@ h1,h2{font-weight:700!important}
 .gallery-campaign-row i{color:#ffd44f;font-size:10px;font-style:normal}
 @keyframes gallery-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:767px){.gallery-campaign-row{gap:13px;padding:10px 13px 10px 0}}
+/* Preserve the campaign ribbon's diagonal angle on mobile. */
+@media(max-width:767px){
+ .bf-hero .tape{transform:rotate(-2deg) scale(1.04);height:34px;margin-top:0;margin-bottom:0}
+ .bf-hero{padding-bottom:8px}
+}
