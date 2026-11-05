@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR"> <head> <meta charset="utf-8"/> <meta content="width=device-width,initial-scale=1" name="viewport"/> <meta content="#165994" name="theme-color"/> <title>Black Friday sem risco | Divessence</title> <meta content="Conheça o Sérum GHK-Cu Divessence: peptídeo de cobre, niacinamida e ácido hialurônico. Escolha seu protocolo com garantia de 90 dias." name="description"/> <link href="/bf-4/assets/images/favico.png" rel="icon"/> <link as="image" href="/bf-4/assets/images/mockup-unidade.webp" rel="preload"/> <link href="/bf-4/styles.css?v=20260925-small" rel="stylesheet"/> <link href="/bf-4/refinements.css?v=20260925-small" rel="stylesheet"/> <script defer="" src="/bf-4/config.js?v=20260925-redtrack"></script><script defer="" src="/bf-4/campanha.js"></script> <script defer="" src="/bf-4/social-proof.js?v=20260925-small"></script> <script defer="" src="/bf-4/checkout-params.js"></script><script defer="" src="/bf-4/app.js?v=20260925-redtrack"></script> <script defer="" src="/bf-4/reviews.js?v=20260925-small"></script> <link href="/bf-4/copy-updates.css?v=20260925-small" rel="stylesheet"/> <script defer="" src="/bf-4/campaign.js?v=20260925-small"></script> <link href="/bf-4/lead-capture.css?v=20260925-small" rel="stylesheet"/> <script defer="defer" src="/bf-4/lead-capture.js?v=20260925-small"></script> <link href="/bf-4/mobile-polish.css?v=20260925-small" rel="stylesheet"/> <link href="/bf-4/campanha.css" rel="stylesheet"/></head> <body> <a class="skip-link" href="#conteudo">Pular para o conteúdo</a> <aside aria-label="Prazo da Black Friday Divessence" class="bf-bar bf-top-static"><span class="bf-top-label"><strong>BLACK FRIDAY DIVESSENCE</strong></span><div aria-label="Tempo restante da fase" aria-live="off" class="bf-top-clock" role="timer"><span><b data-remaining="days">00</b><small>DIAS</small></span><i>:</i><span><b data-remaining="hours">00</b><small>HORAS</small></span><i>:</i><span><b data-remaining="minutes">00</b><small>MIN</small></span><i>:</i><span><b data-remaining="seconds">00</b><small>SEG</small></span></div></aside> <main id="conteudo"><div class="bf-hero"><section aria-labelledby="campaign-headline" class="campaign-hero">
+<html lang="pt-BR"> <head> <meta charset="utf-8"/> <meta content="width=device-width,initial-scale=1" name="viewport"/> <meta content="#165994" name="theme-color"/> <title>Black Friday sem risco | Divessence</title> <meta content="Conheça o Sérum GHK-Cu Divessence: peptídeo de cobre, niacinamida e ácido hialurônico. Escolha seu protocolo com garantia de 90 dias." name="description"/> <link href="/bf-4/assets/images/favico.png" rel="icon"/> <link as="image" href="/bf-4/assets/images/mockup-unidade.webp" rel="preload"/> <link href="/bf-4/styles.css?v=20260925-small" rel="stylesheet"/> <link href="/bf-4/refinements.css?v=20260925-small" rel="stylesheet"/> <script defer="" src="/bf-4/config.js?v=20260925-redtrack"></script><script defer="" src="/bf-4/campanha.js"></script> <script defer="" src="/bf-4/social-proof.js?v=20260925-small"></script> <script defer="" src="/bf-4/checkout-params-raiz.js"></script><script defer="" src="/bf-4/app.js?v=20260925-redtrack"></script> <script defer="" src="/bf-4/reviews.js?v=20260925-small"></script> <link href="/bf-4/copy-updates.css?v=20260925-small" rel="stylesheet"/> <script defer="" src="/bf-4/campaign.js?v=20260925-small"></script> <link href="/bf-4/lead-capture.css?v=20260925-small" rel="stylesheet"/> <script defer="defer" src="/bf-4/lead-capture.js?v=20260925-small"></script> <link href="/bf-4/mobile-polish.css?v=20260925-small" rel="stylesheet"/> <link href="/bf-4/campanha.css" rel="stylesheet"/></head> <body> <a class="skip-link" href="#conteudo">Pular para o conteúdo</a> <aside aria-label="Prazo da Black Friday Divessence" class="bf-bar bf-top-static"><span class="bf-top-label"><strong>BLACK FRIDAY DIVESSENCE</strong></span><div aria-label="Tempo restante da fase" aria-live="off" class="bf-top-clock" role="timer"><span><b data-remaining="days">00</b><small>DIAS</small></span><i>:</i><span><b data-remaining="hours">00</b><small>HORAS</small></span><i>:</i><span><b data-remaining="minutes">00</b><small>MIN</small></span><i>:</i><span><b data-remaining="seconds">00</b><small>SEG</small></span></div></aside> <main id="conteudo"><div class="bf-hero"><section aria-labelledby="campaign-headline" class="campaign-hero">
 <div class="campaign-photo"><img alt="Modelo aplica o sérum Divessence na bochecha e segura o frasco junto ao rosto" fetchpriority="high" src="/bf-4/hero-fotografia.png"/></div>
 <div class="campaign-copy"><p class="campaign-brand">DIVESSENCE · BLACK FRIDAY</p>
 <h2 id="campaign-headline"><span>BLACK FRIDAY</span><strong>SEM RISCO</strong></h2>
@@ -29,4 +29,54 @@
 <!-- RedTrack · track.js -->
 <script src="https://red.track.divessencebeauty.com.br/unilpclick.js?attribution=lastpaid&amp;cookiedomain=&amp;cookieduration=90&amp;defaultcampaignid=6a5908f939d1b65f467961dd&amp;regviewonce=false"></script>
 <!-- RedTrack · postback InitiateCheckout ao clicar nos botões de compra -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var urlParams = new URLSearchParams(window.location.search);
+        var clickid = urlParams.get("rtkcid");
+
+        if (clickid) {
+          document
+            .querySelectorAll(".smartplayer-click-event")
+            .forEach(function (link) {
+              link.addEventListener("click", function (event) {
+                event.preventDefault(); // Impedir navegação imediata
+                var destination = link.href;
+                var redirected = false;
+                function go() {
+                  if (redirected) return;
+                  redirected = true;
+                  window.location.href = destination;
+                }
+
+                var postbackURL =
+                  "https://red.track.divessencebeauty.com.br/postback?clickid=" +
+                  encodeURIComponent(clickid) +
+                  "&type=InitiateCheckout";
+
+                // Disparar postback e redirecionar após a requisição encerrar.
+                fetch(postbackURL, { method: "GET", keepalive: true })
+                  .then(function (response) {
+                    if (!response.ok) {
+                      throw new Error("HTTP " + response.status);
+                    }
+                    console.log("Requisição de postback InitiateCheckout concluída");
+                  })
+                  .catch(function (error) {
+                    console.error("Erro ao disparar postback:", error);
+                  })
+                  .finally(function () {
+                    go();
+                  });
+
+                // Fallback: se demorar mais de 2s, redirecionar mesmo assim.
+                setTimeout(go, 2000);
+              });
+            });
+        } else {
+          console.warn(
+            "ClickID (rtkcid) não encontrado na URL. Conversão não será disparada.",
+          );
+        }
+      });
+    </script>
 </body> </html>
