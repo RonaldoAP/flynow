@@ -312,3 +312,7 @@ h1,h2{font-weight:700!important}
  .campaign-seal-shipping small{font-size:11px}
  .campaign-seal-shipping b{font-size:19px}
 }
+.site-footer .footer-brand .footer-instagram{display:inline-flex;align-items:center;gap:9px;margin-top:12px;color:#f8f5ee;line-height:1.4}
+.site-footer .footer-instagram svg,.site-footer .footer-instagram strong{color:#a8d3ef}
+.site-footer .footer-instagram strong{display:block;font-size:12px}
+.site-footer .footer-instagram:hover{text-decoration:underline}
