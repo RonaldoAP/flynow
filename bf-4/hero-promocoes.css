@@ -1,5 +1,5 @@
-@font-face{font-family:Manrope;src:url('/bf-5/assets/fonts/manrope-bold.woff2');font-weight:800;font-display:swap}
-@font-face{font-family:Manrope;src:url('/bf-5/assets/fonts/manrope-regular.woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('/bf-4/assets/fonts/manrope-bold.woff2');font-weight:800;font-display:swap}
+@font-face{font-family:Manrope;src:url('/bf-4/assets/fonts/manrope-regular.woff2');font-weight:400;font-display:swap}
 .bf5-offer-design,.bf5-offer-design *{box-sizing:border-box}
 .bf5-offer-design{margin:0;background:#101923;color:#f8f5ed;font-family:Manrope,Arial,sans-serif}
 .bf5-offer-design{overflow:hidden;background:radial-gradient(ellipse at 78% 37%,#234963 0,transparent 53%),#101923}
@@ -65,7 +65,7 @@
 .bf5-offer-design .subtitle{font-size:12px;margin-top:9px}
 .bf5-offer-design .products{min-height:250px;margin-bottom:22px}
 .bf5-offer-design .price strong{font-size:30px}}
-@font-face{font-family:CampaignDisplay;src:url('/bf-5/assets/fonts/montserrat-black-italic.ttf') format('truetype');font-style:italic;font-weight:900;font-display:swap}
+@font-face{font-family:CampaignDisplay;src:url('/bf-4/assets/fonts/montserrat-black-italic.ttf') format('truetype');font-style:italic;font-weight:900;font-display:swap}
 .bf5-offer-design h1{font-family:CampaignDisplay,Manrope,Arial,sans-serif;font-weight:900;font-style:italic;font-size:clamp(58px,6.4vw,94px);line-height:.88;letter-spacing:-.065em}
 .bf5-offer-design h1 span,.bf5-offer-design h1 strong{white-space:nowrap}
 .bf5-offer-design h1 strong{font-size:1.1em;line-height:.9}
