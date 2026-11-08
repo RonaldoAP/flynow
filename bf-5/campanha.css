@@ -392,3 +392,62 @@ h1,h2{font-weight:700!important}
 .final-cta .bonus-gift{width:145px;font-size:11px}
 .final-cta .bonus-plus{width:7%}
 @media(max-width:767px){.final-cta .bonus-duo{height:270px;max-width:350px;margin:12px auto}.final-cta .bonus-gift{width:125px;font-size:10px}}
+/* Offer slides share the same composition and selectable checkout targets. */
+.bonus-slides{display:flex;transition:transform .65s cubic-bezier(.22,.7,.2,1);touch-action:pan-y}
+.bonus-carousel .bonus-main{flex:0 0 100%;width:100%;max-width:none;padding-inline:max(44px,calc((100vw - 1232px)/2));box-sizing:border-box}
+.bonus-carousel .bonus-title :is(h1,h2){font-family:var(--sans);font-size:clamp(52px,6.2vw,88px);line-height:.98;font-weight:800;letter-spacing:-.065em;margin:0}
+.bonus-carousel .bonus-title :is(h1,h2) span{display:block;color:#38b8ff}
+.bonus-carousel .bonus-title :is(h1,h2) strong{display:block;color:#ffd44f;font-size:1.18em}
+.bonus-carousel .bonus-bottle img{user-select:none;-webkit-user-drag:none}
+.bundle-art{position:relative;display:flex;align-items:end;justify-content:center;height:430px;isolation:isolate}
+.bundle-paid,.bundle-extra{display:flex;align-items:end;justify-content:center;height:100%;position:relative}
+.bundle-paid{width:57%}
+.bundle-extra{width:30%}
+.bundle-bottle{position:relative;flex:1;height:90%;min-width:0}
+.bundle-bottle img{position:absolute;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%);user-select:none;-webkit-user-drag:none;filter:drop-shadow(3px 10px 9px #0004)}
+.bundle-plus{width:10%;text-align:center;align-self:center;color:#ffd44f;font-size:34px;z-index:3}
+.bundle-extra .bundle-bottle{height:100%}
+.bundle-paid .bundle-bottle:nth-child(even){height:98%;z-index:1}
+.bundle-art-6 .bundle-bottle{height:75%}
+.bundle-art-6 .bundle-paid{width:62%}
+.bundle-art-6 .bundle-extra{width:30%}
+.bundle-art-6 .bundle-plus{width:8%}
+.bundle-art-6 .bundle-paid .bundle-bottle:nth-child(even){height:84%}
+.bundle-art-6 .bundle-extra .bundle-bottle{height:90%}
+.bundle-art-6 .bundle-extra .bundle-bottle:last-child{height:97%;z-index:1}
+.bundle-gift{position:absolute;right:-6px;bottom:18%;transform:rotate(-7deg);background:#ffd44f;color:#111d27;padding:10px 14px;text-align:center;font-size:17px;font-weight:800;z-index:4;box-shadow:0 4px 16px #0003}
+.bundle-gift small{display:block;font-size:9px;letter-spacing:.08em}
+.bonus-controls{display:flex;align-items:center;justify-content:center;gap:15px;padding:0 18px 20px}
+.bonus-controls button{color:#dce7ef;border:1px solid #607e9655;border-radius:50%;width:32px;height:32px;padding:0;display:grid;place-items:center;font-size:24px;line-height:1;background:#0c1723}
+.bonus-controls button:hover{border-color:#ffd44f}
+.bonus-dots{display:flex;gap:3px}
+.bonus-controls .bonus-dots button{width:28px;height:32px;border:0;background:transparent}
+.bonus-dots button span{display:block;width:7px;height:7px;background:#71889a;border-radius:10px;transition:width .2s,background .2s}
+.bonus-dots button[aria-pressed="true"] span{width:23px;background:#ffd44f}
+.bonus-controls .bonus-toggle{font-size:12px;margin-left:6px}
+@media(max-width:767px){
+ .bonus-carousel .bonus-main{padding:18px 20px 16px;min-height:calc(100svh - 140px);justify-content:space-between}
+ .bonus-carousel .bonus-title :is(h1,h2){font-size:clamp(40px,12vw,56px);line-height:.97}
+ .bonus-carousel .bonus-title :is(h1,h2) strong{font-size:1.14em}
+ .bonus-carousel .bonus-media{padding:6px 0}
+ .bonus-carousel .bonus-duo,.bundle-art{height:clamp(250px,39svh,370px);width:100%;max-width:370px;margin:auto}
+ .bonus-carousel .bonus-bottle{width:39%}
+ .bundle-plus{font-size:25px}
+ .bundle-gift{font-size:13px;padding:8px 10px;right:-5px}
+ .bundle-gift small{font-size:8px}
+ .bonus-controls{padding:2px 18px 10px;gap:12px}
+ .bonus-carousel .bonus-price strong{font-size:32px}
+ .bonus-carousel .bonus-unit{margin-bottom:10px}
+ .bonus-carousel .bonus-volume{margin-top:8px}
+ .bonus-carousel .bonus-assurance{margin-top:8px}
+}
+@media(max-width:767px) and (max-height:740px){
+ .bonus-carousel .bonus-main{min-height:0;padding-top:12px;padding-bottom:12px}
+ .bonus-carousel .bonus-title :is(h1,h2){font-size:38px}
+ .bonus-carousel .bonus-duo,.bundle-art{height:230px}
+ .bonus-carousel .bonus-price strong{font-size:30px}
+ .bonus-carousel .bonus-eyebrow{margin-bottom:7px}
+ .bonus-carousel .bonus-cta{padding:11px 24px}
+}
+@media(prefers-reduced-motion:reduce){.bonus-slides{transition:none}}
+@media(max-width:767px){.bundle-art-6{transform:scale(.93);transform-origin:center bottom}}
