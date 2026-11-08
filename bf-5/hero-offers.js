@@ -7,18 +7,17 @@
   const slides = Array.from(track.children);
   const dots = Array.from(carousel.querySelectorAll("[data-bonus-slide]"));
   const toggle = carousel.querySelector(".bonus-toggle");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let active = 0;
-  let paused = reducedMotion.matches;
+  let paused = false;
   let visible = true;
-  let hovered = false;
   let timer;
   let pointerStart;
 
   function schedule() {
     window.clearTimeout(timer);
-    if (paused || !visible || hovered || document.hidden || carousel.contains(document.activeElement)) return;
-    timer = window.setTimeout(() => show(active + 1), 8000);
+    const focusedOffer = carousel.querySelector(".bonus-slide :focus-visible");
+    if (paused || !visible || pointerStart || document.hidden || focusedOffer) return;
+    timer = window.setTimeout(() => show(active + 1), 6000);
   }
 
   function show(index) {
@@ -71,14 +70,6 @@
     pointerStart = undefined;
     schedule();
   });
-  carousel.addEventListener("mouseenter", () => {
-    hovered = true;
-    schedule();
-  });
-  carousel.addEventListener("mouseleave", () => {
-    hovered = false;
-    schedule();
-  });
   carousel.addEventListener("focusin", schedule);
   carousel.addEventListener("focusout", () => window.setTimeout(schedule, 0));
   document.addEventListener("visibilitychange", schedule);
@@ -86,11 +77,6 @@
     visible = entries[0].isIntersecting;
     schedule();
   }, {threshold:0.15}).observe(carousel);
-  reducedMotion.addEventListener("change", event => {
-    paused = event.matches;
-    updateToggle();
-    schedule();
-  });
   updateToggle();
   show(0);
 })();
