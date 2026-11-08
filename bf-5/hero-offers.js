@@ -17,7 +17,7 @@
     window.clearTimeout(timer);
     const focusedOffer = carousel.querySelector(".bonus-slide :focus-visible");
     if (paused || !visible || pointerStart || document.hidden || focusedOffer) return;
-    timer = window.setTimeout(() => show(active + 1), 6000);
+    timer = window.setTimeout(() => show(active + 1), 1500);
   }
 
   function show(index) {
