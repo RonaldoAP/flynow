@@ -1,0 +1,149 @@
+@font-face{font-family:Manrope;src:url('/bf-5/assets/fonts/manrope-bold.woff2');font-weight:800;font-display:swap}
+@font-face{font-family:Manrope;src:url('/bf-5/assets/fonts/manrope-regular.woff2');font-weight:400;font-display:swap}
+.bf5-offer-design,.bf5-offer-design *{box-sizing:border-box}
+.bf5-offer-design{margin:0;background:#101923;color:#f8f5ed;font-family:Manrope,Arial,sans-serif}
+.bf5-offer-design{overflow:hidden;background:radial-gradient(ellipse at 78% 37%,#234963 0,transparent 53%),#101923}
+.bf5-offer-design .layout{max-width:1320px;margin:auto;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:0 35px;padding:54px 44px 46px;align-items:center}
+.bf5-offer-design .heading{grid-column:1;grid-row:1}
+.bf5-offer-design .brand{font-size:12px;letter-spacing:.2em;color:#bed0dc;margin:0 0 22px;font-weight:800}
+.bf5-offer-design h1{font-size:clamp(54px,5.7vw,84px);line-height:.98;letter-spacing:-.065em;margin:0;font-weight:800}
+.bf5-offer-design h1 span{display:block;color:#38b8ff}
+.bf5-offer-design h1 strong{display:block;color:#ffd44f;font-size:1.12em}
+.bf5-offer-design h1 em{font-size:1.25em;font-style:normal}
+.bf5-offer-design .subtitle{font-size:19px;color:#d2dce4;line-height:1.4;margin:20px 0 22px}
+.bf5-offer-design .products{position:relative;grid-column:2;grid-row:1/3;align-self:stretch;min-height:520px;isolation:isolate}
+.bf5-offer-design .products::before{content:"";position:absolute;left:10%;right:10%;bottom:8%;height:25px;background:#0003;filter:blur(15px);border-radius:50%}
+.bf5-offer-design .bottle{position:absolute;bottom:10%;height:84%;width:45%;z-index:2}
+.bf5-offer-design .bottle img{height:100%;width:auto;max-width:none;position:absolute;left:50%;transform:translateX(-50%);filter:drop-shadow(4px 12px 14px #0003)}
+.bf5-offer-design .bottle.first{left:1%;transform:rotate(-4deg);height:80%}
+.bf5-offer-design .bottle.second{right:2%;transform:rotate(4deg)}
+.bf5-offer-design .plus{position:absolute;left:47%;top:45%;color:#ffd44f;font-size:37px;font-weight:800;z-index:3}
+.bf5-offer-design .gift{position:absolute;right:-1%;top:11%;z-index:5;background:#ffd44f;color:#101923;padding:9px 13px;transform:rotate(6deg);font-size:13px;font-weight:800;line-height:1.2;text-align:center}
+.bf5-offer-design .gift span{display:block}
+.bf5-offer-design .ribbon{position:absolute;left:-12%;width:125%;display:flex;align-items:center;justify-content:center;gap:25px;white-space:nowrap;border-block:1px solid #4d98c27a;overflow:hidden}
+.bf5-offer-design .ribbon span{flex-shrink:0}
+.bf5-offer-design .ribbon.back{top:57%;z-index:1;transform:rotate(12deg);background:#163b56;color:#b6cfe0;padding:9px;font-size:13px;letter-spacing:.11em}
+.bf5-offer-design .ribbon.front{bottom:4%;z-index:4;transform:rotate(-12deg);background:#1675bb;color:#f8f5ed;padding:12px;font-size:23px;font-weight:800;box-shadow:0 5px 16px #0002}
+.bf5-offer-design .ribbon i{font-style:normal;color:#ffd44f}
+.bf5-offer-design .purchase{grid-column:1;grid-row:2}
+.bf5-offer-design .price{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0}
+.bf5-offer-design .price span{font-size:18px}
+.bf5-offer-design .price strong{font-size:43px;letter-spacing:-.05em}
+.bf5-offer-design .unit{color:#c9d8e3;font-size:14px;margin:8px 0 13px}
+.bf5-offer-design .shipping{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#ffd44f;margin:0 0 18px}
+.bf5-offer-design .shipping svg{width:24px;height:20px}
+.bf5-offer-design .cta{display:flex;width:max-content;gap:50px;align-items:center;background:#ffd44f;color:#111e29;border:0;border-radius:40px;padding:17px 26px;font:800 18px Manrope,Arial,sans-serif;text-decoration:none}
+.bf5-offer-design .assurance{font-size:11px;color:#b4c9d8;margin-top:12px}
+.bf5-offer-design .assurance span{color:#ffd44f}
+.bf5-offer-design .bottom{overflow:hidden;border-block:1px solid #2978b6;background:#080b10;transform:rotate(-2deg) scale(1.04);padding:6px 0;display:flex;gap:28px;white-space:nowrap;font-size:12px;font-weight:800}
+.bf5-offer-design .bottom span{padding:3px 10px;background:#edf2f6;color:#101923}
+.bf5-offer-design .bottom b{background:#165e98;color:white;padding:5px;margin-right:8px}
+@media(max-width:767px){.bf5-offer-design .layout{display:flex;flex-direction:column;padding:22px 22px 28px;gap:0;min-height:calc(100svh - 35px);justify-content:space-between}
+.bf5-offer-design .heading{text-align:center}
+.bf5-offer-design .brand{font-size:9px;margin-bottom:11px;letter-spacing:.17em}
+.bf5-offer-design h1{font-size:clamp(38px,11vw,51px)}
+.bf5-offer-design h1 strong{font-size:1.1em}
+.bf5-offer-design .subtitle{font-size:14px;margin:12px 0 0}
+.bf5-offer-design .products{flex:1;width:100%;min-height:300px;max-width:430px;margin:6px auto 24px}
+.bf5-offer-design .bottle{height:86%;bottom:8%;width:45%}
+.bf5-offer-design .bottle.first{height:82%}
+.bf5-offer-design .plus{font-size:28px;top:42%}
+.bf5-offer-design .gift{right:-2%;top:7%;font-size:10px;padding:7px 9px}
+.bf5-offer-design .ribbon.back{font-size:10px;gap:16px;padding:7px;top:56%}
+.bf5-offer-design .ribbon.front{font-size:17px;gap:16px;padding:9px;bottom:1%;left:-17%;width:136%}
+.bf5-offer-design .purchase{text-align:center;position:relative;z-index:6}
+.bf5-offer-design .price{justify-content:center;gap:7px}
+.bf5-offer-design .price span{font-size:14px}
+.bf5-offer-design .price strong{font-size:33px}
+.bf5-offer-design .unit{font-size:12px;margin:5px 0 7px}
+.bf5-offer-design .shipping{font-size:12px;margin:0 0 11px}
+.bf5-offer-design .shipping svg{width:21px;height:17px}
+.bf5-offer-design .cta{font-size:17px;padding:13px 26px;margin:auto}
+.bf5-offer-design .assurance{font-size:10px;margin:10px 0 0}}
+@media(max-width:767px) and (max-height:740px){.bf5-offer-design .layout{padding-top:15px;padding-bottom:22px}
+.bf5-offer-design h1{font-size:36px}
+.bf5-offer-design .subtitle{font-size:12px;margin-top:9px}
+.bf5-offer-design .products{min-height:250px;margin-bottom:22px}
+.bf5-offer-design .price strong{font-size:30px}}
+@font-face{font-family:CampaignDisplay;src:url('/bf-5/assets/fonts/montserrat-black-italic.ttf') format('truetype');font-style:italic;font-weight:900;font-display:swap}
+.bf5-offer-design h1{font-family:CampaignDisplay,Manrope,Arial,sans-serif;font-weight:900;font-style:italic;font-size:clamp(58px,6.4vw,94px);line-height:.88;letter-spacing:-.065em}
+.bf5-offer-design h1 span,.bf5-offer-design h1 strong{white-space:nowrap}
+.bf5-offer-design h1 strong{font-size:1.1em;line-height:.9}
+.bf5-offer-design h1 em{display:inline-block;font-family:inherit;font-style:inherit;font-size:1.45em;line-height:.74;letter-spacing:-.09em;vertical-align:baseline;margin-left:.025em}
+.bf5-offer-design .subtitle{font-weight:800}
+.bf5-offer-design .gift{top:52%;right:5%;transform:rotate(-7deg);z-index:5}
+@media(max-width:767px){.bf5-offer-design h1{font-size:clamp(37px,10.8vw,51px);line-height:.89}
+.bf5-offer-design h1 strong{font-size:1.12em}
+.bf5-offer-design h1 em{font-size:1.5em}
+.bf5-offer-design .brand{margin-bottom:16px}
+.bf5-offer-design .subtitle{margin-top:16px}
+.bf5-offer-design .gift{top:53%;right:3%;font-size:11px;padding:9px 11px}}
+@media(max-width:767px) and (max-height:740px){.bf5-offer-design h1{font-size:36px}
+.bf5-offer-design .subtitle{margin-top:13px}}
+@media(max-width:767px){.bf5-offer-design h1{font-size:clamp(42px,12.6vw,58px)}}
+@media(max-width:767px) and (max-height:740px){.bf5-offer-design h1{font-size:44px}}
+.bf5-offer-design .offer-headline{font-family:CampaignDisplay,Manrope,Arial,sans-serif;font-weight:900;font-style:italic;font-size:clamp(58px,6.4vw,94px);line-height:.88;letter-spacing:-.065em;margin:0}
+.bf5-offer-design .offer-headline span{display:block;color:#38b8ff;white-space:nowrap}
+.bf5-offer-design .offer-headline strong{display:block;color:#ffd44f;font-size:1.1em;line-height:.9;white-space:nowrap}
+.bf5-offer-design .offer-headline em{display:inline-block;font-family:inherit;font-style:inherit;font-size:1.45em;line-height:.74;letter-spacing:-.09em;vertical-align:baseline;margin-left:.025em}
+.bf5-offer-design .plus{left:50%;transform:translateX(-50%);font-size:70px;line-height:1;text-shadow:0 3px 12px #0007}
+.bf5-offer-design .bonus-slides{display:flex;transition:transform .6s ease;touch-action:pan-y}
+.bf5-offer-design .bonus-slides .layout{flex:0 0 100%;width:100%;max-width:none;padding-inline:max(44px,calc((100vw - 1232px)/2));margin:0}
+.bf5-offer-design .bottle-group{position:absolute;bottom:10%;display:flex;align-items:end;justify-content:center;height:84%;z-index:2}
+.bf5-offer-design .bottle-group.paid{left:0;width:47%}
+.bf5-offer-design .bottle-group.extra{right:0;width:38%}
+.bf5-offer-design .group-bottle{position:relative;flex:1;min-width:0;height:90%}
+.bf5-offer-design .group-bottle img{position:absolute;height:100%;width:auto;max-width:none;left:50%;transform:translateX(-50%);filter:drop-shadow(4px 10px 10px #0003)}
+.bf5-offer-design .group-bottle:nth-child(even){height:100%;z-index:1}
+.bf5-offer-design .bottle-group.extra .group-bottle{height:100%}
+.bf5-offer-design .products-3 .plus{left:53%}
+.bf5-offer-design .products-6 .bottle-group{height:80%}
+.bf5-offer-design .products-6 .paid{left:0;width:55%}
+.bf5-offer-design .products-6 .extra{right:-1%;width:32%}
+.bf5-offer-design .products-6 .plus{left:60%}
+.bf5-offer-design .products-6 .group-bottle{height:82%}
+.bf5-offer-design .products-6 .group-bottle:nth-child(even){height:92%}
+.bf5-offer-design .products-6 .extra .group-bottle{height:95%}
+.bf5-offer-design .bonus-controls{display:flex;align-items:center;justify-content:center;gap:12px;padding:0 16px 24px}
+.bf5-offer-design .bonus-controls button{border:1px solid #58738777;color:#c4d9e8;background:#101923;border-radius:50%;width:32px;height:32px;font-size:22px;display:grid;place-items:center;cursor:pointer}
+.bf5-offer-design .bonus-dots{display:flex;gap:4px}
+.bf5-offer-design .bonus-dots button{background:transparent;border:0;width:26px}
+.bf5-offer-design .bonus-dots button span{width:7px;height:7px;background:#658298;display:block;border-radius:10px}
+.bf5-offer-design .bonus-dots button[aria-pressed=true] span{background:#ffd44f;width:22px}
+.bf5-offer-design .bonus-controls .bonus-toggle{font-size:12px}
+@media(max-width:767px){.bf5-offer-design .bonus-slides .layout{padding:22px 22px 28px;min-height:calc(100svh - 86px)}
+.bf5-offer-design .offer-headline{font-size:clamp(42px,12.6vw,58px);line-height:.89}
+.bf5-offer-design .offer-headline strong{font-size:1.12em}
+.bf5-offer-design .offer-headline em{font-size:1.5em}
+.bf5-offer-design .plus{font-size:50px}
+.bf5-offer-design .products-6 .plus{font-size:40px}
+.bf5-offer-design .products-6 .bottle-group{height:72%}
+.bf5-offer-design .products-6 .extra{right:1%}
+.bf5-offer-design .products-6 .gift{font-size:10px;right:-1%;padding:8px}
+.bf5-offer-design .products-3 .gift{right:0}}
+@media(max-width:767px) and (max-height:740px){.bf5-offer-design .bonus-slides .layout{padding-top:15px;padding-bottom:22px}
+.bf5-offer-design .offer-headline{font-size:44px}}
+@media(prefers-reduced-motion:reduce){.bf5-offer-design .bonus-slides{transition:none}}
+.bf5-offer-design .bonus-slides .layout{overflow:hidden;position:relative}
+.bf5-offer-design .products .plus{width:76px;height:76px;font-size:0;top:44%;z-index:6;text-shadow:none}
+.bf5-offer-design .products .plus img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 8px #0005)}
+@media(max-width:767px){.bf5-offer-design .products .plus{width:56px;height:56px;top:44%}
+.bf5-offer-design .products-6 .plus{width:45px;height:45px}}/* Keep the campaign composition independent of inherited page typography. */
+.bf5-offer-design{line-height:normal}
+.bf5-offer-design .brand{display:block;width:auto;max-width:none;white-space:nowrap}
+.bf5-offer-design .products .plus{pointer-events:none}
+@media(max-width:767px){
+ .bf5-offer-design .bonus-slides .layout{min-height:calc(100svh - 150px)}
+ .bf5-offer-design .products{min-height:280px}
+}
+@media(max-width:767px) and (max-height:740px){
+ .bf5-offer-design .bonus-slides .layout{padding-top:12px;padding-bottom:16px}
+ .bf5-offer-design .products{min-height:215px;margin-top:0;margin-bottom:18px}
+ .bf5-offer-design .offer-headline{font-size:40px}
+ .bf5-offer-design .brand{margin-bottom:10px}
+ .bf5-offer-design .subtitle{margin-top:10px;font-size:12px}
+ .bf5-offer-design .price strong{font-size:28px}
+ .bf5-offer-design .unit{margin-top:4px;margin-bottom:5px}
+ .bf5-offer-design .cta{padding:11px 24px}
+ .bf5-offer-design .shipping{margin-bottom:9px}
+}
