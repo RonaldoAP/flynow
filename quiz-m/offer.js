@@ -1,8 +1,8 @@
-/* Link de saida do quiz: mesma logica do adv-6 (preclick do RedTrack + parametros de entrada).
-   O pretrack.js do RedTrack acrescenta clickid/rtkck a este link; o botao final do quiz navega para ele. */
+/* Link de saida do quiz: pagina de vendas de calvicie (/calvicie-m) + parametros de entrada.
+   Sem src na URL, marca src=quiz-m para separar as vendas que vieram do quiz. */
 (() => {
   'use strict';
-  const OFFER = 'https://red.track.divessencebeauty.com.br/preclick';
+  const OFFER = window.location.origin + '/calvicie-m';
   if (document.getElementById('dv-offer')) return;
   const destination = new URL(OFFER);
   const incoming = new URLSearchParams(window.location.search);
@@ -11,6 +11,7 @@
     if (key === 'clickid' || key === 'rtkck' || destination.searchParams.has(key)) continue;
     for (const value of incoming.getAll(key)) destination.searchParams.append(key, value);
   }
+  if (!destination.searchParams.has('src')) destination.searchParams.set('src', 'quiz-m');
   const link = document.createElement('a');
   link.id = 'dv-offer';
   link.href = destination.href;
