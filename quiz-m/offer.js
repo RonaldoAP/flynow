@@ -1,16 +1,13 @@
-/* Link de saida do quiz: mesma logica do adv-6 (preclick do RedTrack + parametros de entrada).
-   O pretrack.js do RedTrack acrescenta clickid/rtkck a este link; o botao final do quiz navega para ele. */
+/* Saída do quiz capilar para a página correspondente da Divessence. */
 (() => {
   'use strict';
-  const OFFER = 'https://red.track.divessencebeauty.com.br/preclick';
   if (document.getElementById('dv-offer')) return;
-  const destination = new URL(OFFER);
-  const incoming = new URLSearchParams(window.location.search);
-  for (const key of new Set(incoming.keys())) {
-    // A integracao oficial determina esses valores. Copiar os da entrada os duplicaria.
-    if (key === 'clickid' || key === 'rtkck' || destination.searchParams.has(key)) continue;
-    for (const value of incoming.getAll(key)) destination.searchParams.append(key, value);
-  }
+  const destination = new URL('/pv-calvicie-masculino', window.location.origin);
+  const params = new URLSearchParams(window.location.search);
+  if (!params.get('src')) params.set('src', 'quiz');
+  if (!params.get('clickid') && params.get('rtkcid')) params.set('clickid', params.get('rtkcid'));
+  destination.search = params.toString();
+
   const link = document.createElement('a');
   link.id = 'dv-offer';
   link.href = destination.href;
